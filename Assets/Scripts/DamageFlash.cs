@@ -6,6 +6,7 @@ public class DamageFlash : MonoBehaviour
 {
     [SerializeField] private Image DamageImage;
 
+    private float alpha = 0;
 
 	// Use this for initialization
 	void Start ()
