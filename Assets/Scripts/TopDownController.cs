@@ -1,8 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class TopDownController : MonoBehaviour
 {
+    public Text scoreText;
+    public int score = 0;
     public float speed = 10f;
     public float gravity = 20f;
 
@@ -29,4 +32,13 @@ public class TopDownController : MonoBehaviour
         // Move Character Controller
         controller.Move (moveDirection);
     }
-}
+    void OnTriggerEnter(Collider Pickup)
+    {
+        if (Pickup.gameObject.tag == "MedPack")
+        {
+            Destroy(Pickup.gameObject);
+            score++;
+            scoreText.text = "Score : " + score;
+        }
+    }
+    }

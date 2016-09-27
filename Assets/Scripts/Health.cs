@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class Health : MonoBehaviour 
 {
 	public int health = 5;
-    public int lastHealth;
+  //  public int lastHealth;
     public int hit; // (being damaged)
 	//public int currentHealth;
 	public Image damageImage;  
@@ -21,31 +21,31 @@ public class Health : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
 
-        if (health > 5)
-        {
-            health = 5;
-        }
-        if (health <= 0)
-        {
-            health = 0;
-        }
 
-        if ()//Health starts at 5, After damage is 4
+        //if (health > 5)
+        //{
+        //    health = 5;
+        //}
+        //if (health <= 0)
+        //{
+        //    health = 0;
+        //}
+
+        //  if ()//Health starts at 5, After damage is 4
         //set lastHealth to health, stop screenflash
-        )
+
 
         {
-
+            damaged = true;
 
             if (damaged == true)
             {
 
                 damaged = true;
-                Color col = damageImage.color;
-                col.a = 1;
-                damageImage.color = col;
+                //Color col = damageImage.color;
+                //col.a = 1;
+                //damageImage.color = col;
 
                 health--;
                 // ... set the colour of the damageImage to the flash colour.
@@ -64,7 +64,7 @@ public class Health : MonoBehaviour
             damaged = false;
             
         }
-        lastHealth = health;
+      //  lastHealth = health;
     }
 
         

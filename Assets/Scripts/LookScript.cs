@@ -10,12 +10,14 @@ public class LookScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        Vector3 lookVec = new Vector3(Input.GetAxis("LookVertical"), 0, Input.GetAxis("LookHorizontal"));
+        Vector3 lookVec = new Vector3(-Input.GetAxis("LookVertical"), 0, Input.GetAxis("LookHorizontal"));
       //  Debug.Log("Magnitude " + lookVec);
         if (lookVec.magnitude >0.1)
         {
-            Quaternion charRotation = Quaternion.FromToRotation(new Vector3(0, 0, 1), lookVec);
+            Quaternion charRotation = Quaternion.FromToRotation(new Vector3(-1, 0, 0), lookVec);
             transform.rotation = charRotation;
         }
+
+        Debug.Log(lookVec);
 	}
 }
