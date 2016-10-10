@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using InControl;
 
 public class TopDownController : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class TopDownController : MonoBehaviour
     public int score = 0;
     public float speed = 10f;
     public float gravity = 20f;
+    public float deadzone = 0.2f;
 
     public Vector3 moveDirection = new Vector3(0,0,0);
     public CharacterController controller;
@@ -19,12 +21,34 @@ public class TopDownController : MonoBehaviour
 	}
 	
 	// Update is called once per frame
-	void Update ()
+	void FixedUpdate ()
     {
-	    if (controller.isGrounded)
+        if (controller.isGrounded)
         {
-            moveDirection = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0);
+            InputDevice device = InputManager.ActiveDevice;
+
+
+
+            float horizontal = Mathf.Clamp(Input.GetAxis("Horizontal") + device.LeftStick.X, -1f, 1f);
+            float vertical = Mathf.Clamp(Input.GetAxis("Vertical") + device.LeftStick.Y, -1f, 1f);
+
+            moveDirection *= speed * Time.deltaTime;
+
+            if (Mathf.Abs(horizontal) <= deadzone)
+            {
+                horizontal = 0;
+            }
+            if (Mathf.Abs(vertical) <= deadzone)
+                vertical = 0;
+
+            moveDirection = new Vector3(horizontal, vertical, 0);
+
             moveDirection = Camera.main.transform.TransformDirection(moveDirection);
+
+
+
+            // moveDirection.Normalize(); 
+
             moveDirection *= speed * Time.deltaTime;
 
         }

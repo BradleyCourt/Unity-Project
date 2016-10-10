@@ -24,7 +24,7 @@ public class Shooting : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButton(0))
         {
             GameObject obj = Instantiate(projectile, transform.position, Quaternion.identity) as GameObject;
             Destroy(obj, bulletLifeTime);
@@ -38,14 +38,13 @@ public class Shooting : MonoBehaviour
         inputVector.x = Input.GetAxis("LookHorizontal");
         inputVector.y = Input.GetAxis("LookVertical");
 
-        if (inputVector.magnitude > deadZone)
-        {
+     
             if (Time.time > nextFireTime)
             {
                 nextFireTime = Time.time + fireInterval;
 
                 Debug.Log("Fired bullet in direction: " + inputVector);
             }
-        }
+        
 	}
 }
