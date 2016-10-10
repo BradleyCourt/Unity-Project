@@ -5,13 +5,13 @@ using UnityEngine.UI;
 public class Health : MonoBehaviour 
 {
 	public int health = 5;
-  //  public int lastHealth;
+    //public int lastHealth;
     public int hit; // (being damaged)
 	//public int currentHealth;
 	public Image damageImage;  
 	public float flashSpeed = 5f;
 	bool isDead;
-	bool damaged;
+	public bool damaged;
 	// Use this for initialization
 	void Start () 
 	{
@@ -21,7 +21,6 @@ public class Health : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
 
         //if (health > 5)
         //{
@@ -37,7 +36,7 @@ public class Health : MonoBehaviour
 
 
         {
-            damaged = true;
+            //damaged = true;
 
             if (damaged == true)
             {
@@ -58,7 +57,7 @@ public class Health : MonoBehaviour
                 //Works, proven by the Debug code.
                 //Debug.Break();
                 // ... transition the colour back to clear.
-                //damageImage.color = Color.Lerp (damageImage.color, Color.clear, flashSpeed * Time.deltaTime);
+                damageImage.color = Color.Lerp (damageImage.color, Color.clear, flashSpeed * Time.deltaTime);
             }
 
             damaged = false;
@@ -69,4 +68,3 @@ public class Health : MonoBehaviour
 
         
 }
-
