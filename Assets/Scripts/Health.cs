@@ -4,7 +4,10 @@ using UnityEngine.UI;
 
 public class Health : MonoBehaviour 
 {
-	public int health = 5;
+    TopDownController topDownController;
+    Shooting shooting;
+    LookScript lookScript;
+    public int health = 0;
     //public int lastHealth;
     public int hit; // (being damaged)
 	//public int currentHealth;
@@ -15,38 +18,44 @@ public class Health : MonoBehaviour
 	// Use this for initialization
 	void Start () 
 	{
-
+        
 	}
+
+    void death()
+    {
+
+    }
+
+    void applyDamage()
+    {
+        if (damaged)
+        {
+            health--;
+        }
+
+        if (health <= 0)
+        {
+            isDead = true;
+            topDownController.enabled = false;
+            shooting.enabled = false;
+            lookScript.enabled = false;
+            print("DED");
+
+        }
+    }
+
 
     // Update is called once per frame
     void Update()
     {
-
-        //if (health > 5)
-        //{
-        //    health = 5;
-        //}
-        //if (health <= 0)
-        //{
-        //    health = 0;
-        //}
-
-        //  if ()//Health starts at 5, After damage is 4
+        //if ()//Health starts at 5, After damage is 4
         //set lastHealth to health, stop screenflash
-
-
-        {
-            //damaged = true;
-
+        topDownController = GetComponent<TopDownController>();
+        shooting = GetComponent<Shooting>();
+        lookScript = GetComponent<LookScript>();
             if (damaged == true)
             {
-
-                damaged = true;
-                //Color col = damageImage.color;
-                //col.a = 1;
-                //damageImage.color = col;
-
-                health--;
+            applyDamage();
                 // ... set the colour of the damageImage to the flash colour.
                 //damageImage.color = flashColour;
             }
@@ -60,11 +69,6 @@ public class Health : MonoBehaviour
                 damageImage.color = Color.Lerp (damageImage.color, Color.clear, flashSpeed * Time.deltaTime);
             }
 
-            damaged = false;
-            
+            damaged = false;   
         }
-      //  lastHealth = health;
     }
-
-        
-}
