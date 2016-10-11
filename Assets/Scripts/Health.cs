@@ -3,9 +3,10 @@ using System.Collections;
 using UnityEngine.UI;
 
 public class Health : MonoBehaviour 
-{
+{   // there was conflicting code as a file was edited on 2 machines likely my bad, shooting doesnt exist anymore, you probs just need to restate
+    // it but i dont know what youve done so youll have to look into that, my bad... i think
     TopDownController topDownController;
-    Shooting shooting;
+    //Shooting shooting;
     LookScript lookScript;
     public int health = 0;
     //public int lastHealth;
@@ -37,7 +38,7 @@ public class Health : MonoBehaviour
         {
             isDead = true;
             topDownController.enabled = false;
-            shooting.enabled = false;
+       //     shooting.enabled = false;
             lookScript.enabled = false;
             print("DED");
 
@@ -51,7 +52,7 @@ public class Health : MonoBehaviour
         //if ()//Health starts at 5, After damage is 4
         //set lastHealth to health, stop screenflash
         topDownController = GetComponent<TopDownController>();
-        shooting = GetComponent<Shooting>();
+       // shooting = GetComponent<Shooting>();
         lookScript = GetComponent<LookScript>();
             if (damaged == true)
             {
