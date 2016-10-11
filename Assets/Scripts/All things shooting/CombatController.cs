@@ -35,7 +35,7 @@ public class CombatController : MonoBehaviour
     }
     public void Shoot()
     {
-        WeaponBase selectedWeapon = weapons[1];
+        WeaponBase selectedWeapon = weapons[0];
 
         GameObject obj = Instantiate(selectedWeapon.projectile, transform.position, Quaternion.identity) as GameObject;
         Destroy(obj, selectedWeapon.bulletLifeTime);
