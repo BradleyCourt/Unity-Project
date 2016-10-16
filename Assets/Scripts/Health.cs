@@ -5,14 +5,16 @@ using UnityEngine.UI;
 public class Health : MonoBehaviour 
 {
     TopDownController topDownController;
-    Shooting shooting;
+    CombatController combatController;
     LookScript lookScript;
-    public int health = 0;
+    public int originalHealth = 5;
+    public int health;
     //public int lastHealth;
     public int hit; // (being damaged)
 	//public int currentHealth;
 	public Image damageImage;  
 	public float flashSpeed = 5f;
+    public Color flashColour = new Color(1f, 0f, 0f, 0.5f);
 	bool isDead;
 	public bool damaged;
 	// Use this for initialization
@@ -21,28 +23,32 @@ public class Health : MonoBehaviour
         
 	}
 
-    void death()
+    public void death()
     {
-
-    }
-
-    void applyDamage()
-    {
-        if (damaged)
-        {
-            health--;
-        }
-
         if (health <= 0)
         {
             isDead = true;
             topDownController.enabled = false;
-            shooting.enabled = false;
+            combatController.enabled = false;
             lookScript.enabled = false;
             print("DED");
-
         }
     }
+
+    public void applyDamage(int damage)
+    {
+        if (damaged == true)
+        {
+            health -= damage;
+            damageImage.color = flashColour;
+        }
+        else
+        {
+            damageImage.color = Color.Lerp(damageImage.color, Color.clear, flashSpeed * Time.deltaTime);
+        }
+
+    }
+    
 
 
     // Update is called once per frame
@@ -51,24 +57,23 @@ public class Health : MonoBehaviour
         //if ()//Health starts at 5, After damage is 4
         //set lastHealth to health, stop screenflash
         topDownController = GetComponent<TopDownController>();
-        shooting = GetComponent<Shooting>();
+        combatController = GetComponent<CombatController>();
         lookScript = GetComponent<LookScript>();
             if (damaged == true)
             {
             applyDamage();
-                // ... set the colour of the damageImage to the flash colour.
-                //damageImage.color = flashColour;
+                // ... set the colour of the damageImage to the flash colour.                  
             }
             // Otherwise...
             else if (damaged = true && health <= 0)
             {
-                isDead = true;
+
+            death();
                 //Works, proven by the Debug code.
                 //Debug.Break();
                 // ... transition the colour back to clear.
-                damageImage.color = Color.Lerp (damageImage.color, Color.clear, flashSpeed * Time.deltaTime);
-            }
 
-            damaged = false;   
-        }
+            }
+        damaged = false;
+    }
     }
