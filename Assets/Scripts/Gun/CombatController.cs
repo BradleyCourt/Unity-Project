@@ -51,27 +51,30 @@ public class CombatController : MonoBehaviour
     void Update()
     {
 
-        if ((Input.GetMouseButtonDown(0)) && (Time.time >= selectedWeapon.fireRate))
-            {
-                 if (isShooting == false)
-            {
-                 isShooting = true;
+        if ((Input.GetMouseButton(0)))
+        {
+            if (isShooting == false)
+            {   
+                isShooting = true;
                 shootTimer = StartCoroutine(ShootWeapon());
+
+                // StopCoroutine(shootTimer);
             }
+
+
             else if (!Input.GetMouseButton(0) && isShooting == true)
             {
-
                 StopCoroutine(shootTimer);
                 isShooting = false;
-            }
+            }   
         }
-
     }
-
     IEnumerator ShootWeapon()
     {
-        while(true)
+        while (true)
         {
+            yield return new WaitForSeconds(selectedWeapon.fireRate);
+
             GameObject obj = Instantiate(selectedWeapon.projectile, transform.position, Quaternion.identity) as GameObject;
             Destroy(obj, selectedWeapon.bulletLifeTime);
 
@@ -79,8 +82,6 @@ public class CombatController : MonoBehaviour
             body.AddForce(transform.forward * selectedWeapon.bulletForce, ForceMode.Impulse);
 
             Physics.IgnoreCollision(obj.GetComponent<Collider>(), GetComponent<Collider>());
-
-           // yield return new WaitForSeconds(selectedWeapon.fireRate);
         }
     }
 
@@ -103,12 +104,12 @@ public class CombatController : MonoBehaviour
        // inputVector.y = Input.GetAxis("LookVertical");
 
 
-        if (Time.time > selectedWeapon.nextFireTime)
-        {
-            selectedWeapon.nextFireTime = Time.time + selectedWeapon.fireRate;
+        //if (Time.time > selectedWeapon.nextFireTime)
+        //{
+        //    selectedWeapon.nextFireTime = Time.time + selectedWeapon.fireRate;
 
-            Debug.Log("Fired bullet in direction: " + inputVector);
-        }
+        //    Debug.Log("Fired bullet in direction: " + inputVector);
+      //  }
     }
 }
 
