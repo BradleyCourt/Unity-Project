@@ -50,16 +50,22 @@ public class CombatController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButton(0) && isShooting == false)
-        {
-            isShooting = true;
-            shootTimer = StartCoroutine(ShootWeapon());
+
+        if ((Input.GetMouseButtonDown(0)) && (Time.time >= selectedWeapon.fireRate))
+            {
+                 if (isShooting == false)
+            {
+                 isShooting = true;
+                shootTimer = StartCoroutine(ShootWeapon());
+            }
+            else if (!Input.GetMouseButton(0) && isShooting == true)
+            {
+
+                StopCoroutine(shootTimer);
+                isShooting = false;
+            }
         }
-        else if (!Input.GetMouseButton(0) && isShooting == true)
-        {
-            StopCoroutine(shootTimer);
-            isShooting = false;
-        }
+
     }
 
     IEnumerator ShootWeapon()
@@ -74,7 +80,7 @@ public class CombatController : MonoBehaviour
 
             Physics.IgnoreCollision(obj.GetComponent<Collider>(), GetComponent<Collider>());
 
-            yield return new WaitForSeconds(selectedWeapon.fireRate / 1);
+           // yield return new WaitForSeconds(selectedWeapon.fireRate);
         }
     }
 

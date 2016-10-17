@@ -32,6 +32,8 @@ public class LookScript : MonoBehaviour
             charRotation.x = 0;
             charRotation.z = 0;
             transform.rotation = charRotation;
+            //Camera.main.transform.rotation;
+            // cancel out main camera rotation
         }
 
         //  Vector3 lookVec = new Vector3(-Input.GetAxis("LookVertical"), 0, Input.GetAxis("LookHorizontal"));
