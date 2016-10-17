@@ -11,8 +11,8 @@ public class LookScript : MonoBehaviour
     void Start ()
     {
         ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-	
-	}
+
+    }
 	
 	// Update is called once per frame
 	void Update ()

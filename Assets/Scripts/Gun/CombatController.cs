@@ -24,9 +24,10 @@ public class CombatController : MonoBehaviour
 
     public WeaponBase selectedWeapon;// = weapons;
     bool isShooting = false;
+    private bool coroutinerun;
 
     //functionality refs
-    Coroutine shootTimer = null;
+   // Coroutine shootTimer = null;
 
     // Use this for initialization
     void Start()
@@ -54,26 +55,31 @@ public class CombatController : MonoBehaviour
         if ((Input.GetMouseButton(0)))
         {
             if (isShooting == false)
-            {   
+            {
                 isShooting = true;
-                shootTimer = StartCoroutine(ShootWeapon());
+                if (!coroutinerun)
+                {
+                    StartCoroutine(ShootWeapon());
+                }
 
                 // StopCoroutine(shootTimer);
             }
+        }
 
-
-            else if (!Input.GetMouseButton(0) && isShooting == true)
+            if (Input.GetMouseButtonUp(0) && isShooting == true)
             {
-                StopCoroutine(shootTimer);
+                Debug.Log("working");
+                StopCoroutine(ShootWeapon());
                 isShooting = false;
             }   
-        }
+        
     }
     IEnumerator ShootWeapon()
     {
-        while (true)
+        coroutinerun = true;
+        while (isShooting)
         {
-            yield return new WaitForSeconds(selectedWeapon.fireRate);
+            Debug.Log("hi");
 
             GameObject obj = Instantiate(selectedWeapon.projectile, transform.position, Quaternion.identity) as GameObject;
             Destroy(obj, selectedWeapon.bulletLifeTime);
@@ -82,7 +88,11 @@ public class CombatController : MonoBehaviour
             body.AddForce(transform.forward * selectedWeapon.bulletForce, ForceMode.Impulse);
 
             Physics.IgnoreCollision(obj.GetComponent<Collider>(), GetComponent<Collider>());
+
+            yield return new WaitForSeconds(selectedWeapon.fireRate);
         }
+        coroutinerun = false;
+        
     }
 
     public void Shoot()
