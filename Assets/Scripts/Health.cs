@@ -1,9 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using System;
 
-public class Health : MonoBehaviour 
-{ 
+public class Health : MonoBehaviour
+{
     TopDownController topDownController;
     CombatController combatController;
     LookScript lookScript;
@@ -12,20 +13,20 @@ public class Health : MonoBehaviour
     public int health;
 
     bool isDead;
-	public bool damaged;
+    public bool damaged;
 
-    public Image damageImage;  
-	public float flashSpeed = 5f;
+    public Image damageImage;
+    public float flashSpeed = 5f;
     public Color flashColour = new Color(1f, 0f, 0f, 0.5f);
-	
-	
-    // Use this for initialization
-	void Start () 
-	{
-        
-	}
 
-    void alive()
+
+    // Use this for initialization
+    void Start()
+    {
+
+    }
+
+    void Awake()
     {
         health = originalHealth;
         topDownController = GetComponent<TopDownController>();
@@ -33,7 +34,7 @@ public class Health : MonoBehaviour
         lookScript = GetComponent<LookScript>();
     }
 
-    public void death()
+    void death()
     {
         if (health <= 0)
         {
@@ -53,7 +54,7 @@ public class Health : MonoBehaviour
             damageImage.color = flashColour;
         }
     }
-    
+
 
 
     // Update is called once per frame
@@ -62,17 +63,19 @@ public class Health : MonoBehaviour
         //if ()//Health starts at 5, After damage is 4
         //set lastHealth to health, stop screenflash
 
-            if (damaged == true)
-            {
+        if (damaged == true)
+        {
             applyDamage();
-            
+
         }
-            // Otherwise...
-            else if (isDead = true && health <= 0)
-            {
+        // Otherwise...
+        else if (isDead = true && health <= 0)
+        {
             death();
-            }
+        }
         damaged = false;
         damageImage.color = Color.Lerp(damageImage.color, Color.clear, flashSpeed * Time.deltaTime);
+        
     }
+    
 }
