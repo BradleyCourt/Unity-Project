@@ -22,6 +22,8 @@ public class CombatController : MonoBehaviour
     public int num = 0;
     private Vector2 inputVector;
 
+
+
     public WeaponBase selectedWeapon;// = weapons;
     bool isShooting = false;
     private bool coroutinerun;
@@ -80,7 +82,7 @@ public class CombatController : MonoBehaviour
         while (isShooting)
         {
             Debug.Log("hi");
-
+           
             GameObject obj = Instantiate(selectedWeapon.projectile, transform.position, Quaternion.identity) as GameObject;
             Destroy(obj, selectedWeapon.bulletLifeTime);
 
