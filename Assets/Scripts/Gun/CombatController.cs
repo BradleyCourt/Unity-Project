@@ -17,7 +17,7 @@ public class CombatController : MonoBehaviour
     //public float fireInterval = 0.25f;
     //private float nextFireTime;
 
-    public Vector3 fireFrom;
+    public Vector3 Target;
     [Space()]
     public float deadZone = 0.1f;
     public int currentWeapon = 0;
@@ -44,18 +44,24 @@ public class CombatController : MonoBehaviour
         if (Input.GetKey("1"))
         {
             num = 0;
+            currentWeapon = 0;
+            num = currentWeapon;
+            Debug.Log("first gun equipped");
         }
         
         if (Input.GetKey("2"))
         {
             num = 1;
+            currentWeapon = 1;
+            num = currentWeapon;
+            Debug.Log("second gun equipped");
         }
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        WeaponSwitch();
         if ((Input.GetMouseButton(0)))
         {
             if (isShooting == false)
@@ -87,10 +93,10 @@ public class CombatController : MonoBehaviour
 
 
             //GameObject obj = Instantiate()
-            GameObject obj = Instantiate(selectedWeapon.projectile, fireFrom, Quaternion.identity) as GameObject;
+            GameObject obj = Instantiate(selectedWeapon.projectile, transform.position, Quaternion.identity) as GameObject;
             Destroy(obj, selectedWeapon.bulletLifeTime);
 
-            Debug.Log(fireFrom);
+            Debug.Log(transform.position);
 
             Rigidbody body = obj.GetComponent<Rigidbody>();
             body.AddForce(transform.forward * selectedWeapon.bulletForce, ForceMode.Impulse);
