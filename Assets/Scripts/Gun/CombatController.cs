@@ -17,7 +17,7 @@ public class CombatController : MonoBehaviour
     //public float fireInterval = 0.25f;
     //private float nextFireTime;
 
-    public Vector3 Target;
+    public GameObject Target;
     [Space()]
     public float deadZone = 0.1f;
     public int currentWeapon = 0;
@@ -46,6 +46,7 @@ public class CombatController : MonoBehaviour
             num = 0;
             currentWeapon = 0;
             num = currentWeapon;
+            selectedWeapon = weapons[num];
             Debug.Log("first gun equipped");
         }
         
@@ -54,6 +55,7 @@ public class CombatController : MonoBehaviour
             num = 1;
             currentWeapon = 1;
             num = currentWeapon;
+            selectedWeapon = weapons[num];
             Debug.Log("second gun equipped");
         }
     }
@@ -93,13 +95,12 @@ public class CombatController : MonoBehaviour
 
 
             //GameObject obj = Instantiate()
-            GameObject obj = Instantiate(selectedWeapon.projectile, transform.position, Quaternion.identity) as GameObject;
+            GameObject obj = Instantiate(selectedWeapon.projectile, Target.transform.position , Quaternion.identity) as GameObject;
             Destroy(obj, selectedWeapon.bulletLifeTime);
 
-            Debug.Log(transform.position);
-
             Rigidbody body = obj.GetComponent<Rigidbody>();
-            body.AddForce(transform.forward * selectedWeapon.bulletForce, ForceMode.Impulse);
+            body.AddForce(Target.transform.forward * selectedWeapon.bulletForce, ForceMode.Impulse);
+            Debug.Log(transform.forward);
 
             Physics.IgnoreCollision(obj.GetComponent<Collider>(), GetComponent<Collider>());
 

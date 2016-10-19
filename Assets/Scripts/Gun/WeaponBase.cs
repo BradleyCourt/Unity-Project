@@ -13,6 +13,7 @@ public class WeaponBase : MonoBehaviour
     public float reloadSpeed = 2.5f;
     public float bulletForce = 100f;
     public float bulletLifeTime = 5f;
+
     
 
     // Use this for initialization
@@ -25,5 +26,10 @@ public class WeaponBase : MonoBehaviour
 	void Update ()
     {
      
+    }
+
+    public void selectedGun(int num)
+    {
+        
     }
 }
