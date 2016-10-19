@@ -18,6 +18,19 @@ public class LookScript : MonoBehaviour
 	void Update ()
     {
 
+
+
+        /** old code
+        Vector2 playerPos = Camera.main.WorldToScreenPoint(gameObject.transform.position);
+        Vector2 mousePos = Input.mousePosition;
+
+        Vector2 posDiff = mousePos - playerPos;
+        Vector3 playerRot = gameObject.transform.rotation.eulerAngles;
+
+        playerRot.y = Mathf.Atan2(posDiff.x, posDiff.y) * Mathf.Rad2Deg;
+    **/
+
+
         ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         Physics.Raycast(ray, out hit);
 
@@ -36,14 +49,15 @@ public class LookScript : MonoBehaviour
             // cancel out main camera rotation
         }
 
-        //  Vector3 lookVec = new Vector3(-Input.GetAxis("LookVertical"), 0, Input.GetAxis("LookHorizontal"));
-        ////  Debug.Log("Magnitude " + lookVec);
-        //  if (lookVec.magnitude >0.1)
-        //  {
-        //      Quaternion charRotation = Quaternion.FromToRotation(new Vector3(-1, 0, 0), lookVec);
-        //      transform.rotation = charRotation;
-        //  }
+        Vector3 lookVec = new Vector3(-Input.GetAxis("LookVertical"), 0, Input.GetAxis("LookHorizontal"));
+        //  Debug.Log("Magnitude " + lookVec);
+        if (lookVec.magnitude > 0.5)
+        {
+            Quaternion charRotation = Quaternion.FromToRotation(new Vector3(-1, 0, 0), lookVec);
+            transform.rotation = charRotation;
+        }
 
-        //  Debug.Log(lookVec);
+        Debug.Log(lookVec);
+
     }
 }

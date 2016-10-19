@@ -17,11 +17,13 @@ public class CombatController : MonoBehaviour
     //public float fireInterval = 0.25f;
     //private float nextFireTime;
 
+    public Vector3 fireFrom;
+    [Space()]
     public float deadZone = 0.1f;
     public int currentWeapon = 0;
     public int num = 0;
     private Vector2 inputVector;
-
+  
 
 
     public WeaponBase selectedWeapon;// = weapons;
@@ -29,7 +31,7 @@ public class CombatController : MonoBehaviour
     private bool coroutinerun;
 
     //functionality refs
-   // Coroutine shootTimer = null;
+    // Coroutine shootTimer = null;
 
     // Use this for initialization
     void Start()
@@ -82,9 +84,13 @@ public class CombatController : MonoBehaviour
         while (isShooting)
         {
             Debug.Log("hi");
-           
-            GameObject obj = Instantiate(selectedWeapon.projectile, transform.position, Quaternion.identity) as GameObject;
+
+
+            //GameObject obj = Instantiate()
+            GameObject obj = Instantiate(selectedWeapon.projectile, fireFrom, Quaternion.identity) as GameObject;
             Destroy(obj, selectedWeapon.bulletLifeTime);
+
+            Debug.Log(fireFrom);
 
             Rigidbody body = obj.GetComponent<Rigidbody>();
             body.AddForce(transform.forward * selectedWeapon.bulletForce, ForceMode.Impulse);

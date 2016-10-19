@@ -16,7 +16,7 @@ public class TopDownController : MonoBehaviour
 
     // Use this for initialization
     void Start ()
-    {
+    { 
         controller = GetComponent<CharacterController>();
 	}
 	
