@@ -7,6 +7,9 @@ public class LookScript : MonoBehaviour
     Ray ray;
     RaycastHit hit;
     public bool canSee = false;
+
+    public LayerMask mask;
+
     // Use this for initialization
     void Start ()
     {
@@ -32,7 +35,7 @@ public class LookScript : MonoBehaviour
 
 
         ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        Physics.Raycast(ray, out hit);
+        Physics.Raycast(ray, out hit, 1000f, mask);
 
         if (hit.collider)
         {
