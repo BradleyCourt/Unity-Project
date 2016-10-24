@@ -23,14 +23,15 @@ public class TopDownController : MonoBehaviour
 	// Update is called once per frame
 	void FixedUpdate ()
     {
-        if (controller.isGrounded)
-        {
-            InputDevice device = InputManager.ActiveDevice;
+        InputDevice device = InputManager.ActiveDevice;
+        
+            //float horizontal = Mathf.Clamp(Input.GetAxis("Horizontal") + device.LeftStick.X, -1f, 1f);
+            //float vertical = Mathf.Clamp(Input.GetAxis("Vertical") + device.LeftStick.Y, -1f, 1f);
 
+            float horizontal = Input.GetAxis("Horizontal") + device.LeftStick.X;
+            float vertical = Input.GetAxis("Vertical") + device.LeftStick.Y;
 
-
-            float horizontal = Mathf.Clamp(Input.GetAxis("Horizontal") + device.LeftStick.X, -1f, 1f);
-            float vertical = Mathf.Clamp(Input.GetAxis("Vertical") + device.LeftStick.Y, -1f, 1f);
+        Debug.Log(horizontal);    
 
             moveDirection *= speed * Time.deltaTime;
 
@@ -41,7 +42,10 @@ public class TopDownController : MonoBehaviour
             if (Mathf.Abs(vertical) <= deadzone)
                 vertical = 0;
 
-            moveDirection = new Vector3(horizontal, vertical, 0);
+
+
+
+            moveDirection = new Vector3(horizontal, 0, vertical);
 
             moveDirection = Camera.main.transform.TransformDirection(moveDirection);
 
@@ -51,7 +55,7 @@ public class TopDownController : MonoBehaviour
 
             moveDirection *= speed * Time.deltaTime;
 
-        }
+        
         moveDirection.y -= (gravity * Time.deltaTime);
         // Move Character Controller
         controller.Move (moveDirection);
