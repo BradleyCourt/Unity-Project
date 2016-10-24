@@ -31,7 +31,7 @@ public class TopDownController : MonoBehaviour
             float horizontal = Input.GetAxis("Horizontal") + device.LeftStick.X;
             float vertical = Input.GetAxis("Vertical") + device.LeftStick.Y;
 
-        Debug.Log(horizontal);    
+        //Debug.Log(horizontal);    
 
             moveDirection *= speed * Time.deltaTime;
 
@@ -46,8 +46,8 @@ public class TopDownController : MonoBehaviour
 
 
             moveDirection = new Vector3(horizontal, 0, vertical);
-
-            moveDirection = Camera.main.transform.TransformDirection(moveDirection);
+       // Debug.Log(device.LeftStick.X);
+        moveDirection = Camera.main.transform.TransformDirection(moveDirection);
 
 
 

@@ -7,22 +7,37 @@ public class LookScript : MonoBehaviour
     Ray ray;
     RaycastHit hit;
     public bool canSee = false;
-
+    public float deadzone = 0.2f;
     public LayerMask mask;
 
-    // Use this for initialization
     void Start ()
     {
         ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
+
     }
 	
 	// Update is called once per frame
-	void Update ()
+	void FixedUpdate ()
     {
+        InputDevice device = InputManager.ActiveDevice;
 
+        float horizontal = Input.GetAxis("Horizontal") + device.RightStick.X;
+        float vertical = Input.GetAxis("Vertical") + device.RightStick.Y;
 
+        //Vector3 conVec = new Vector3(-Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+        //if (conVec.magnitude > 0.5)
+        //{
+        //    Quaternion charRotation = Quaternion.FromToRotation(new Vector3(-1, 0, 0), conVec);
+        //    transform.rotation = charRotation;
+        //}
 
+        // if (Mathf.Abs(horizontal) <= deadzone)
+        //{
+        //Debug.Log(device.RightStick.X);
+        //    transform.Rotate(0, device.RightStick.Y, 0);
+        //transform.LookAt(gunbarrel);
+        // }
         /** old code
         Vector2 playerPos = Camera.main.WorldToScreenPoint(gameObject.transform.position);
         Vector2 mousePos = Input.mousePosition;
@@ -34,7 +49,7 @@ public class LookScript : MonoBehaviour
     **/
 
 
-        ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         Physics.Raycast(ray, out hit, 1000f, mask);
 
         if (hit.collider)
@@ -60,7 +75,7 @@ public class LookScript : MonoBehaviour
             transform.rotation = charRotation;
         }
 
-        Debug.Log(lookVec);
+        //Debug.Log(lookVec);
 
     }
 }
