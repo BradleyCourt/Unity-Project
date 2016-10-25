@@ -22,7 +22,7 @@ public class CombatController : MonoBehaviour
     [Space()]
     public float deadZone = 0.1f;
     public int currentWeapon = 0;
-    public int num = 0;
+    public int num = 1;
     private Vector2 inputVector;
   
 
@@ -30,7 +30,7 @@ public class CombatController : MonoBehaviour
     public WeaponBase selectedWeapon;// = weapons;
     bool isShooting = false;
     private bool coroutinerun;
-
+    InputDevice device = InputManager.ActiveDevice;
     //functionality refs
     // Coroutine shootTimer = null;
 
@@ -42,27 +42,29 @@ public class CombatController : MonoBehaviour
     }
     public void WeaponSwitch()
     {
-        InputDevice device = InputManager.ActiveDevice;
 
-        if (Input.GetKey("1") || device.Action3) // A BUTTON
+
+        if (Input.GetKeyDown("1") || device.Action3) // A BUTTON
         {
-          
-            num = 0;
-            currentWeapon = 0;
-            num = currentWeapon;
+
+            if (num > 1)
+            {
+                num = 0;
+            }
             selectedWeapon = weapons[num];
-            Debug.Log("first gun equipped");
+            num++;
         }
+
         
 
-        if (Input.GetKey("2") || device.Action4) // B BUTTON
-        {
-            num = 1;
-            currentWeapon = 1;
-            num = currentWeapon;
-            selectedWeapon = weapons[num];
-            Debug.Log("second gun equipped");
-        }
+        //if (Input.GetKey("2") || device.Action4) // B BUTTON
+        //{
+        //    num = 1;
+        //    currentWeapon = 1;
+        //    num = currentWeapon;
+        //    selectedWeapon = weapons[num];
+        //    Debug.Log("second gun equipped");
+        //}
     }
 
     // Update is called once per frame
@@ -88,8 +90,8 @@ public class CombatController : MonoBehaviour
                 Debug.Log("working");
                 StopCoroutine(ShootWeapon());
                 isShooting = false;
-            }   
-        
+            }
+
     }
     IEnumerator ShootWeapon()
     {
