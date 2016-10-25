@@ -8,11 +8,13 @@ public class Health : MonoBehaviour
     TopDownController topDownController;
     CombatController combatController;
     LookScript lookScript;
+    GameObject Player;
 
     public int originalHealth = 5;
     public int health;
 
     bool isDead;
+    bool inEnemyRange;
     public bool damaged;
 
     public Image damageImage;
@@ -29,6 +31,7 @@ public class Health : MonoBehaviour
     void Awake()
     {
         health = originalHealth;
+        Player = GameObject.FindGameObjectWithTag("Player");
         topDownController = GetComponent<TopDownController>();
         combatController = GetComponent<CombatController>();
         lookScript = GetComponent<LookScript>();
@@ -59,7 +62,26 @@ public class Health : MonoBehaviour
         }
     }
 
+    void OnTriggerEnter(Collider other)
+    {
+        // If the entering collider is the player...
+        if (other.gameObject == Player)
+        {
+            // ... the player is in range.
+            inEnemyRange = true;
+        }
+    }
 
+
+    void OnTriggerExit(Collider other)
+    {
+        // If the exiting collider is the player...
+        if (other.gameObject == Player)
+        {
+            // ... the player is no longer in range.
+            inEnemyRange = false;
+        }
+    }
 
     // Update is called once per frame
     void Update()

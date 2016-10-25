@@ -21,10 +21,10 @@ public class CameraFollow : MonoBehaviour {
         transform.LookAt(target);
         //   transform.position = target.position + m_offset;
         
-        //transform.position = new Vector3(
-        //Mathf.Clamp(transform.position.x, 0, 0);
-        //Mathf.Clamp(transform.position.y, 0, 0);
-        //Mathf.Clamp(transform.position.z, 0, 0);
+       //transform.position = new Vector3(
+       //Mathf.Clamp(transform.position.x, 0, 0);
+       //Mathf.Clamp(transform.position.y, 0, 0);
+       //Mathf.Clamp(transform.position.z, 0, 0);
     }
 }
 ;
