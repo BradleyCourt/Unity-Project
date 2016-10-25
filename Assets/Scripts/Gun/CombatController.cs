@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using InControl;
 
 public class CombatController : MonoBehaviour
 {
@@ -41,8 +42,11 @@ public class CombatController : MonoBehaviour
     }
     public void WeaponSwitch()
     {
-        if (Input.GetKey("1"))
+        InputDevice device = InputManager.ActiveDevice;
+
+        if (Input.GetKey("1") || device.Action3) // A BUTTON
         {
+          
             num = 0;
             currentWeapon = 0;
             num = currentWeapon;
@@ -50,7 +54,8 @@ public class CombatController : MonoBehaviour
             Debug.Log("first gun equipped");
         }
         
-        if (Input.GetKey("2"))
+
+        if (Input.GetKey("2") || device.Action4) // B BUTTON
         {
             num = 1;
             currentWeapon = 1;

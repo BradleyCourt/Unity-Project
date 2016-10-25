@@ -20,36 +20,18 @@ public class LookScript : MonoBehaviour
 	// Update is called once per frame
 	void FixedUpdate ()
     {
+        Vector3 angles = new Vector3();
+
+        angles.x = transform.rotation.x;
+        angles.y = transform.rotation.y;
+        angles.z = transform.rotation.z;
+
+
+
         InputDevice device = InputManager.ActiveDevice;
 
-        float horizontal = Input.GetAxis("Horizontal") + device.RightStick.X;
-        float vertical = Input.GetAxis("Vertical") + device.RightStick.Y;
 
-        //Vector3 conVec = new Vector3(-Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
-        //if (conVec.magnitude > 0.5)
-        //{
-        //    Quaternion charRotation = Quaternion.FromToRotation(new Vector3(-1, 0, 0), conVec);
-        //    transform.rotation = charRotation;
-        //}
-
-        // if (Mathf.Abs(horizontal) <= deadzone)
-        //{
-        //Debug.Log(device.RightStick.X);
-        //    transform.Rotate(0, device.RightStick.Y, 0);
-        //transform.LookAt(gunbarrel);
-        // }
-        /** old code
-        Vector2 playerPos = Camera.main.WorldToScreenPoint(gameObject.transform.position);
-        Vector2 mousePos = Input.mousePosition;
-
-        Vector2 posDiff = mousePos - playerPos;
-        Vector3 playerRot = gameObject.transform.rotation.eulerAngles;
-
-        playerRot.y = Mathf.Atan2(posDiff.x, posDiff.y) * Mathf.Rad2Deg;
-    **/
-
-
-            ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         Physics.Raycast(ray, out hit, 1000f, mask);
 
         if (hit.collider)
@@ -67,13 +49,16 @@ public class LookScript : MonoBehaviour
             // cancel out main camera rotation
         }
 
-        Vector3 lookVec = new Vector3(-Input.GetAxis("LookVertical"), 0, Input.GetAxis("LookHorizontal"));
+        // CONTROLLER LOOK
+
+        Vector3 lookVec = new Vector3(-device.RightStick.X, 0, -device.RightStick.Y);
         //  Debug.Log("Magnitude " + lookVec);
         if (lookVec.magnitude > 0.5)
         {
-            Quaternion charRotation = Quaternion.FromToRotation(new Vector3(-1, 0, 0), lookVec);
-            transform.rotation = charRotation;
-        }
+            Quaternion conRotate = Quaternion.FromToRotation(new Vector3(-1, 0, -15f), lookVec);
+
+            transform.rotation = conRotate;
+        } 
 
         //Debug.Log(lookVec);
 
