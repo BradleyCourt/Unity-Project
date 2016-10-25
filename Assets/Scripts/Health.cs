@@ -36,13 +36,17 @@ public class Health : MonoBehaviour
 
     void death()
     {
-        if (health <= 0)
+        if (gameObject.tag == "Player" && health <= 0)
         {
             isDead = true;
             topDownController.enabled = false;
             combatController.enabled = false;
             lookScript.enabled = false;
-            print("DED");
+            print("Game Over");
+        }
+        else if (gameObject.tag == "Enemy" && health <= 0)
+        {
+            isDead = true;
         }
     }
 
