@@ -100,8 +100,10 @@ public class Health : MonoBehaviour
             death();
         }
         damaged = false;
-        damageImage.color = Color.Lerp(damageImage.color, Color.clear, flashSpeed * Time.deltaTime);
-        
+        if (damageImage != null)
+        {
+            damageImage.color = Color.Lerp(damageImage.color, Color.clear, flashSpeed * Time.deltaTime);
+        }
     }
     
 }

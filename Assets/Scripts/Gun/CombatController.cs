@@ -42,20 +42,23 @@ public class CombatController : MonoBehaviour
     }
     public void WeaponSwitch()
     {
-
-
-        if (Input.GetKeyDown("1") || device.Action3) // A BUTTON
+        // Keyboard Weapon Switching (Press 0-9)
+        for (int i = 0; i < weapons.Count; i++)
         {
-
-            if (num > 1)
+            if (Input.GetKeyDown(KeyCode.Alpha1 + i))
             {
-                num = 0;
+                num = i;
+                selectedWeapon = weapons[num];
+                break;
             }
-            selectedWeapon = weapons[num];
-            num++;
         }
 
-        
+        // Gamepad Weapon Switching
+        if (device.Action3.WasPressed) // A BUTTON
+        {
+            num = (num + 1) % weapons.Count;
+            selectedWeapon = weapons[num];            
+        }        
 
         //if (Input.GetKey("2") || device.Action4) // B BUTTON
         //{
