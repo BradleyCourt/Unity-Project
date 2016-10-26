@@ -8,10 +8,12 @@ public class Health : MonoBehaviour
     TopDownController topDownController;
     CombatController combatController;
     LookScript lookScript;
+    WeaponBase weaponStat;
     GameObject Player;
 
     public int originalHealth = 5;
     public int health;
+    public int damageDone;
 
     bool isDead;
     bool inEnemyRange;
@@ -25,21 +27,20 @@ public class Health : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-
+        combatController = GameObject.FindObjectOfType<CombatController>();
     }
 
     void Awake()
     {
         health = originalHealth;
         Player = GameObject.FindGameObjectWithTag("Player");
-        topDownController = GetComponent<TopDownController>();
-        combatController = GetComponent<CombatController>();
-        lookScript = GetComponent<LookScript>();
+        topDownController = Player.GetComponent<TopDownController>();    
+        lookScript = Player.GetComponent<LookScript>();
     }
 
     void death()
     {
-        if (gameObject.tag == "Player" && health <= 0)
+        if (gameObject == Player && health <= 0)
         {
             isDead = true;
             topDownController.enabled = false;
@@ -50,45 +51,34 @@ public class Health : MonoBehaviour
         else if (gameObject.tag == "Enemy" && health <= 0)
         {
             isDead = true;
+            Destroy(gameObject);
         }
     }
 
     public void applyDamage()
     {
-        if (damaged == true)
+        print(damageDone);
+        if (gameObject.tag == "Player" && damaged == true || inEnemyRange)
         {
-            health--;
+            health --;
             damageImage.color = flashColour;
         }
-    }
-
-    void OnTriggerEnter(Collider other)
-    {
-        // If the entering collider is the player...
-        if (other.gameObject == Player)
+        if (gameObject.tag == "Enemy" && damaged == true)
         {
-            // ... the player is in range.
-            inEnemyRange = true;
+            health -= damageDone;
         }
+        damaged = false;
     }
 
 
-    void OnTriggerExit(Collider other)
-    {
-        // If the exiting collider is the player...
-        if (other.gameObject == Player)
-        {
-            // ... the player is no longer in range.
-            inEnemyRange = false;
-        }
-    }
 
     // Update is called once per frame
     void Update()
     {
+        //damageDone = combatController.weapons[combatController.num].damage;
+        //print(combatController.weapons[combatController.num].damage);
         //if ()//Health starts at 5, After damage is 4
         //set lastHealth to health, stop screenflash
-
         if (damaged == true)
         {
             applyDamage();
@@ -105,5 +95,16 @@ public class Health : MonoBehaviour
             damageImage.color = Color.Lerp(damageImage.color, Color.clear, flashSpeed * Time.deltaTime);
         }
     }
-    
+
+    void OnCollisionEnter(Collision projectile)
+    {
+        if (gameObject.tag == "Enemy")
+        {
+            // ... the player is in range.
+            damageDone = combatController.weapons[combatController.num].damage;
+            damaged = true;
+
+        }
+    }
+
 }   

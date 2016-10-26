@@ -28,6 +28,8 @@ public class WeaponBase : MonoBehaviour
      
     }
 
+
+
     public void selectedGun(int num)
     {
         
