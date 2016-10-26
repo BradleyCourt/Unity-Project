@@ -22,15 +22,14 @@ public class CombatController : MonoBehaviour
     [Space()]
     public float deadZone = 0.1f;
     public int currentWeapon = 0;
-    public int num = 1;
+    public int num = 0;
     private Vector2 inputVector;
-  
 
 
     public WeaponBase selectedWeapon;// = weapons;
     bool isShooting = false;
     private bool coroutinerun;
-    InputDevice device = InputManager.ActiveDevice;
+    InputDevice device;
     //functionality refs
     // Coroutine shootTimer = null;
 
@@ -52,13 +51,12 @@ public class CombatController : MonoBehaviour
                 break;
             }
         }
-
         // Gamepad Weapon Switching
-        if (device.Action3.WasPressed) // A BUTTON
+        if (device.Action3.WasPressed)    // X BUTTON  
         {
             num = (num + 1) % weapons.Count;
-            selectedWeapon = weapons[num];            
-        }        
+            selectedWeapon = weapons[num];
+        }
 
         //if (Input.GetKey("2") || device.Action4) // B BUTTON
         //{
@@ -73,8 +71,10 @@ public class CombatController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        device = InputManager.ActiveDevice;
+
         WeaponSwitch();
-        if ((Input.GetMouseButton(0)))
+        if ((Input.GetMouseButton(0)) || (InputManager.ActiveDevice.GetControl(InputControlType.RightTrigger)))
         {
             if (isShooting == false)
             {
@@ -88,13 +88,19 @@ public class CombatController : MonoBehaviour
             }
         }
 
-            if (Input.GetMouseButtonUp(0) && isShooting == true)
+        if (Input.GetMouseButtonUp(0) && isShooting == true)
+        {
+            Debug.Log("working");
+            StopCoroutine(ShootWeapon());
+            isShooting = false;
+        }
+        if (InputManager.ActiveDevice.GetControl(InputControlType.RightTrigger) && isShooting == true)
             {
                 Debug.Log("working");
                 StopCoroutine(ShootWeapon());
                 isShooting = false;
-            }
-
+                
+        }
     }
     IEnumerator ShootWeapon()
     {
@@ -105,6 +111,7 @@ public class CombatController : MonoBehaviour
 
 
             //GameObject obj = Instantiate()
+            
             GameObject obj = Instantiate(selectedWeapon.projectile, Target.transform.position , Quaternion.identity) as GameObject;
             Destroy(obj, selectedWeapon.bulletLifeTime);
 
@@ -116,6 +123,7 @@ public class CombatController : MonoBehaviour
 
             yield return new WaitForSeconds(selectedWeapon.fireRate);
         }
+        
         coroutinerun = false;
         
     }
