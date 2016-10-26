@@ -46,6 +46,7 @@ public class Health : MonoBehaviour
             topDownController.enabled = false;
             combatController.enabled = false;
             lookScript.enabled = false;
+            Destroy(Player);
             print("Game Over");
         }
         else if (gameObject.tag == "Enemy" && health <= 0)
@@ -75,16 +76,12 @@ public class Health : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //damageDone = combatController.weapons[combatController.num].damage;
-        //print(combatController.weapons[combatController.num].damage);
-        //if ()//Health starts at 5, After damage is 4
-        //set lastHealth to health, stop screenflash
+        
         if (damaged == true)
         {
             applyDamage();
 
         }
-        // Otherwise...
         else if (isDead = true && health <= 0)
         {
             death();

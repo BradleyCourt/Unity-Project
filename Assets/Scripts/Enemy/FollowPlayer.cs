@@ -15,18 +15,14 @@ public class FollowPlayer : MonoBehaviour
     }
     void Update()
     {
-        //GetComponent<NavMeshAgent>().destination = player.transform.position;
         attack();
         Distance = Vector3.Distance(transform.position, player.transform.position);
-
-
     }
     public void attack()
     { 
       
         if (Distance <= attackRange)
         {
-         
             agent.speed = 0;
         }
         else

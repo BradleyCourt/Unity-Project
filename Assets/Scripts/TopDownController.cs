@@ -24,14 +24,9 @@ public class TopDownController : MonoBehaviour
 	void FixedUpdate ()
     {
         InputDevice device = InputManager.ActiveDevice;
-        
-            //float horizontal = Mathf.Clamp(Input.GetAxis("Horizontal") + device.LeftStick.X, -1f, 1f);
-            //float vertical = Mathf.Clamp(Input.GetAxis("Vertical") + device.LeftStick.Y, -1f, 1f);
 
             float horizontal = Input.GetAxis("Horizontal") + device.LeftStick.X;
             float vertical = Input.GetAxis("Vertical") + device.LeftStick.Y;
-
-        //Debug.Log(horizontal);    
 
             moveDirection *= speed * Time.deltaTime;
 
@@ -39,25 +34,17 @@ public class TopDownController : MonoBehaviour
             {
                 horizontal = 0;
             }
-            if (Mathf.Abs(vertical) <= deadzone)
-                vertical = 0;
+        if (Mathf.Abs(vertical) <= deadzone)
+        {
+            vertical = 0;
+        }
 
-
-
-
-            moveDirection = new Vector3(horizontal, 0, vertical);
-       // Debug.Log(device.LeftStick.X);
+        moveDirection = new Vector3(horizontal, 0, vertical);
         moveDirection = Camera.main.transform.TransformDirection(moveDirection);
 
-
-
-            // moveDirection.Normalize(); 
-
-            moveDirection *= speed * Time.deltaTime;
-
-        
+        moveDirection *= speed * Time.deltaTime;
         moveDirection.y -= (gravity * Time.deltaTime);
-        // Move Character Controller
+        
         controller.Move (moveDirection);
     }
     void OnTriggerEnter(Collider Pickup)

@@ -5,19 +5,7 @@ using InControl;
 
 public class CombatController : MonoBehaviour
 {
-
     public List<WeaponBase> weapons;
-
-
-    //public GameObject projectile;
-    //[Space()]
-
-    //public float bulletForce = 100f;
-    //public float bulletLifeTime = 5f;
-
-    //public float fireInterval = 0.25f;
-    //private float nextFireTime;
-
     public GameObject Target;
     [Space()]
     public float deadZone = 0.1f;
@@ -26,18 +14,15 @@ public class CombatController : MonoBehaviour
     private Vector2 inputVector;
 
 
-    public WeaponBase selectedWeapon;// = weapons;
+    public WeaponBase selectedWeapon;
     bool isShooting = false;
     private bool coroutinerun;
     InputDevice device;
-    //functionality refs
-    // Coroutine shootTimer = null;
 
     // Use this for initialization
     void Start()
     {
 
-        //selectedWeapon = weapons[num];
     }
     public void WeaponSwitch()
     {
@@ -57,15 +42,6 @@ public class CombatController : MonoBehaviour
             num = (num + 1) % weapons.Count;
             selectedWeapon = weapons[num];
         }
-
-        //if (Input.GetKey("2") || device.Action4) // B BUTTON
-        //{
-        //    num = 1;
-        //    currentWeapon = 1;
-        //    num = currentWeapon;
-        //    selectedWeapon = weapons[num];
-        //    Debug.Log("second gun equipped");
-        //}
     }
 
     // Update is called once per frame
@@ -83,8 +59,6 @@ public class CombatController : MonoBehaviour
                 {
                     StartCoroutine(ShootWeapon());
                 }
-
-                // StopCoroutine(shootTimer);
             }
         }
 
@@ -95,23 +69,17 @@ public class CombatController : MonoBehaviour
             isShooting = false;
         }
         if (InputManager.ActiveDevice.GetControl(InputControlType.RightTrigger) && isShooting == true)
-            {
-                Debug.Log("working");
-                StopCoroutine(ShootWeapon());
-                isShooting = false;
-                
+        {
+            Debug.Log("working");
+            StopCoroutine(ShootWeapon());
+            isShooting = false;
         }
-    }
+    } 
     IEnumerator ShootWeapon()
     {
         coroutinerun = true;
         while (isShooting)
         {
-            Debug.Log("hi");
-
-
-            //GameObject obj = Instantiate()
-            
             GameObject obj = Instantiate(selectedWeapon.projectile, Target.transform.position , Quaternion.identity) as GameObject;
             Destroy(obj, selectedWeapon.bulletLifeTime);
 
@@ -122,39 +90,8 @@ public class CombatController : MonoBehaviour
             Physics.IgnoreCollision(obj.GetComponent<Collider>(), GetComponent<Collider>());
 
             yield return new WaitForSeconds(selectedWeapon.fireRate);
-        }
-        
-        coroutinerun = false;
-        
-    }
-
-
-
-    public void Shoot()
-    {
-       
-        
-
-  
-        //GameObject obj = Instantiate(selectedWeapon.projectile, transform.position, Quaternion.identity) as GameObject;
-        //Destroy(obj, selectedWeapon.bulletLifeTime);
-
-        //Rigidbody body = obj.GetComponent<Rigidbody>();
-        //body.AddForce(transform.forward * selectedWeapon.bulletForce, ForceMode.Impulse);
-
-        //Physics.IgnoreCollision(obj.GetComponent<Collider>(), GetComponent<Collider>());
-
-
-    //    inputVector.x = Input.GetAxis("LookHorizontal");
-       // inputVector.y = Input.GetAxis("LookVertical");
-
-
-        //if (Time.time > selectedWeapon.nextFireTime)
-        //{
-        //    selectedWeapon.nextFireTime = Time.time + selectedWeapon.fireRate;
-
-        //    Debug.Log("Fired bullet in direction: " + inputVector);
-      //  }
+        }    
+        coroutinerun = false;   
     }
 }
 

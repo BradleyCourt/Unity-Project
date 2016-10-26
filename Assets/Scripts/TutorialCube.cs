@@ -17,7 +17,6 @@ public class TutorialCube : MonoBehaviour
     {
         float movementX = Input.GetAxis("Horizontal");
         float movementZ = Input.GetAxis("Vertical");
-        //    transform.position += Vector3.right * movementX * Time.deltaTime;
         m_rigidbody.AddTorque(movementZ * maxTorque, 0, movementX * maxTorque);
     }
 }

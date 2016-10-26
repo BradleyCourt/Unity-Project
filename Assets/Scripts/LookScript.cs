@@ -36,31 +36,24 @@ public class LookScript : MonoBehaviour
 
         if (hit.collider)
         {
-            // Rotate player to look at where the raycast hit
-            // use hit.point
+           
             Vector3 aimPoint = hit.point;
-            Vector3 playerToAim = aimPoint - transform.position;
-            //Quaternion charRotation = Quaternion.FromToRotation(transform.position, aimPoint);
+            Vector3 playerToAim = aimPoint - transform.position;       
             Quaternion charRotation = Quaternion.LookRotation(playerToAim, Vector3.up);
             charRotation.x = 0;
             charRotation.z = 0;
             transform.rotation = charRotation;
-            //Camera.main.transform.rotation;
-            // cancel out main camera rotation
         }
 
         // CONTROLLER LOOK
 
         Vector3 lookVec = new Vector3(-device.RightStick.X, 0, -device.RightStick.Y);
-        //  Debug.Log("Magnitude " + lookVec);
         if (lookVec.magnitude > 0.5)
         {
             Quaternion conRotate = Quaternion.FromToRotation(new Vector3(-1, 0, -15f), lookVec);
 
             transform.rotation = conRotate;
-        } 
-
-        //Debug.Log(lookVec);
+        }
 
     }
 }

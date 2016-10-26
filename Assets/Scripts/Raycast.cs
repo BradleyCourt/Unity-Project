@@ -3,7 +3,8 @@ using System.Collections;
 
 public class Raycast : MonoBehaviour
 {
-
+    // is this script really needed
+    // issac
     void RayCast()
     {
         RaycastHit hit;
