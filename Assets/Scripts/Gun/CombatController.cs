@@ -34,7 +34,7 @@ public class CombatController : MonoBehaviour
                 num = i;
                 selectedWeapon = weapons[num];
                 break;
-            }
+            }k
         }
         // Gamepad Weapon Switching
         if (device.Action3.WasPressed)    // X BUTTON  
