@@ -51,9 +51,10 @@ public class TopDownController : MonoBehaviour
     {
         if (Pickup.gameObject.tag == "MedPack")
         {
-            Destroy(Pickup.gameObject);
-            score++;
-            scoreText.text = "Score : " + score;
+            //Destroy(Pickup.gameObject);
+            
+            //score++;
+            //scoreText.text = "Score : " + score;
         }
     }
     }

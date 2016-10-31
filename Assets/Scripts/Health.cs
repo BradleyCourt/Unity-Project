@@ -11,7 +11,8 @@ public class Health : MonoBehaviour
     WeaponBase weaponStat;
     GameObject Player;
 
-    public int originalHealth = 5;
+    public Text healthText;
+    public int originalHealth = 100;
     public int health;
     public int damageDone;
 
@@ -63,6 +64,7 @@ public class Health : MonoBehaviour
         {
             health --;
             damageImage.color = flashColour;
+            healthText.text = "Health = " + health;
         }
         if (gameObject.tag == "Enemy" && damaged == true)
         {
@@ -101,6 +103,23 @@ public class Health : MonoBehaviour
             damageDone = combatController.weapons[combatController.num].damage;
             damaged = true;
 
+        }
+    }
+    void OnTriggerEnter(Collider Pickup)
+    {
+        if (Pickup.gameObject.tag == "MedPack")
+        {
+            if (health >= originalHealth)
+            {
+              //Do Nothing
+            }
+            else
+            {
+                Destroy(Pickup.gameObject);
+
+                health++;
+                healthText.text = "Health : " + health;
+            }
         }
     }
 
