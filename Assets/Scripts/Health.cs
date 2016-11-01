@@ -16,6 +16,8 @@ public class Health : MonoBehaviour
     public int maxHealth = 100;
 
     public int health;
+    public int healAmount;
+
     public int damageDone;
 
     bool isDead;
@@ -36,7 +38,6 @@ public class Health : MonoBehaviour
 
     void Awake()
     {
-        health = maxHealth;
         Player = GameObject.FindGameObjectWithTag("Player");
         topDownController = Player.GetComponent<TopDownController>();
     }
@@ -71,6 +72,7 @@ public class Health : MonoBehaviour
         {
             followPlayer.attack();
             health -= damageDone;
+           
         }
         damaged = false;
     }
@@ -80,10 +82,16 @@ public class Health : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (health > maxHealth)
+        {
+            health = maxHealth;
+            healthText.text = "Health : " + health;
+        }
+
         if (damaged == true)
         {
             applyDamage();
+            healthText.text = "Health : " + health;
 
         }
         else if (isDead = true && health <= 0)
@@ -119,12 +127,14 @@ public class Health : MonoBehaviour
             {
               //Do Nothing
             }
-            else
+            else if (health != maxHealth)
             {
                 Destroy(Pickup.gameObject);
 
-                health++;
+              
+                health += healAmount;
                 healthText.text = "Health : " + health;
+
             }
         }
     }
