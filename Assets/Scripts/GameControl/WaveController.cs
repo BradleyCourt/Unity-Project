@@ -12,6 +12,8 @@ public class WaveController : MonoBehaviour
     float enemiesPerSecond;
     public int baseEnemiesPerWave;
     public int enemyIncreasePerWave;
+    public int waveTimeIncrease;
+    public int waveTimeAddition;
     static WaveController instance;
 
     #region Properties
@@ -50,9 +52,12 @@ public class WaveController : MonoBehaviour
 
     IEnumerator SpawnWave()
     {
+        float extraTime = waveTimeAddition * Mathf.Floor(waveNumber / waveTimeIncrease);
         remainingEnemies = remainingSpawns = CalcEnemiesPerWave();
-        enemiesPerSecond = CalcEnemiesPerSecond(remainingSpawns);
+        enemiesPerSecond = CalcEnemiesPerSecond(remainingSpawns, spawnPeriod + extraTime);
         print("EPS: " + enemiesPerSecond);
+        print("Enemies this wave: " + remainingSpawns);
+
         int enemiesPerPulse;
         while (remainingSpawns > 0)
         {
@@ -60,9 +65,9 @@ public class WaveController : MonoBehaviour
             remainingSpawns -= enemiesPerPulse;
             for (int i = enemiesPerPulse; i > 0; i -= 1)
             {
-                print(spawnPoints[i - 1].position.ToString());
+                //print(spawnPoints[i - 1].position.ToString());
             }
-            yield return new WaitForSeconds(enemiesPerSecond);
+            yield return new WaitForSeconds(1 / enemiesPerSecond);
         }
         // ###############Added for testing purposes! Remove ######################
         StartCoroutine(WavePause());
@@ -71,17 +76,19 @@ public class WaveController : MonoBehaviour
 
     IEnumerator WavePause()
     {
+        
         print(wavePausePeriod + " seconds until new wave");
         yield return new WaitForSeconds(wavePausePeriod);
         print("Starting next wave");
+        waveNumber += 1; //####################################BADBADBAD########################
         StartCoroutine(SpawnWave());
     }
 
-    float CalcEnemiesPerSecond(int totalEnemies)
+    float CalcEnemiesPerSecond(int totalEnemies, float totalTime)
     {
         if (spawnPoints.Length == 0) { return 0; }
 
-        float enemiesPerSecond = ((totalEnemies / spawnPeriod) / spawnPoints.Length);
+        float enemiesPerSecond = ((totalEnemies / totalTime) / spawnPoints.Length);
         return enemiesPerSecond;
     }
 
