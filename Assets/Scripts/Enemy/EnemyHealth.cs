@@ -9,6 +9,10 @@ public class EnemyHealth : MonoBehaviour
     WeaponBase weaponStat;
     GameObject Player;
 
+    Collider[] attackColliders;
+
+    public float attackRange; 
+
     public int maxHealth = 100;
     public int damageToDeal;
 
@@ -19,68 +23,54 @@ public class EnemyHealth : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        // followPlayer = GameObject.FindObjectOfType<FollowPlayer>();
+        followPlayer = GameObject.FindObjectOfType<FollowPlayer>();
     }
 
     void Awake()
     {
-        // Player = GameObject.FindGameObjectWithTag("Player");
+        Player = GameObject.FindGameObjectWithTag("Player");
     }
 
     void death()
     {
-        if (gameObject == Player && maxHealth <= 0)
+        if (gameObject.tag == "Enemy" && maxHealth <= 0)
         {
-            //isDead = true;
-            //topDownController.enabled = false;
-            //combatController.enabled = false;
-            //lookScript.enabled = false;
-            //print("Game Over");
-        }
-        else if (gameObject.tag == "Enemy" && maxHealth <= 0)
-        {
-            //    isDead = true;
-            //    Destroy(gameObject);
+            isDead = true;
+            Destroy(gameObject);
         }
     }
 
 
-    public void attackPlayer()
+    void attackPlayer(Vector3 attackBox)
     {
-        //if (gameObject.tag == "Player" && damaged == true)
-        //{
-        //    maxHealth -= weaponStat.damage;
-        //}
-        //damaged = false;
+        attackColliders = Physics.OverlapSphere(attackBox, attackRange);
+
+        while()
+        {
+            
+        }
     }
 
 
 
-    // Update is called once per frame
+    //Update is called once per frame
     void Update()
     {
 
-        //if (damaged == true)
-        //{
-        //    applyDamage();
+        if (damaged == true)
+        {
+            //attackPlayer();
 
-        //}
-        //else if (isDead = true && health <= 0)
-        //{
-        //    death();
-        //}
-        //damaged = false;
-        //if (damageImage != null)
-        //{
-        //    damageImage.color = Color.Lerp(damageImage.color, Color.clear, flashSpeed * Time.deltaTime);
-        //}
+        }
+        else if (isDead = true && maxHealth <= 0)
+        {
+            death();
+        }
+        damaged = false;
     }
 
-    //void OnCollisionEnter(Collision projectile)
-    //{
-    //    }
-    //    if (gameObject.tag == "Player")
-    //    {
-    //        attackPlayer;
-    //    }
-   }
+    void OnCollisionEnter(Collision col)
+    {
+        attackPlayer(col.contacts[0].point);
+    }
+}
