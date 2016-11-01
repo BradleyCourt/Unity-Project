@@ -19,12 +19,12 @@ public class EnemyHealth : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        followPlayer = GameObject.FindObjectOfType<FollowPlayer>();
+        // followPlayer = GameObject.FindObjectOfType<FollowPlayer>();
     }
 
     void Awake()
     {
-        Player = GameObject.FindGameObjectWithTag("Player");
+        // Player = GameObject.FindGameObjectWithTag("Player");
     }
 
     void death()
@@ -39,19 +39,19 @@ public class EnemyHealth : MonoBehaviour
         }
         else if (gameObject.tag == "Enemy" && maxHealth <= 0)
         {
-        //    isDead = true;
-        //    Destroy(gameObject);
+            //    isDead = true;
+            //    Destroy(gameObject);
         }
     }
 
 
     public void attackPlayer()
     {
-        if (gameObject.tag == "Player" && damaged == true)
-        {
-            maxHealth -= weaponStat.damage;
-        }
-        damaged = false;
+        //if (gameObject.tag == "Player" && damaged == true)
+        //{
+        //    maxHealth -= weaponStat.damage;
+        //}
+        //damaged = false;
     }
 
 
@@ -83,5 +83,4 @@ public class EnemyHealth : MonoBehaviour
     //    {
     //        attackPlayer;
     //    }
-    //}
-
+   }

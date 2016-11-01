@@ -84,7 +84,7 @@ public class CombatController : MonoBehaviour
             if (t.name == "Magazine")
             {
 
-                t.text = selectedWeapon.name + selectedWeapon.currentAmmo.ToString();
+                t.text = selectedWeapon.name + " : " + selectedWeapon.currentAmmo.ToString();
             }
         }
     }
