@@ -4,17 +4,36 @@ using System.Collections;
 public class WaveController : MonoBehaviour
 {
     public Transform[] spawnPoints;
-    public int remainingSpawns;
-    public int remainingEnemies;
-    public int waveNumber;
+    [HideInInspector] public int remainingSpawns;
+    private int remainingEnemies;
+    [HideInInspector] public int waveNumber;
     public float spawnPeriod;
+    public float wavePausePeriod;
     float enemiesPerSecond;
     public int baseEnemiesPerWave;
     public int enemyIncreasePerWave;
     static WaveController instance;
 
+    #region Properties
+    public int RemainingEnemies
+    {
+        get
+        {
+            return remainingEnemies;
+        }
+        set
+        {
+            remainingEnemies = value;
+            if (remainingEnemies <= 0)
+            {
+                waveNumber += 1;
+                StartCoroutine(WavePause());
+            }
+        }
+    }
+    #endregion Properties
 
-	void Start ()
+    void Start ()
     {
         if (instance == null || instance == this)
         {
@@ -45,6 +64,17 @@ public class WaveController : MonoBehaviour
             }
             yield return new WaitForSeconds(enemiesPerSecond);
         }
+        // ###############Added for testing purposes! Remove ######################
+        StartCoroutine(WavePause());
+        // ###############Added for testing purposes! Remove ######################
+    }
+
+    IEnumerator WavePause()
+    {
+        print(wavePausePeriod + " seconds until new wave");
+        yield return new WaitForSeconds(wavePausePeriod);
+        print("Starting next wave");
+        StartCoroutine(SpawnWave());
     }
 
     float CalcEnemiesPerSecond(int totalEnemies)
