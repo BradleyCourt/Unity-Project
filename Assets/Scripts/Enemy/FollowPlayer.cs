@@ -3,6 +3,7 @@ using System.Collections;
 
 public class FollowPlayer : MonoBehaviour
 {
+    Health health;
     private NavMeshAgent agent;
     public GameObject player;
     public float attackRange = 0f;
@@ -20,8 +21,7 @@ public class FollowPlayer : MonoBehaviour
         Distance = Vector3.Distance(transform.position, player.transform.position);
     }
     public void attack()
-    { 
-      
+    {       
         if (Distance <= attackRange)
         {
             agent.speed = 0;

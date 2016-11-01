@@ -3,19 +3,15 @@ using System.Collections;
 using UnityEngine.UI;
 using System;
 
-public class Health : MonoBehaviour
+public class EnemyHealth : MonoBehaviour
 {
-    TopDownController topDownController;
-    CombatController combatController;
     FollowPlayer followPlayer;
-    LookScript lookScript;
     WeaponBase weaponStat;
     GameObject Player;
 
-    public Text healthText;
     public int maxHealth = 100;
     public int health;
-    public int damageDone;
+    public int damageToDeal;
 
     bool isDead;
     public bool damaged;
@@ -63,7 +59,7 @@ public class Health : MonoBehaviour
         print(damageDone);
         if (gameObject.tag == "Player" && damaged == true)
         {
-            health --;
+            health--;
             damageImage.color = flashColour;
             healthText.text = "Health = " + health;
         }
@@ -80,7 +76,7 @@ public class Health : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
         if (damaged == true)
         {
             applyDamage();
@@ -105,7 +101,7 @@ public class Health : MonoBehaviour
             damaged = true;
 
         }
-        else if(gameObject.tag == "Player")
+        else if (gameObject.tag == "Player")
         {
             followPlayer.attack();
         }
@@ -116,7 +112,7 @@ public class Health : MonoBehaviour
         {
             if (health >= maxHealth)
             {
-              //Do Nothing
+                //Do Nothing
             }
             else
             {
@@ -128,4 +124,4 @@ public class Health : MonoBehaviour
         }
     }
 
-}   
+}
