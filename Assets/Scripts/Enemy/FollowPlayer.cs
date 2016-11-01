@@ -8,10 +8,11 @@ public class FollowPlayer : MonoBehaviour
     public float attackRange = 0f;
     float Distance;
     public float Defaultspeed = 3.5f;
+
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        //GameObject player = GameObject.FindGameObjectWithTag("Player");
     }
     void Update()
     {
