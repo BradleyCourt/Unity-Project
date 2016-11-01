@@ -45,7 +45,7 @@ public class EnemyHealth : MonoBehaviour
     {
         attackColliders = Physics.OverlapSphere(attackBox, attackRange);
 
-        while()
+      //  while()
         {
             
         }
