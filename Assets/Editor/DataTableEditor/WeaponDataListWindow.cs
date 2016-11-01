@@ -26,7 +26,7 @@ public class WeaponDataListWindow : EditorWindow
 
 	//Display settings
 	static GUIStyle s_tableStyle = new GUIStyle();
-	static GUIStyle s_headerStyle = new GUIStyle(EditorStyles.toolbarButton);
+	static GUIStyle s_headerStyle = new GUIStyle();
 	static Color c_evenColumn = new Color(0.8f, 0.8f, 1.0f);
 	static Color c_oddColumn = new Color(0.9f, 0.9f, 1.0f);
 	static float cellPad = 1;
@@ -46,6 +46,7 @@ public class WeaponDataListWindow : EditorWindow
 
 		#region Styles
 		s_tableStyle.margin = new RectOffset(6, 6, 4, 4);
+        s_headerStyle = new GUIStyle(EditorStyles.toolbarButton);
 		s_headerStyle.alignment = TextAnchor.MiddleCenter;
 		s_headerStyle.fontSize = 10;
 		#endregion Styles
