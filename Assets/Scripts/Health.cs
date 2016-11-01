@@ -12,8 +12,12 @@ public class Health : MonoBehaviour
     WeaponBase weaponStat;
     GameObject Player;
 
+<<<<<<< HEAD
     public Text healthText;
     public int maxHealth = 100;
+=======
+    public int originalHealth = 5;
+>>>>>>> 357b02bd4344b7ef36e67f670966f214691db6df
     public int health;
     public int damageDone;
 
@@ -65,7 +69,6 @@ public class Health : MonoBehaviour
         {
             health --;
             damageImage.color = flashColour;
-            healthText.text = "Health = " + health;
         }
         if (gameObject.tag == "Enemy" && damaged == true)
         {
@@ -110,6 +113,7 @@ public class Health : MonoBehaviour
             followPlayer.attack();
         }
     }
+<<<<<<< HEAD
     void OnTriggerEnter(Collider Pickup)
     {
         if (Pickup.gameObject.tag == "MedPack")
@@ -127,5 +131,7 @@ public class Health : MonoBehaviour
             }
         }
     }
+=======
+>>>>>>> 357b02bd4344b7ef36e67f670966f214691db6df
 
 }   
