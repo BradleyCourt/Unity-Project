@@ -7,16 +7,18 @@ public class Health : MonoBehaviour
 {
     TopDownController topDownController;
     CombatController combatController;
+    FollowPlayer followPlayer;
     LookScript lookScript;
     WeaponBase weaponStat;
     GameObject Player;
 
-    public int originalHealth = 5;
+    public Text healthText;
+    public int maxHealth = 100;
+
     public int health;
     public int damageDone;
 
     bool isDead;
-    bool inEnemyRange;
     public bool damaged;
 
     public Image damageImage;
@@ -28,14 +30,15 @@ public class Health : MonoBehaviour
     void Start()
     {
         combatController = GameObject.FindObjectOfType<CombatController>();
+        lookScript = GameObject.FindObjectOfType<LookScript>();
+        followPlayer = GameObject.FindObjectOfType<FollowPlayer>();
     }
 
     void Awake()
     {
-        health = originalHealth;
+        health = maxHealth;
         Player = GameObject.FindGameObjectWithTag("Player");
-        topDownController = Player.GetComponent<TopDownController>();    
-        lookScript = Player.GetComponent<LookScript>();
+        topDownController = Player.GetComponent<TopDownController>();
     }
 
     void death()
@@ -46,7 +49,6 @@ public class Health : MonoBehaviour
             topDownController.enabled = false;
             combatController.enabled = false;
             lookScript.enabled = false;
-            Destroy(Player);
             print("Game Over");
         }
         else if (gameObject.tag == "Enemy" && health <= 0)
@@ -56,16 +58,18 @@ public class Health : MonoBehaviour
         }
     }
 
+
     public void applyDamage()
     {
         print(damageDone);
-        if (gameObject.tag == "Player" && damaged == true || inEnemyRange)
+        if (gameObject.tag == "Player" && damaged == true)
         {
             health --;
             damageImage.color = flashColour;
         }
         if (gameObject.tag == "Enemy" && damaged == true)
         {
+            followPlayer.attack();
             health -= damageDone;
         }
         damaged = false;
@@ -97,10 +101,31 @@ public class Health : MonoBehaviour
     {
         if (gameObject.tag == "Enemy")
         {
-            // ... the player is in range.
             damageDone = combatController.weapons[combatController.num].damage;
             damaged = true;
 
+        }
+        else if(gameObject.tag == "Player")
+        {
+            followPlayer.attack();
+        }
+    }
+
+    void OnTriggerEnter(Collider Pickup)
+    {
+        if (Pickup.gameObject.tag == "MedPack")
+        {
+            if (health >= maxHealth)
+            {
+              //Do Nothing
+            }
+            else
+            {
+                Destroy(Pickup.gameObject);
+
+                health++;
+                healthText.text = "Health : " + health;
+            }
         }
     }
 

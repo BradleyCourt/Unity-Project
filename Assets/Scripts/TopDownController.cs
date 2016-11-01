@@ -29,7 +29,7 @@ public class TopDownController : MonoBehaviour
             float vertical = Input.GetAxis("Vertical") + device.LeftStick.Y;
 
             moveDirection *= speed * Time.deltaTime;
-
+            moveDirection.Normalize();
             if (Mathf.Abs(horizontal) <= deadzone)
             {
                 horizontal = 0;
@@ -44,16 +44,16 @@ public class TopDownController : MonoBehaviour
 
         moveDirection *= speed * Time.deltaTime;
         moveDirection.y -= (gravity * Time.deltaTime);
-        
-        controller.Move (moveDirection);
+
+        controller.Move(moveDirection);
     }
     void OnTriggerEnter(Collider Pickup)
     {
         if (Pickup.gameObject.tag == "MedPack")
         {
-            Destroy(Pickup.gameObject);
-            score++;
-            scoreText.text = "Score : " + score;
+            //Destroy(Pickup.gameObject);
+            //score++;
+            //scoreText.text = "Score : " + score;
         }
     }
     }
