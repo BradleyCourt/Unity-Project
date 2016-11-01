@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using InControl;
+using UnityEngine.UI;
 
 public class CombatController : MonoBehaviour
 {
@@ -22,7 +23,7 @@ public class CombatController : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-
+        
     }
     public void WeaponSwitch()
     {
@@ -34,7 +35,7 @@ public class CombatController : MonoBehaviour
                 num = i;
                 selectedWeapon = weapons[num];
                 break;
-            }   
+            }
         }
         // Gamepad Weapon Switching
         if (device.Action3.WasPressed)    // X BUTTON  
@@ -57,6 +58,7 @@ public class CombatController : MonoBehaviour
                 isShooting = true;
                 if (!coroutinerun)
                 {
+
                     StartCoroutine(ShootWeapon());
                 }
             }
@@ -74,13 +76,26 @@ public class CombatController : MonoBehaviour
             StopCoroutine(ShootWeapon());
             isShooting = false;
         }
-    } 
+
+        Text[] array = FindObjectsOfType<Text>();
+
+        foreach (Text t in array)
+        {
+            if (t.name == "Magazine")
+            {
+
+                t.text = selectedWeapon.name + " : " + selectedWeapon.currentAmmo.ToString();
+            }
+        }
+    }
     IEnumerator ShootWeapon()
     {
         coroutinerun = true;
         while (isShooting)
         {
-            GameObject obj = Instantiate(selectedWeapon.projectile, Target.transform.position , Quaternion.identity) as GameObject;
+            selectedWeapon.currentAmmo--;
+
+            GameObject obj = Instantiate(selectedWeapon.projectile, Target.transform.position, Quaternion.identity) as GameObject;
             Destroy(obj, selectedWeapon.bulletLifeTime);
 
             Rigidbody body = obj.GetComponent<Rigidbody>();
@@ -90,8 +105,19 @@ public class CombatController : MonoBehaviour
             Physics.IgnoreCollision(obj.GetComponent<Collider>(), GetComponent<Collider>());
 
             yield return new WaitForSeconds(selectedWeapon.fireRate);
-        }    
-        coroutinerun = false;   
+
+            
+
+            if (selectedWeapon.currentAmmo <= 0)
+            {
+                yield return new WaitForSeconds(selectedWeapon.reloadSpeed);
+                selectedWeapon.currentAmmo = selectedWeapon.ammoCapacity;
+                //StartCoroutine(reloadGun());
+                // Debug.Log(currentAmmo);
+            }
+
+
+        }
+        coroutinerun = false;
     }
 }
-
