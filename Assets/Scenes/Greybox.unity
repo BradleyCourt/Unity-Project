@@ -760,11 +760,13 @@ MonoBehaviour:
   - {fileID: 1711243319}
   - {fileID: 2139885065}
   remainingSpawns: 0
-  remainingEnemies: 0
   waveNumber: 1
   spawnPeriod: 10
+  wavePausePeriod: 5
   baseEnemiesPerWave: 10
   enemyIncreasePerWave: 5
+  waveTimeIncrease: 2
+  waveTimeAddition: 5
 --- !u!4 &1816472809
 Transform:
   m_ObjectHideFlags: 0
