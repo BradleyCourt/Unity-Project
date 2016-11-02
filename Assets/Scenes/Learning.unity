@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44692558, g: 0.49678743, b: 0.57508624, a: 1}
+  m_IndirectSpecularColor: {r: 0.44692546, g: 0.49678695, b: 0.5750854, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -1104,13 +1104,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectile: {fileID: 1000011621331690, guid: b75e4ef01b97c694fad4ac2ef1b97114, type: 2}
   damage: 100
-  fireRate: 2
+  fireRate: 0
   nextFireTime: 25.5
-  ammoCapacity: 3
+  ammo: 1
+  ammoCapacity: 10
   reloadSpeed: 3
   bulletForce: 300
   bulletLifeTime: 5
   currentAmmo: 0
+  shotsFired: 0
 --- !u!65 &858320365
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2077,13 +2079,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectile: {fileID: 100120, guid: 890c88766af4de045ad88bb01e0975a9, type: 2}
   damage: 10
-  fireRate: 0.25
+  fireRate: 0.1
   nextFireTime: 25.5
+  ammo: 8
   ammoCapacity: 8
   reloadSpeed: 2.5
   bulletForce: 100
   bulletLifeTime: 5
   currentAmmo: 0
+  shotsFired: 0
 --- !u!65 &1698908259
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2186,7 +2190,7 @@ GameObject:
   - 64: {fileID: 1762190765}
   - 23: {fileID: 1762190764}
   m_Layer: 8
-  m_Name: Quad
+  m_Name: lookPlane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

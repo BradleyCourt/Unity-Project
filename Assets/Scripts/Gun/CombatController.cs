@@ -12,19 +12,22 @@ public class CombatController : MonoBehaviour
     public float deadZone = 0.1f;
     public int currentWeapon = 0;
     public int num = 0;
-    private Vector2 inputVector;
 
+    Text magazineText;
 
     public WeaponBase selectedWeapon;
     bool isShooting = false;
     private bool coroutinerun;
+    bool isReloading = false;
     InputDevice device;
 
     // Use this for initialization
     void Start()
     {
-        
+        GameObject obj = GameObject.Find("Magazine");
+        magazineText = obj.GetComponent<Text>();
     }
+
     public void WeaponSwitch()
     {
         // Keyboard Weapon Switching (Press 0-9)
@@ -38,7 +41,7 @@ public class CombatController : MonoBehaviour
             }
         }
         // Gamepad Weapon Switching
-        if (device.Action3.WasPressed)    // X BUTTON  
+        if (device.Action4.WasPressed)    // Y BUTTON  
         {
             num = (num + 1) % weapons.Count;
             selectedWeapon = weapons[num];
@@ -53,12 +56,11 @@ public class CombatController : MonoBehaviour
         WeaponSwitch();
         if ((Input.GetMouseButton(0)) || (InputManager.ActiveDevice.GetControl(InputControlType.RightTrigger)))
         {
-            if (isShooting == false)
+            if (isShooting == false && !isReloading)
             {
                 isShooting = true;
                 if (!coroutinerun)
                 {
-
                     StartCoroutine(ShootWeapon());
                 }
             }
@@ -77,23 +79,42 @@ public class CombatController : MonoBehaviour
             isShooting = false;
         }
 
-        Text[] array = FindObjectsOfType<Text>();
-
-        foreach (Text t in array)
+        if (magazineText != null)
         {
-            if (t.name == "Magazine")
+            Text t = magazineText;
+            if (selectedWeapon.ammoCapacity == 0 && selectedWeapon.currentAmmo == 0)
             {
-
-                t.text = selectedWeapon.name + " : " + selectedWeapon.currentAmmo.ToString();
+                t.text = selectedWeapon.name + " : " + selectedWeapon.currentAmmo.ToString() + "  /  " + selectedWeapon.ammoCapacity + "  Out Of Ammo!  ";
+            }
+            else if (isReloading == true && selectedWeapon.ammoCapacity != 0)
+            {
+                t.text = selectedWeapon.name + " : " + selectedWeapon.currentAmmo.ToString() + "  /  " + selectedWeapon.ammoCapacity + "  Reloading...  ";
+            }
+            else if (isReloading == false)
+            {
+                t.text = selectedWeapon.name + " : " + selectedWeapon.currentAmmo.ToString() + "  /  " + selectedWeapon.ammoCapacity + "  Ready!  ";
             }
         }
+
+        if (Input.GetKeyDown(KeyCode.R) || (InputManager.ActiveDevice.GetControl(InputControlType.Action3)))
+        {
+            Debug.Log("Reloading");
+
+            StartCoroutine(wepReload());
+        }
+
     }
+
+
+
     IEnumerator ShootWeapon()
     {
         coroutinerun = true;
-        while (isShooting)
+        while (isShooting && selectedWeapon.currentAmmo != 0)
         {
+
             selectedWeapon.currentAmmo--;
+            selectedWeapon.shotsFired++;
 
             GameObject obj = Instantiate(selectedWeapon.projectile, Target.transform.position, Quaternion.identity) as GameObject;
             Destroy(obj, selectedWeapon.bulletLifeTime);
@@ -106,18 +127,102 @@ public class CombatController : MonoBehaviour
 
             yield return new WaitForSeconds(selectedWeapon.fireRate);
 
-            
-
             if (selectedWeapon.currentAmmo <= 0)
             {
+                isReloading = true;
                 yield return new WaitForSeconds(selectedWeapon.reloadSpeed);
-                selectedWeapon.currentAmmo = selectedWeapon.ammoCapacity;
-                //StartCoroutine(reloadGun());
-                // Debug.Log(currentAmmo);
+
+                int ammoNeeded = selectedWeapon.ammo - selectedWeapon.currentAmmo;
+
+                if (ammoNeeded < selectedWeapon.ammoCapacity)
+                {
+                    selectedWeapon.ammoCapacity -= ammoNeeded;
+                    selectedWeapon.currentAmmo = selectedWeapon.ammo;
+                }
+                else if (ammoNeeded > selectedWeapon.ammoCapacity)
+                {
+                    selectedWeapon.currentAmmo += selectedWeapon.ammoCapacity;
+                    selectedWeapon.ammoCapacity = 0;
+                }
+                else if (ammoNeeded == selectedWeapon.ammoCapacity)
+                {
+                    selectedWeapon.currentAmmo += selectedWeapon.ammoCapacity;
+                    selectedWeapon.ammoCapacity = 0;
+                }
+                else
+                {
+                    Debug.Log("out of ammo");
+                }
+
+
+
+                //if (selectedWeapon.ammoCapacity == 0)
+                //{
+                //    Debug.Log("cannot relod");
+                //}
+                //else if (selectedWeapon.ammoCapacity <= 0)
+                //{
+                //    selectedWeapon.ammoCapacity = 0;
+                //}
+                //else
+                //{
+                //    selectedWeapon.ammoCapacity -= selectedWeapon.shotsFired;
+                //    selectedWeapon.currentAmmo = selectedWeapon.ammo;
+                //    selectedWeapon.shotsFired = 0;
+                //}
+
+                isReloading = false;
+
             }
 
 
         }
         coroutinerun = false;
+    }
+    IEnumerator wepReload()
+    {
+
+
+        int ammoNeeded = selectedWeapon.ammo - selectedWeapon.currentAmmo;
+
+        if (ammoNeeded < selectedWeapon.ammoCapacity)
+        {
+            selectedWeapon.ammoCapacity -= ammoNeeded;
+            selectedWeapon.currentAmmo = selectedWeapon.ammo;
+        }
+        else if (ammoNeeded > selectedWeapon.ammoCapacity)
+        {
+            selectedWeapon.currentAmmo += selectedWeapon.ammoCapacity;
+            selectedWeapon.ammoCapacity = 0;
+        }
+        else if (ammoNeeded == selectedWeapon.ammoCapacity)
+        {
+            selectedWeapon.currentAmmo += selectedWeapon.ammoCapacity;
+            selectedWeapon.ammoCapacity = 0;
+        }
+        else
+        {
+            Debug.Log("out of ammo");
+        }
+        isReloading = true;
+        yield return new WaitForSeconds(selectedWeapon.reloadSpeed);
+
+        //if (selectedWeapon.ammoCapacity == 0)
+        //{
+        //    Debug.Log("cannot relod");
+        //}
+        //else if (selectedWeapon.ammoCapacity <= 0)
+        //{
+        //    selectedWeapon.ammoCapacity = 0;
+        //}
+        //else
+        //{
+        //    selectedWeapon.ammoCapacity -= selectedWeapon.shotsFired;
+        //    selectedWeapon.currentAmmo = selectedWeapon.ammo;
+        //    selectedWeapon.shotsFired = 0;
+        //}
+
+        isReloading = false;
+
     }
 }
