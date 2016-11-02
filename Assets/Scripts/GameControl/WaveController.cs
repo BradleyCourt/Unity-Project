@@ -14,6 +14,7 @@ public class WaveController : MonoBehaviour
     public int enemyIncreasePerWave;
     public int waveTimeIncrease;
     public int waveTimeAddition;
+    public GameObject enemy; //Change to array when more enemies
     static WaveController instance;
 
     #region Properties
@@ -65,7 +66,9 @@ public class WaveController : MonoBehaviour
             remainingSpawns -= enemiesPerPulse;
             for (int i = enemiesPerPulse; i > 0; i -= 1)
             {
-                //print(spawnPoints[i - 1].position.ToString());
+                GameObject bob = Instantiate(enemy);
+                bob.GetComponent<AudioSource>().pitch = Random.Range(0.8f, 1.2f);
+                //bob.GetComponent<AudioSource>(). = Random.Range(0.0f, 0.5f);
             }
             yield return new WaitForSeconds(1 / enemiesPerSecond);
         }
