@@ -70,7 +70,6 @@ public class Health : MonoBehaviour
         }
         if (gameObject.tag == "Enemy" && damaged == true)
         {
-            followPlayer.attack();
             health -= damageDone;
            
         }
