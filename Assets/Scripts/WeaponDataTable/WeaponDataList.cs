@@ -12,15 +12,15 @@ public enum WeaponType
 public class WeaponDataList : ScriptableObject
 {
 	public List<WeaponDataEntry> weaponList = new List<WeaponDataEntry>();
-	public static Dictionary<String, int> properties = new Dictionary<string, int>{	{ "name", 300 },
-																					{ "type", 150 },
-																					{ "damage", 100 },
-																					{ "fireRate", 100 },
-																					{ "critChance", 100 },
-																					{ "accuracy", 100 },
-																					{ "magSize", 100 },
-																					{ "reloadSpeed", 100 },
-																					{ "mesh", 300 } };
+	public static Dictionary<String, float> properties = new Dictionary<string, float>{	{ "name", 1.0f },
+																						{ "type", 0.5f },
+																						{ "damage", 0.5f },
+																						{ "fireRate", 0.5f },
+																						{ "critChance", 0.5f },
+																						{ "accuracy", 0.5f },
+																						{ "magSize", 0.5f },
+																						{ "reloadSpeed", 0.5f },
+																						{ "mesh", 1.0f } };
 }
 
 [Serializable]

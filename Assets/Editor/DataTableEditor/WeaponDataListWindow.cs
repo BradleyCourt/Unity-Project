@@ -4,6 +4,7 @@ using UnityEditor;
 using UnityEditorInternal;
 using System.Collections;
 using System.Collections.Generic;
+using System.Text;
 
 /** references
  * 
@@ -73,22 +74,61 @@ public class WeaponDataListWindow : EditorWindow
 		dataList.ApplyModifiedProperties();
 	}
 
+	#region Formatting and Style Methods
+	static string FormatPropertyName(string propertyName)
+	{
+		//Create string builder to allow for editing
+		StringBuilder formattedName = new StringBuilder(propertyName);
+		//Convert underscored names to formatted names
+		formattedName.Replace('_', ' ');
+		//Convert camelCase names to formatted names
+		for (int i = 1; i < formattedName.Length; i += 1)
+		{
+			if (char.IsUpper(formattedName[i]) && (formattedName[i - 1] != ' '))
+			{
+				formattedName.Insert(i, ' ');
+			}
+		}
+		//Convert first letter to captial
+		formattedName[0] = char.ToUpper(formattedName[0]);
+
+		return formattedName.ToString();
+	}
+
+	static void ColumnWeightToSize(ref Dictionary<string, float> properties, float totalWidth)
+	{
+		List<string> keys = new List<string>(properties.Keys);
+
+		float totalWeight = 0;
+		for (int i = 0; i < keys.Count; i += 1)
+		{
+			totalWeight += properties[keys[i]];
+		}
+
+		for (int i = 0; i < keys.Count; i += 1)
+		{
+			float portionOfWidth = properties[keys[i]] / totalWeight;
+			properties[keys[i]] = totalWidth * portionOfWidth;
+		}
+	}
+
+	#endregion Formatting and Style Methods
+
 	#region ReorderableList Methods
 	static void DrawElementCallback(Rect rect, int index, bool isActive, bool isFocused)
 	{
-		if (index == 0)	Debug.Log("Element: " + rect);
 		//Gets element currently being rendered by list
 		SerializedProperty element = listDisplay.serializedProperty.GetArrayElementAtIndex(index);
 		//Get list of displayed properties and their column widths
-		Dictionary<string, int> data = WeaponDataList.properties;
-		List<string> keys = new List<string>(data.Keys);
-		float columnWidth = rect.width / data.Count; //temp fixed column width
+		Dictionary<string, float> properties = WeaponDataList.properties;
+		List<string> keys = new List<string>(properties.Keys);
+		ColumnWeightToSize(ref properties, rect.width);
 		rect.y += 2;
 
-		for (int i = 0; i < data.Count; i += 1)
+		for (int i = 0; i < properties.Count; i += 1)
 		{
-			Rect position = new Rect(rect.x + cellPad, rect.y, columnWidth - (cellPad*2), EditorGUIUtility.singleLineHeight);
-			rect.x += columnWidth;
+			Rect position = new Rect(rect.x + cellPad, rect.y, properties[keys[i]] - (cellPad*2), EditorGUIUtility.singleLineHeight);
+			rect.x += properties[keys[i]];
 			SerializedProperty property = element.FindPropertyRelative(keys[i]);
             EditorGUI.PropertyField(position, property, GUIContent.none);
 		}
@@ -96,22 +136,21 @@ public class WeaponDataListWindow : EditorWindow
 
 	static void DrawHeaderCallback(Rect rect)
 	{
-		Debug.Log("Header: " + rect);
 		//Offset due to dragable icon
 		float startOffset = 14f;
 		rect.x += startOffset;
 		rect.width -= startOffset;
 		//Get list of displayed properties and their column widths
-		Dictionary<string, int> data = WeaponDataList.properties;
-		List<string> keys = new List<string>(data.Keys);
-		float columnWidth = rect.width / data.Count; //temp fixed column width
+		Dictionary<string, float> properties = WeaponDataList.properties;
+		List<string> keys = new List<string>(properties.Keys);
+		ColumnWeightToSize(ref properties, rect.width);
 
-		for (int i = 0; i < data.Count; i += 1)
+		for (int i = 0; i < properties.Count; i += 1)
 		{
 			GUI.backgroundColor = (i % 2 == 0) ? c_evenColumn : c_oddColumn;
-			Rect position = new Rect(rect.x, rect.y, columnWidth, EditorGUIUtility.singleLineHeight);
-			rect.x += columnWidth;
-			EditorGUI.LabelField(position, keys[i], s_headerStyle);
+			Rect position = new Rect(rect.x, rect.y, properties[keys[i]], EditorGUIUtility.singleLineHeight);
+			rect.x += properties[keys[i]];
+			EditorGUI.LabelField(position, FormatPropertyName(keys[i]), s_headerStyle);
 		}
 		GUI.backgroundColor = Color.white;
 	}
