@@ -3,18 +3,37 @@ using System.Collections;
 
 public class WaveController : MonoBehaviour
 {
-    public Transform[] spawnPoints;
-    [HideInInspector] public int remainingSpawns;
-    private int remainingEnemies;
-    [HideInInspector] public int waveNumber;
+	[Header("Waves")]
+	[Tooltip("Base number of enemies, before increase per wave")]
+	public int baseEnemiesPerWave;
+	[Tooltip("Number of additional enemies per wave (Excludes first wave)")]
+	public int enemyIncreasePerWave;
+	[Tooltip("Wait period between clearing current wave and spawning the next")]
+	public float wavePausePeriod; 
+
+	[Header("Spawn Rate")]
+	[Tooltip("Period of time in which to spawn all enemies for the current wave")]
     public float spawnPeriod;
-    public float wavePausePeriod;
-    float enemiesPerSecond;
-    public int baseEnemiesPerWave;
-    public int enemyIncreasePerWave;
-    public int waveTimeIncrease;
-    public int waveTimeAddition;
-    public GameObject enemy; //Change to array when more enemies
+	[Tooltip("How many waves per increase to the spawn period")]
+	public int spawnPeriodIncreaseFrequency;
+	[Tooltip("How long to increase the spawn period by")]
+	public float spawnPeriodTimeAddition;
+	float enemiesPerSecond; //Spawn rate based on total enemies, spawn points, and spawn period
+
+	[Header("Spawning")]
+	[Tooltip("Possible spawn locations for enemies")]
+	public Transform[] spawnPoints;
+	[Tooltip("Spawnable enemies, spawn weighting, and minimum wave requirement")]
+	public GameObject enemy; //Change to array when more enemies
+
+	//Hidden wave data
+	private int remainingSpawns; //Enemies that have yet to be spawned for the current wave
+	[HideInInspector]
+	public int waveNumber; //Current wave number
+	[HideInInspector]
+	private int remainingEnemies; //Enemies left to be killed before the next wave spawns
+
+	//Functionality
     static WaveController instance;
 
     #region Properties
@@ -47,13 +66,13 @@ public class WaveController : MonoBehaviour
             Destroy(this);
         }
 
-        baseEnemiesPerWave -= enemyIncreasePerWave;
+        baseEnemiesPerWave -= enemyIncreasePerWave; //Accounts for spawnWave adding the increase during the initial wave
         StartCoroutine(SpawnWave());
 	}
 
     IEnumerator SpawnWave()
     {
-        float extraTime = waveTimeAddition * Mathf.Floor(waveNumber / waveTimeIncrease);
+        float extraTime = spawnPeriodTimeAddition * Mathf.Floor(waveNumber / spawnPeriodIncreaseFrequency);
         remainingEnemies = remainingSpawns = CalcEnemiesPerWave();
         enemiesPerSecond = CalcEnemiesPerSecond(remainingSpawns, spawnPeriod + extraTime);
         print("EPS: " + enemiesPerSecond);
@@ -79,11 +98,10 @@ public class WaveController : MonoBehaviour
 
     IEnumerator WavePause()
     {
-        
         print(wavePausePeriod + " seconds until new wave");
         yield return new WaitForSeconds(wavePausePeriod);
         print("Starting next wave");
-        waveNumber += 1; //####################################BADBADBAD########################
+        waveNumber += 1;
         StartCoroutine(SpawnWave());
     }
 

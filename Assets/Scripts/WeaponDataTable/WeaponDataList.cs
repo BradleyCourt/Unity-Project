@@ -13,14 +13,16 @@ public class WeaponDataList : ScriptableObject
 {
 	public List<WeaponDataEntry> weaponList = new List<WeaponDataEntry>();
 	public static Dictionary<String, float> properties = new Dictionary<string, float>{	{ "name", 1.0f },
-																						{ "type", 0.5f },
-																						{ "damage", 0.5f },
-																						{ "fireRate", 0.5f },
-																						{ "critChance", 0.5f },
-																						{ "accuracy", 0.5f },
-																						{ "magSize", 0.5f },
-																						{ "reloadSpeed", 0.5f },
-																						{ "mesh", 1.0f } };
+																						{ "type", 0.75f },
+																						{ "damage", 0.75f },
+																						{ "fireRate", 0.75f },
+																						{ "critChance", 0.75f },
+																						{ "accuracy", 0.75f },
+																						{ "magSize", 0.75f },
+																						{ "reloadSpeed", 0.75f },
+																						{ "mesh", 1.0f },
+																						{ "weaponImage", 1.0f },
+																						{ "ammoImage", 1.0f} };
 }
 
 [Serializable]
@@ -35,6 +37,8 @@ public struct WeaponDataEntry
 	public int magSize;
 	public float reloadSpeed;
 	public GameObject mesh;
+	public Sprite weaponImage;
+	public Sprite ammoImage;
 
 	public WeaponDataEntry(string wName)
 	{
@@ -47,18 +51,22 @@ public struct WeaponDataEntry
 		magSize = 10;
 		reloadSpeed = 0;
 		mesh = null;
+		weaponImage = null;
+		ammoImage = null;
 	}
 
-	public WeaponDataEntry(string wName, WeaponType wType, int wDamage, float wFireRate, float wCritChance, float wAccuracy, int wMagSize, float wReloadSpeed, GameObject wMesh)
+	public WeaponDataEntry(WeaponDataEntry other)
 	{
-		name = wName;
-		type = wType;
-		damage = wDamage;
-		fireRate = wFireRate;
-		critChance = wCritChance;
-		accuracy = wAccuracy;
-		magSize = wMagSize;
-		reloadSpeed = wReloadSpeed;
-		mesh = wMesh;
+		name = other.name;
+		type = other.type;
+		damage = other.damage;
+		fireRate = other.fireRate;
+		critChance = other.critChance;
+		accuracy = other.accuracy;
+		magSize = other.magSize;
+		reloadSpeed = other.reloadSpeed;
+		mesh = other.mesh;
+		weaponImage = other.weaponImage;
+		ammoImage = other.ammoImage;
 	}
 }

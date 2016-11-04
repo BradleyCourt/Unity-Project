@@ -555,21 +555,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06b7762feae120e4d972de088b5e1df4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  baseEnemiesPerWave: 10
+  enemyIncreasePerWave: 5
+  wavePausePeriod: 5
+  spawnPeriod: 10
+  spawnPeriodIncreaseFrequency: 5
+  spawnPeriodTimeAddition: 2.5
   spawnPoints:
   - {fileID: 76631696}
   - {fileID: 468910008}
   - {fileID: 1578488455}
   - {fileID: 1711243319}
   - {fileID: 2139885065}
-  remainingSpawns: 0
-  waveNumber: 1
-  spawnPeriod: 10
-  wavePausePeriod: 5
-  baseEnemiesPerWave: 10
-  enemyIncreasePerWave: 5
-  waveTimeIncrease: 2
-  waveTimeAddition: 5
   enemy: {fileID: 1000011884771680, guid: 8188a15183a3c7c4ea7865b27d078ade, type: 2}
+  waveNumber: 1
 --- !u!4 &1816472809
 Transform:
   m_ObjectHideFlags: 0
