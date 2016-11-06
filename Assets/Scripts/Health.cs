@@ -80,6 +80,7 @@ public class Health : MonoBehaviour
 
     // Update is called once per frame
     void Update()
+        // Issac some of the code in here i dont believe needs to be in update. the damage == true statement throws a null
     {
         if (health > maxHealth)
         {
