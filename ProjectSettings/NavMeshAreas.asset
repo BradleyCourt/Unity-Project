@@ -14,7 +14,13 @@ NavMeshAreas:
   - name: Path1
     cost: 10
   - name: Path2
-    cost: 5
+    cost: 20
+  - name: Path3
+    cost: 30
+  - name: Path4
+    cost: 40
+  - name: Path5
+    cost: 50
   - name: 
     cost: 1
   - name: 
@@ -38,13 +44,7 @@ NavMeshAreas:
   - name: 
     cost: 1
   - name: 
-    cost: 1
-  - name: 
-    cost: 1
-  - name: 
-    cost: 1
-  - name: 
-    cost: 1
+    cost: 0
   - name: 
     cost: 1
   - name: 

@@ -119,6 +119,7 @@ public class CombatController : MonoBehaviour
             GameObject obj = Instantiate(selectedWeapon.projectile, Target.transform.position, Quaternion.identity) as GameObject;
             Destroy(obj, selectedWeapon.bulletLifeTime);
 
+
             Rigidbody body = obj.GetComponent<Rigidbody>();
             body.AddForce(Target.transform.forward * selectedWeapon.bulletForce, ForceMode.Impulse);
             Debug.Log(transform.forward);
@@ -224,5 +225,12 @@ public class CombatController : MonoBehaviour
 
         isReloading = false;
 
+    }
+    void OnCollisionEnter(Collision col)
+    {
+        if (col.gameObject.name == "Bullet")
+        {
+            Destroy(col.gameObject);
+        }
     }
 }
