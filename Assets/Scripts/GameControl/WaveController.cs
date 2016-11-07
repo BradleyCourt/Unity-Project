@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+[RequireComponent(typeof(AudioSource))]
 public class WaveController : MonoBehaviour
 {
 	[Header("Waves")]
@@ -26,6 +27,10 @@ public class WaveController : MonoBehaviour
 	[Tooltip("Spawnable enemies, spawn weighting, and minimum wave requirement")]
 	public GameObject enemy; //Change to array when more enemies
 
+    [Header("Sound Effects")]
+    [Tooltip("Sound effect played when the next wave starts")]
+    public AudioClip snd_WaveStart;
+
 	//Hidden wave data
 	private int remainingSpawns; //Enemies that have yet to be spawned for the current wave
 	[HideInInspector]
@@ -35,6 +40,7 @@ public class WaveController : MonoBehaviour
 
 	//Functionality
     static WaveController instance;
+    AudioSource audioSource;
 
     #region Properties
     public int RemainingEnemies
@@ -65,6 +71,13 @@ public class WaveController : MonoBehaviour
         {
             Destroy(this);
         }
+
+        audioSource = gameObject.GetComponent<AudioSource>();
+        if (audioSource == null)
+        {
+            Debug.LogWarning("No AudioSource Found!", gameObject);
+        }
+
 
         baseEnemiesPerWave -= enemyIncreasePerWave; //Accounts for spawnWave adding the increase during the initial wave
         StartCoroutine(SpawnWave());
@@ -102,6 +115,10 @@ public class WaveController : MonoBehaviour
         yield return new WaitForSeconds(wavePausePeriod);
         print("Starting next wave");
         waveNumber += 1;
+        if (audioSource != null)
+        {
+            audioSource.PlayOneShot(snd_WaveStart);
+        }
         StartCoroutine(SpawnWave());
     }
 
