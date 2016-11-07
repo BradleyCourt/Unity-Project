@@ -12,7 +12,8 @@ public class HealthPack : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Player")
+        PlayerHealth ph = other.gameObject.GetComponent<PlayerHealth>();
+        if (other.gameObject.tag == "Player" && ph.health != ph.maxHealth)
         {
             other.GetComponent<Health>().AffectHealth(healthToGive);
             Destroy(gameObject);

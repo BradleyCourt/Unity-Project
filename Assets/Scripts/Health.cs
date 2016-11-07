@@ -11,6 +11,7 @@ public abstract class Health : MonoBehaviour
     public int health;
 
     public bool isDead;
+    
 
     //public Image damageImage;
     //public float flashSpeed = 5f;
@@ -21,16 +22,34 @@ public abstract class Health : MonoBehaviour
     
 
     public void AffectHealth(int healthDelta)
-    {
+    { 
         health += healthDelta;
+  
         if (health > maxHealth)
         {
             health = maxHealth;
         }
+        if (health <= 0)
+        {
+      
+            checkDead();
+        }
     }
-
     // Update is called once per frame
     void Update()
     {
+       
+    }
+
+    public void checkDead()
+    {
+        if (health <= 0)
+        {
+            isDead = true;
+
+            Debug.Log("you are very dead");
+  
+        }
+       
     }
 }   

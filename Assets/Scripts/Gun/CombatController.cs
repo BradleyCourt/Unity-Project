@@ -33,18 +33,25 @@ public class CombatController : MonoBehaviour
         // Keyboard Weapon Switching (Press 0-9)
         for (int i = 0; i < weapons.Count; i++)
         {
-            if (Input.GetKeyDown(KeyCode.Alpha1 + i))
+            if (isReloading == true)
             {
-                weaponID = i;
-                selectedWeapon = weapons[weaponID];
-                break;
+
             }
-        }
-        // Gamepad Weapon Switching
-        if (device.Action4.WasPressed)    // Y BUTTON  
-        {
-            weaponID = (weaponID + 1) % weapons.Count;
-            selectedWeapon = weapons[weaponID];
+            else
+            {
+                if (Input.GetKeyDown(KeyCode.Alpha1 + i))
+                {
+                    weaponID = i;
+                    selectedWeapon = weapons[weaponID];
+                    break;
+                }
+            }
+            // Gamepad Weapon Switching
+            if (device.Action4.WasPressed)    // Y BUTTON  
+            {
+                weaponID = (weaponID + 1) % weapons.Count;
+                selectedWeapon = weapons[weaponID];
+            }
         }
     }
 
@@ -89,6 +96,8 @@ public class CombatController : MonoBehaviour
             else if (isReloading == true && selectedWeapon.ammoCapacity != 0)
             {
                 t.text = selectedWeapon.name + " : " + selectedWeapon.currentAmmo.ToString() + "  /  " + selectedWeapon.ammoCapacity + "  Reloading...  ";
+                //disable weapon switch
+                
             }
             else if (isReloading == false)
             {

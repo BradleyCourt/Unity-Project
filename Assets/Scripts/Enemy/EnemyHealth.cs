@@ -9,9 +9,9 @@ public class EnemyHealth : Health
 
     public float attackTimer;
     public float attackCooldown;
-
+    public float attackRange;
     public int attackDamage;
-
+    
 
     public override void Death()
     {
@@ -42,7 +42,7 @@ public class EnemyHealth : Health
 
         //    float direction = Vector3.Dot(dir, transform.forward);
 
-        if (distance < 10)
+        if (distance < attackRange)
         {
             GameObject.FindGameObjectWithTag("Player").GetComponent<Health>().AffectHealth(-attackDamage);
 }
