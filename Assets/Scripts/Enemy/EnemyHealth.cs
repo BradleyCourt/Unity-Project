@@ -5,21 +5,46 @@ using System;
 
 public class EnemyHealth : Health
 {
+    public GameObject target;
+
+    public float attackTimer;
+    public float attackCooldown;
+
+    public int attackDamage;
+
+
     public override void Death()
     {
 
     }
-    //private void EnemyAttack()
-    //{
-    //    float distance = Vector3.Distance(target.transform.position, transform.position);
 
-    //    Vector3 dir = (target.transform.position - transform.position).normalized;
+    void Update()
+    {
+        if (attackTimer > 0)
+            attackTimer -= Time.deltaTime;
 
-    //    float direction = Vector3.Dot(dir, transform.forward);
+        if (attackTimer < 0)
+            attackTimer = 0;
 
-    //    if (distance < 2.5f)
-    //    {
-    //        GameObject.FindGameObjectWithTag("Player").AffectHealth();
-    //    }
-    //}
+        if (attackTimer == 0)
+        {
+            EnemyAttack();
+            attackTimer = attackCooldown;
+        }
+    }
+
+
+    private void EnemyAttack()
+    {
+        float distance = Vector3.Distance(target.transform.position, transform.position);
+
+        //    Vector3 dir = (target.transform.position - transform.position).normalized;
+
+        //    float direction = Vector3.Dot(dir, transform.forward);
+
+        if (distance < 10)
+        {
+            GameObject.FindGameObjectWithTag("Player").GetComponent<Health>().AffectHealth(-attackDamage);
+}
+    }
 }

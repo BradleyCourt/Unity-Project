@@ -22,10 +22,7 @@ GameObject:
   - 33: {fileID: 33000011368466182}
   - 23: {fileID: 23000012429259510}
   - 114: {fileID: 114000012129588056}
-  - 114: {fileID: 114000014201806752}
   - 143: {fileID: 143000010343258654}
-  - 114: {fileID: 114000012105844678}
-  - 114: {fileID: 114000010555537230}
   m_Layer: 0
   m_Name: PlayerMesh
   m_TagString: Untagged
@@ -99,7 +96,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000010360531462}
-  - 114: {fileID: 114000012159451660}
   - 114: {fileID: 114000010911307510}
   - 143: {fileID: 143000013979351428}
   - 114: {fileID: 114000012955932216}
@@ -552,26 +548,6 @@ Behaviour:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013502647770}
   m_Enabled: 1
---- !u!114 &114000010555537230
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000010622892084}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60aa3c197e298934489b05d15f38d66c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  healthText: {fileID: 0}
-  maxHealth: 100
-  health: 5
-  healAmount: 0
-  damageDone: 0
-  damaged: 0
-  damageImage: {fileID: 0}
-  flashSpeed: 5
-  flashColour: {r: 1, g: 0, b: 0, a: 0.5}
 --- !u!114 &114000010627178580
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -656,19 +632,8 @@ MonoBehaviour:
   Target: {fileID: 1000011946172012}
   deadZone: 0.1
   currentWeapon: 0
-  num: 1
+  weaponID: 0
   selectedWeapon: {fileID: 114000011039134522}
---- !u!114 &114000012105844678
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000010622892084}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f3d37deaf723644991c6aa697e86287, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114000012129588056
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -685,26 +650,6 @@ MonoBehaviour:
   mask:
     serializedVersion: 2
     m_Bits: 256
---- !u!114 &114000012159451660
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000012938493382}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60aa3c197e298934489b05d15f38d66c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  healthText: {fileID: 0}
-  maxHealth: 100
-  health: 100
-  healAmount: 0
-  damageDone: 0
-  damaged: 0
-  damageImage: {fileID: 0}
-  flashSpeed: 5
-  flashColour: {r: 1, g: 0, b: 0, a: 0.5}
 --- !u!114 &114000012955932216
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -712,24 +657,6 @@ MonoBehaviour:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012938493382}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1bd655dfdcf4e9c438b48fd384d263cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scoreText: {fileID: 0}
-  score: 0
-  speed: 10
-  gravity: 20
-  deadzone: 0.2
-  moveDirection: {x: 0, y: 0, z: 0}
-  controller: {fileID: 0}
---- !u!114 &114000014201806752
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000010622892084}
-  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1bd655dfdcf4e9c438b48fd384d263cb, type: 3}
   m_Name: 
