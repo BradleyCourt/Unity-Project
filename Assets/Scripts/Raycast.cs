@@ -16,7 +16,7 @@ public class Raycast : MonoBehaviour
         if (Physics.Raycast(transform.position, (forward), out hit))
         {
             rayDistance = hit.distance;
-            print(rayDistance + " " + hit.collider.gameObject.name);
+          //  print(rayDistance + " " + hit.collider.gameObject.name);
         }
     }
 
