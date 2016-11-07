@@ -3,74 +3,23 @@ using System.Collections;
 using UnityEngine.UI;
 using System;
 
-public class EnemyHealth : MonoBehaviour
+public class EnemyHealth : Health
 {
-    FollowPlayer followPlayer;
-    WeaponBase weaponStat;
-    GameObject Player;
-
-    Collider[] attackColliders;
-
-    public float attackRange; 
-
-    public int maxHealth = 100;
-    public int damageToDeal;
-
-    bool isDead;
-    public bool damaged;
-
-
-    // Use this for initialization
-    void Start()
-    {
-        followPlayer = GameObject.FindObjectOfType<FollowPlayer>();
-    }
-
-    void Awake()
-    {
-        Player = GameObject.FindGameObjectWithTag("Player");
-    }
-
-    void death()
-    {
-        if (gameObject.tag == "Enemy" && maxHealth <= 0)
-        {
-            isDead = true;
-            Destroy(gameObject);
-        }
-    }
-
-
-    void attackPlayer(Vector3 attackBox)
-    {
-        attackColliders = Physics.OverlapSphere(attackBox, attackRange);
-
-      //  while()
-        {
-            
-        }
-    }
-
-
-
-    //Update is called once per frame
-    void Update()
+    public override void Death()
     {
 
-        if (damaged == true)
-        {
-            //attackPlayer();
-
-        }
-        else if (isDead = true && maxHealth <= 0)
-        {
-            death();
-        }
-        damaged = false;
     }
+    //private void EnemyAttack()
+    //{
+    //    float distance = Vector3.Distance(target.transform.position, transform.position);
 
-    void OnCollisionEnter(Collision col)
-    {
-        attackPlayer(col.contacts[0].point);
-    }
+    //    Vector3 dir = (target.transform.position - transform.position).normalized;
+
+    //    float direction = Vector3.Dot(dir, transform.forward);
+
+    //    if (distance < 2.5f)
+    //    {
+    //        GameObject.FindGameObjectWithTag("Player").AffectHealth();
+    //    }
+    //}
 }

@@ -11,7 +11,7 @@ public class CombatController : MonoBehaviour
     [Space()]
     public float deadZone = 0.1f;
     public int currentWeapon = 0;
-    public int num = 0;
+    public int weaponID = 0;
 
     Text magazineText;
 
@@ -35,16 +35,16 @@ public class CombatController : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Alpha1 + i))
             {
-                num = i;
-                selectedWeapon = weapons[num];
+                weaponID = i;
+                selectedWeapon = weapons[weaponID];
                 break;
             }
         }
         // Gamepad Weapon Switching
         if (device.Action4.WasPressed)    // Y BUTTON  
         {
-            num = (num + 1) % weapons.Count;
-            selectedWeapon = weapons[num];
+            weaponID = (weaponID + 1) % weapons.Count;
+            selectedWeapon = weapons[weaponID];
         }
     }
 
