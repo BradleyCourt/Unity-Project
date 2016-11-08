@@ -7,7 +7,7 @@ TagManager:
   - Enemy
   - Collectable
   - MedPack
-  - Bullet
+  - AmmoPack
   layers:
   - Default
   - TransparentFX
