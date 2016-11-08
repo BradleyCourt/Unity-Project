@@ -8,19 +8,16 @@ public abstract class Health : MonoBehaviour
     [Header ("Health")]
     [Tooltip("Maximum Health")]
     public int maxHealth;
+    [Tooltip("Current Health")]
     public int health;
-
+    [Tooltip("Is agent dead or not")]
     public bool isDead;
     
-
-    //public Image damageImage;
-    //public float flashSpeed = 5f;
-    //public Color flashColour = new Color(1f, 0f, 0f, 0.5f);
 
 
     public abstract void Death();
     
-
+    
     public void AffectHealth(int healthDelta)
     { 
         health += healthDelta;
@@ -31,25 +28,13 @@ public abstract class Health : MonoBehaviour
         }
         if (health <= 0)
         {
-      
-            checkDead();
+            isDead = true;
+            Debug.Log("You are dead - Game Over");
         }
     }
     // Update is called once per frame
     void Update()
     {
-       
-    }
-
-    public void checkDead()
-    {
-        if (health <= 0)
-        {
-            isDead = true;
-
-            Debug.Log("you are very dead");
-  
-        }
        
     }
 }   
