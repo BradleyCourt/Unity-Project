@@ -34,15 +34,25 @@ public class CombatController : MonoBehaviour
         // Keyboard Weapon Switching (Press 0-9)
         for (int i = 0; i < weapons.Count; i++)
         {
-          
+            
             if (Input.GetKeyDown(KeyCode.Alpha1 + i))
             {
-                weaponID = i;
-                selectedWeapon = weapons[weaponID];
-                StopAllCoroutines();
-                isReloading = false;
-                coroutinerun = false;
-                break;
+                if (weaponID == i)
+                {
+                    // your already holding the gun your trying to switch to
+                    // do nothing
+                }
+                else
+                {
+                    // the gun your holding is not the same as the gun you are trying to switch to
+                    // switch weapon
+                    weaponID = i;
+                    selectedWeapon = weapons[weaponID];
+                    StopAllCoroutines();
+                    isReloading = false;
+                    coroutinerun = false;
+                    break;
+                }
             }
         }
         // Gamepad Weapon Switching
@@ -171,33 +181,37 @@ public class CombatController : MonoBehaviour
     }
     IEnumerator wepReload()
     {
-        isReloading = true;
-        yield return new WaitForSeconds(selectedWeapon.reloadSpeed);
-
-        int ammoNeeded = selectedWeapon.ammo - selectedWeapon.currentAmmo;
-
-        if (ammoNeeded < selectedWeapon.ammoCapacity)
+        if (selectedWeapon.currentAmmo == selectedWeapon.ammo)
         {
-            selectedWeapon.ammoCapacity -= ammoNeeded;
-            selectedWeapon.currentAmmo = selectedWeapon.ammo;
-        }
-        else if (ammoNeeded > selectedWeapon.ammoCapacity)
-        {
-            selectedWeapon.currentAmmo += selectedWeapon.ammoCapacity;
-            selectedWeapon.ammoCapacity = 0;
-        }
-        else if (ammoNeeded == selectedWeapon.ammoCapacity)
-        {
-            selectedWeapon.currentAmmo += selectedWeapon.ammoCapacity;
-            selectedWeapon.ammoCapacity = 0;
+            // full on ammo, dont reload
         }
         else
         {
-            Debug.Log("out of ammo");
-        }
-        
+            isReloading = true;
+            yield return new WaitForSeconds(selectedWeapon.reloadSpeed);
 
-        isReloading = false;
+            int ammoNeeded = selectedWeapon.ammo - selectedWeapon.currentAmmo;
+
+            if (ammoNeeded < selectedWeapon.ammoCapacity)
+            {
+                selectedWeapon.ammoCapacity -= ammoNeeded;
+                selectedWeapon.currentAmmo = selectedWeapon.ammo;
+            }
+            else if (ammoNeeded > selectedWeapon.ammoCapacity)
+            {
+                selectedWeapon.currentAmmo += selectedWeapon.ammoCapacity;
+                selectedWeapon.ammoCapacity = 0;
+            }
+            else if (ammoNeeded == selectedWeapon.ammoCapacity)
+            {
+                selectedWeapon.currentAmmo += selectedWeapon.ammoCapacity;
+                selectedWeapon.ammoCapacity = 0;
+            }
+            
+
+
+            isReloading = false;
+        }
     }
     void OnCollisionEnter(Collision col)
     {
