@@ -30,28 +30,29 @@ public class CombatController : MonoBehaviour
 
     public void WeaponSwitch()
     {
+        
         // Keyboard Weapon Switching (Press 0-9)
         for (int i = 0; i < weapons.Count; i++)
         {
-            if (isReloading == true)
+          
+            if (Input.GetKeyDown(KeyCode.Alpha1 + i))
             {
-
-            }
-            else
-            {
-                if (Input.GetKeyDown(KeyCode.Alpha1 + i))
-                {
-                    weaponID = i;
-                    selectedWeapon = weapons[weaponID];
-                    break;
-                }
-            }
-            // Gamepad Weapon Switching
-            if (device.Action4.WasPressed)    // Y BUTTON  
-            {
-                weaponID = (weaponID + 1) % weapons.Count;
+                weaponID = i;
                 selectedWeapon = weapons[weaponID];
+                StopAllCoroutines();
+                isReloading = false;
+                coroutinerun = false;
+                break;
             }
+        }
+        // Gamepad Weapon Switching
+        if (device.Action4.WasPressed)    // Y BUTTON  
+        {
+            weaponID = (weaponID + 1) % weapons.Count;
+            selectedWeapon = weapons[weaponID];
+            StopAllCoroutines();
+            isReloading = false;
+            coroutinerun = false;
         }
     }
 
@@ -63,12 +64,18 @@ public class CombatController : MonoBehaviour
         WeaponSwitch();
         if ((Input.GetMouseButton(0)) || (InputManager.ActiveDevice.GetControl(InputControlType.RightTrigger)))
         {
+
+            Debug.Log(isReloading);
             if (isShooting == false && !isReloading)
             {
                 isShooting = true;
                 if (!coroutinerun)
                 {
-                    StartCoroutine(ShootWeapon());
+                    if (selectedWeapon.currentAmmo <= 0)
+                    {
+                        StartCoroutine(wepReload());
+                    }
+                    StartCoroutine(ShootWeapon());                    
                 }
             }
         }
@@ -95,9 +102,7 @@ public class CombatController : MonoBehaviour
             }
             else if (isReloading == true && selectedWeapon.ammoCapacity != 0)
             {
-                t.text = selectedWeapon.name + " : " + selectedWeapon.currentAmmo.ToString() + "  /  " + selectedWeapon.ammoCapacity + "  Reloading...  ";
-                //disable weapon switch
-                
+                t.text = selectedWeapon.name + " : " + selectedWeapon.currentAmmo.ToString() + "  /  " + selectedWeapon.ammoCapacity + "  Reloading...  ";           
             }
             else if (isReloading == false)
             {
@@ -113,10 +118,7 @@ public class CombatController : MonoBehaviour
         }
 
     }
-
-
-
-    IEnumerator ShootWeapon()
+        IEnumerator ShootWeapon()
     {
         coroutinerun = true;
         while (isShooting && selectedWeapon.currentAmmo != 0)
@@ -127,7 +129,6 @@ public class CombatController : MonoBehaviour
 
             GameObject obj = Instantiate(selectedWeapon.projectile, Target.transform.position, Quaternion.identity) as GameObject;
             Destroy(obj, selectedWeapon.bulletLifeTime);
-
 
             Rigidbody body = obj.GetComponent<Rigidbody>();
             body.AddForce(Target.transform.forward * selectedWeapon.bulletForce, ForceMode.Impulse);
@@ -163,35 +164,15 @@ public class CombatController : MonoBehaviour
                 {
                     Debug.Log("out of ammo");
                 }
-
-
-
-                //if (selectedWeapon.ammoCapacity == 0)
-                //{
-                //    Debug.Log("cannot relod");
-                //}
-                //else if (selectedWeapon.ammoCapacity <= 0)
-                //{
-                //    selectedWeapon.ammoCapacity = 0;
-                //}
-                //else
-                //{
-                //    selectedWeapon.ammoCapacity -= selectedWeapon.shotsFired;
-                //    selectedWeapon.currentAmmo = selectedWeapon.ammo;
-                //    selectedWeapon.shotsFired = 0;
-                //}
-
                 isReloading = false;
-
             }
-
-
         }
         coroutinerun = false;
     }
     IEnumerator wepReload()
     {
-
+        isReloading = true;
+        yield return new WaitForSeconds(selectedWeapon.reloadSpeed);
 
         int ammoNeeded = selectedWeapon.ammo - selectedWeapon.currentAmmo;
 
@@ -214,26 +195,9 @@ public class CombatController : MonoBehaviour
         {
             Debug.Log("out of ammo");
         }
-        isReloading = true;
-        yield return new WaitForSeconds(selectedWeapon.reloadSpeed);
-
-        //if (selectedWeapon.ammoCapacity == 0)
-        //{
-        //    Debug.Log("cannot relod");
-        //}
-        //else if (selectedWeapon.ammoCapacity <= 0)
-        //{
-        //    selectedWeapon.ammoCapacity = 0;
-        //}
-        //else
-        //{
-        //    selectedWeapon.ammoCapacity -= selectedWeapon.shotsFired;
-        //    selectedWeapon.currentAmmo = selectedWeapon.ammo;
-        //    selectedWeapon.shotsFired = 0;
-        //}
+        
 
         isReloading = false;
-
     }
     void OnCollisionEnter(Collision col)
     {
