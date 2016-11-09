@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class UIController : MonoBehaviour {
 
     public GameObject gameOverPanel;
+    public GameObject menuPanel;
 
     public PlayerHealth playerHealth;
     public GameObject player;
@@ -23,7 +24,7 @@ public class UIController : MonoBehaviour {
     {
         if (playerHealth.isDead)
         {
-            print("Suck a dick Issac");
+            print("Player Dead - Game Over");
             gameOverPanel.SetActive(true);
         }
 	}
@@ -33,10 +34,13 @@ public class UIController : MonoBehaviour {
         Application.Quit();
     }
 
-    void ExitMainMenu()
-    {
-
-    }
+    //void EnterMainMenu()
+    //{
+    //    if (Input.GetKeyDown("Escape"))
+    //    {
+    //        menuPanel
+    //    }
+    //}
 
     public void TryAgain()
     {
