@@ -1145,7 +1145,6 @@ MonoBehaviour:
   weapons:
   - {fileID: 1698908258}
   - {fileID: 858320364}
-  - {fileID: 858320364}
   Target: {fileID: 1189301980}
   deadZone: 0.1
   currentWeapon: 0
