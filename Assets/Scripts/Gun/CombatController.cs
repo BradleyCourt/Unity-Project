@@ -58,6 +58,7 @@ public class CombatController : MonoBehaviour
         // Gamepad Weapon Switching
         if (device.Action4.WasPressed)    // Y BUTTON  
         {
+            Debug.Log(weaponID);
             weaponID = (weaponID + 1) % weapons.Count;
             selectedWeapon = weapons[weaponID];
             StopAllCoroutines();
