@@ -1,13 +1,13 @@
 fileFormatVersion: 2
-guid: 31dc64e14fb261145a53f2ebec2ed14e
-timeCreated: 1478646994
+guid: 82c0291ae8c3a1c4289d0fdf56c85963
+timeCreated: 1479078126
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: Char_MESH333333
-    100002: //RootNode
-    100004: polySurface20
+    100000: //RootNode
+    100002: Char_MESH4
+    100004: Hair_MESH
     100006: Rig:arm1_L_JNT
     100008: Rig:arm1_R_JNT
     100010: Rig:arm2_L_JNT
@@ -60,9 +60,9 @@ ModelImporter:
     100104: Rig:toes_R_End
     100106: Rig:wrist_L_JNT
     100108: Rig:wrist_R_JNT
-    400000: Char_MESH333333
-    400002: //RootNode
-    400004: polySurface20
+    400000: //RootNode
+    400002: Char_MESH4
+    400004: Hair_MESH
     400006: Rig:arm1_L_JNT
     400008: Rig:arm1_R_JNT
     400010: Rig:arm2_L_JNT
@@ -115,12 +115,12 @@ ModelImporter:
     400104: Rig:toes_R_End
     400106: Rig:wrist_L_JNT
     400108: Rig:wrist_R_JNT
-    4300000: polySurface20
-    4300002: Char_MESH333333
+    4300000: Hair_MESH
+    4300002: Char_MESH4
     7400000: Take 001
     9500000: //RootNode
-    13700000: Char_MESH333333
-    13700002: polySurface20
+    13700000: Char_MESH4
+    13700002: Hair_MESH
   materials:
     importMaterials: 1
     materialName: 0
