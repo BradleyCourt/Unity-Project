@@ -125,4 +125,8 @@ Material:
       second: {r: 0.5, g: 0, b: 0, a: 0.70967746}
     - first:
         name: _EmissionColor
+<<<<<<< HEAD:Assets/Meshes/Materials/Red_LED.mat
+      second: {r: 0.5735294, g: 0, b: 0, a: 1}
+=======
       second: {r: 0.5019608, g: 0, b: 0, a: 1}
+>>>>>>> 0f1e4e2e04c60977b91004954b7e21946b53deed:Assets/Meshes/Materials/LED_Red.mat
