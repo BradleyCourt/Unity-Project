@@ -1,12 +1,12 @@
 fileFormatVersion: 2
 guid: 82c0291ae8c3a1c4289d0fdf56c85963
-timeCreated: 1479078126
+timeCreated: 1479096918
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
     100000: //RootNode
-    100002: Char_MESH4
+    100002: Char_MESH
     100004: Hair_MESH
     100006: Rig:arm1_L_JNT
     100008: Rig:arm1_R_JNT
@@ -61,7 +61,7 @@ ModelImporter:
     100106: Rig:wrist_L_JNT
     100108: Rig:wrist_R_JNT
     400000: //RootNode
-    400002: Char_MESH4
+    400002: Char_MESH
     400004: Hair_MESH
     400006: Rig:arm1_L_JNT
     400008: Rig:arm1_R_JNT
@@ -116,10 +116,10 @@ ModelImporter:
     400106: Rig:wrist_L_JNT
     400108: Rig:wrist_R_JNT
     4300000: Hair_MESH
-    4300002: Char_MESH4
+    4300002: Char_MESH
     7400000: Take 001
     9500000: //RootNode
-    13700000: Char_MESH4
+    13700000: Char_MESH
     13700002: Hair_MESH
   materials:
     importMaterials: 1
