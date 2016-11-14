@@ -274,6 +274,12 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 650115291}
   m_Script: {fileID: 11500000, guid: 63a6e1916847b414b92b50818711e298, type: 3}
+--- !u!114 &861729379 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114000013437359240, guid: bb120c92f5fe349429cd461d600be765,
+    type: 2}
+  m_PrefabInternal: {fileID: 650115291}
+  m_Script: {fileID: 11500000, guid: 7b35073ce4378014aa05a7d16cbb240e, type: 3}
 --- !u!1001 &1055894333
 Prefab:
   m_ObjectHideFlags: 0
@@ -587,7 +593,7 @@ Light:
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
+    m_Type: 0
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -895,6 +901,21 @@ Prefab:
       propertyPath: playerHealth
       value: 
       objectReference: {fileID: 689777983}
+    - target: {fileID: 114000013597833626, guid: bc0e9e10b655eaa4fb6dac0a98c5ec61,
+        type: 2}
+      propertyPath: playerWeapons
+      value: 
+      objectReference: {fileID: 861729379}
+    - target: {fileID: 114000010612302592, guid: bc0e9e10b655eaa4fb6dac0a98c5ec61,
+        type: 2}
+      propertyPath: fillOrigin
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000013350576970, guid: bc0e9e10b655eaa4fb6dac0a98c5ec61,
+        type: 2}
+      propertyPath: m_ShowMaskGraphic
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bc0e9e10b655eaa4fb6dac0a98c5ec61, type: 2}
   m_IsPrefabParent: 0
@@ -1028,7 +1049,7 @@ Prefab:
     - target: {fileID: 2300000, guid: d51bd303e893a1a43bba971e37ed6fe8, type: 3}
       propertyPath: m_Materials.Array.data[9]
       value: 
-      objectReference: {fileID: 2100000, guid: 778a87958e4849f43818e307186dbf4e, type: 2}
+      objectReference: {fileID: 2100000, guid: 38a45470dec84cb458fbcb2e4cc59698, type: 2}
     - target: {fileID: 2300000, guid: d51bd303e893a1a43bba971e37ed6fe8, type: 3}
       propertyPath: m_Materials.Array.data[10]
       value: 
@@ -1048,7 +1069,15 @@ Prefab:
     - target: {fileID: 2300000, guid: d51bd303e893a1a43bba971e37ed6fe8, type: 3}
       propertyPath: m_Materials.Array.data[2]
       value: 
-      objectReference: {fileID: 2100000, guid: 778a87958e4849f43818e307186dbf4e, type: 2}
+      objectReference: {fileID: 2100000, guid: f6b4ab41cef721749b1e5a45792055b1, type: 2}
+    - target: {fileID: 2300000, guid: d51bd303e893a1a43bba971e37ed6fe8, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 30f36c32193e23e46aed704e7aa8b50b, type: 2}
+    - target: {fileID: 2300000, guid: d51bd303e893a1a43bba971e37ed6fe8, type: 3}
+      propertyPath: m_ReceiveShadows
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d51bd303e893a1a43bba971e37ed6fe8, type: 3}
   m_IsPrefabParent: 0

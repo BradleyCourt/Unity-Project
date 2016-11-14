@@ -13,12 +13,12 @@ public class PlayerHUD : MonoBehaviour
 	public Text ammoTotalText;
 	public Transform bulletIconDisplay;
 	public GameObject bulletIconPrefab;
+    public CombatController playerWeapons;
 	List<GameObject> bulletIcons = new List<GameObject>(0);
 	[Header("Health Display")]
 	public ImageFillBar healthBar;
 	public PlayerHealth playerHealth;
 
-	public int testAmmo = 5;
 	public static PlayerHUD instance;
 
 	void Awake ()
@@ -59,8 +59,13 @@ public class PlayerHUD : MonoBehaviour
 
 	public void UpdateWeaponDisplay()
 	{
-		int currentAmmo = testAmmo;
-		if (bulletIcons.Count < currentAmmo)
+		int currentAmmo = playerWeapons.selectedWeapon.currentAmmo;
+        int totalAmmo = playerWeapons.selectedWeapon.ammoCapacity;
+
+        ammoRemainingText.text = currentAmmo.ToString();
+        ammoTotalText.text = totalAmmo.ToString();
+
+        if (bulletIcons.Count < currentAmmo)
 		{
 			int increaseBy = currentAmmo - bulletIcons.Count;
 			float iconWidth = bulletIconPrefab.GetComponent<RectTransform>().rect.width;
@@ -87,5 +92,7 @@ public class PlayerHUD : MonoBehaviour
 				Destroy(oldIcon);
 			}
 		}
+
+        
 	}
 }
