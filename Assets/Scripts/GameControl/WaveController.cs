@@ -39,7 +39,7 @@ public class WaveController : MonoBehaviour
 	private int remainingEnemies; //Enemies left to be killed before the next wave spawns
 
 	//Functionality
-    static WaveController instance;
+    public static WaveController instance;
     AudioSource audioSource;
 
     #region Properties
@@ -104,9 +104,6 @@ public class WaveController : MonoBehaviour
             }
             yield return new WaitForSeconds(1 / enemiesPerSecond);
         }
-        // ###############Added for testing purposes! Remove ######################
-        StartCoroutine(WavePause());
-        // ###############Added for testing purposes! Remove ######################
     }
 
     IEnumerator WavePause()

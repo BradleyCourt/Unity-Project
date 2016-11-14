@@ -3,17 +3,22 @@ using System.Collections;
 
 public class Bullet : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
-    void OnCollisionEnter()
+    GameObject player;
+    public int bulletDamage;
+
+    void Awake()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
+        bulletDamage = player.GetComponent<CombatController>().selectedWeapon.damage;
+    }
+
+
+    void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.GetComponent<Health>())
+        {
+            other.gameObject.GetComponent<Health>().AffectHealth(-bulletDamage);
+        }
         Debug.Log("collided");
         Destroy(gameObject);
     }

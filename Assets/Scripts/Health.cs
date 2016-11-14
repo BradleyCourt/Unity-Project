@@ -29,7 +29,7 @@ public abstract class Health : MonoBehaviour
         if (health <= 0)
         {
             isDead = true;
-            Debug.Log("You are dead - Game Over");
+            Death();
         }
     }
     // Update is called once per frame

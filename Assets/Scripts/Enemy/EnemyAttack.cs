@@ -2,12 +2,18 @@
 using System.Collections;
 
 public class EnemyAttack : MonoBehaviour {
-
+    [Tooltip("What the enemy should attack")]
     public GameObject target;
 
+    [Header("Enemy Attack Stats")]
+    [Tooltip("Time it takes before damage is applied")]
     public float attackTimer;
+    [Tooltip("Time before agent can attack again")]
     public float attackCooldown;
+    [Tooltip("Distance the agent can attack up to")]
     public float attackRange;
+
+    [Tooltip("Amount of health to take away")]
     public int attackDamage;
 
 
@@ -29,11 +35,6 @@ public class EnemyAttack : MonoBehaviour {
     private void EnemyAttacking()
     {
         float distance = Vector3.Distance(target.transform.position, transform.position);
-
-        //    Vector3 dir = (target.transform.position - transform.position).normalized;
-
-        //    float direction = Vector3.Dot(dir, transform.forward);
-
         if (distance < attackRange)
         {
             GameObject.FindGameObjectWithTag("Player").GetComponent<Health>().AffectHealth(-attackDamage);
