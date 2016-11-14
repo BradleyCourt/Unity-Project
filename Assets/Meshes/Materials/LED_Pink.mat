@@ -125,8 +125,4 @@ Material:
       second: {r: 0.5, g: 0, b: 0.19230819, a: 0.8387097}
     - first:
         name: _EmissionColor
-<<<<<<< HEAD:Assets/Meshes/Materials/Pink_Led.mat
-      second: {r: 0.71323526, g: 0.010488763, b: 0.31581986, a: 1}
-=======
       second: {r: 0.5019608, g: 0, b: 0.19215688, a: 1}
->>>>>>> 0f1e4e2e04c60977b91004954b7e21946b53deed:Assets/Meshes/Materials/LED_Pink.mat

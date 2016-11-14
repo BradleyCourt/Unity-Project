@@ -1,17 +1,5 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
-guid: fcba6099a7a4543408faa12c4ea79fbc
-timeCreated: 1478050785
-=======
-<<<<<<< HEAD
-guid: d63e923bea1cde04184669af505f43d8
-timeCreated: 1478051133
-=======
-guid: e4d74fabe99e095429aee1b01c353cc1
-timeCreated: 1478050969
->>>>>>> ae30cbec37331dea0d15f9a7e0c246bef0dff29a
->>>>>>> 782d12aa001a23194aacaae59c224661cd5942a5
-licenseType: Free
+guid: f8554b6a8f7752142b4379392f2d3f3e
 NativeFormatImporter:
   userData: 
   assetBundleName: 
