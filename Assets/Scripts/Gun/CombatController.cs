@@ -182,10 +182,15 @@ public class CombatController : MonoBehaviour
     }
     IEnumerator wepReload()
     {
+        if (selectedWeapon.ammoCapacity > 600)
+        {
+            selectedWeapon.ammoCapacity = 600;
+        }
         if (selectedWeapon.currentAmmo == selectedWeapon.ammo)
         {
             // full on ammo, dont reload
         }
+      
         else
         {
             isReloading = true;
