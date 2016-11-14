@@ -1,0 +1,5 @@
+Character Animations
+
+Run Cycle - Key 1 - 33
+
+Death Cycle - Key 40 - 110

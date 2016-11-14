@@ -28,3 +28,12 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+Assets/Materials/MC.meta
+Assets/Materials/MC/Char_DIFF.tif
+Assets/Materials/MC/Char_DIFF.tif.meta
+Assets/Materials/MC/Char_Spec.tif
+Assets/Materials/MC/Char_Spec.tif.meta
+Assets/Meshes/Base_Character.fbx
+Assets/Meshes/Base_Character.fbx.meta
+Assets/Meshes/Materials/Char4_DIFF copy.mat
+Assets/Meshes/Materials/Char4_DIFF copy.mat.meta

@@ -18,19 +18,19 @@ public class AICosting : MonoBehaviour
 	void Update ()
     {
         NavMesh.SetAreaCost(areaIndex, cost);
-       // Debug.Log(NavMesh.GetAreaCost(areaIndex));
+        //Debug.Log(NavMesh.GetAreaCost(areaIndex));
         
         //Debug.Log(transform.name);
 	}
 
     void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Triggering");
-        Debug.Log(other.tag);        
+        //Debug.Log("Triggering");
+        // Debug.Log(other.tag);        
         
         if (other.tag == "Enemy")
         {
-            Debug.Log("Adding Cost");
+            //Debug.Log("Adding Cost");
             cost += 1;
         }
 
@@ -40,7 +40,7 @@ public class AICosting : MonoBehaviour
     {
         if (other.tag == "Enemy")
         {
-            Debug.Log("Enemy Left");
+            //Debug.Log("Enemy Left");
             cost--;
         }
     }

@@ -21,33 +21,49 @@ public class TopDownController : MonoBehaviour
 	}
 	
 	// Update is called once per frame
-	void FixedUpdate ()
+	void Update ()
     {
-        InputDevice device = InputManager.ActiveDevice;
+		//Grab input device
+		InputDevice device = InputManager.ActiveDevice;
+		//Grab player directional input
+		float horizontal = Input.GetAxis("Horizontal") + device.LeftStick.X;
+		float vertical = Input.GetAxis("Vertical") + device.LeftStick.Y;
+		//Check for input deadzone
+		if (Mathf.Abs(horizontal) <= deadzone) { horizontal = 0; }
+		if (Mathf.Abs(vertical) <= deadzone) { vertical = 0; }
+		//Normalise input, apply speed, apply gravity, and scale by deltaTime
+		moveDirection = new Vector3(horizontal, 0, vertical);
+		moveDirection = moveDirection.normalized * speed;
+		moveDirection.y = -gravity;
+		moveDirection = moveDirection * Time.deltaTime;
+		//Perform movement 
+		controller.Move(moveDirection);
 
-            float horizontal = Input.GetAxis("Horizontal") + device.LeftStick.X;
-            float vertical = Input.GetAxis("Vertical") + device.LeftStick.Y;
+		//InputDevice device = InputManager.ActiveDevice;
 
-            moveDirection *= speed * Time.deltaTime;
-            moveDirection.Normalize();
-            if (Mathf.Abs(horizontal) <= deadzone)
-            {
-                horizontal = 0;
-            }
-        if (Mathf.Abs(vertical) <= deadzone)
-        {
-            vertical = 0;
-        }
+		//float horizontal = Input.GetAxis("Horizontal") + device.LeftStick.X;
+		//float vertical = Input.GetAxis("Vertical") + device.LeftStick.Y;
 
-        moveDirection = new Vector3(horizontal, 0, vertical);
-        moveDirection = Camera.main.transform.TransformDirection(moveDirection);
+		//moveDirection *= speed * Time.deltaTime;
+		//moveDirection.Normalize();
+		//if (Mathf.Abs(horizontal) <= deadzone)
+		//{
+		//	horizontal = 0;
+		//}
+		//if (Mathf.Abs(vertical) <= deadzone)
+		//{
+		//	vertical = 0;
+		//}
 
-        moveDirection *= speed * Time.deltaTime;
-        moveDirection.y -= (gravity * Time.deltaTime);
+		//moveDirection = new Vector3(horizontal, 0, vertical);
+		////moveDirection = Camera.main.transform.TransformDirection(moveDirection);
 
-        controller.Move(moveDirection);
-    }
-    void OnTriggerEnter(Collider Pickup)
+		//moveDirection *= speed * Time.deltaTime;
+		//moveDirection.y -= (gravity * Time.deltaTime);
+
+		//controller.Move(moveDirection);
+	}
+	void OnTriggerEnter(Collider Pickup)
     {
         if (Pickup.gameObject.tag == "MedPack")
         {
