@@ -4,6 +4,6 @@ Run Cycle - Key 1 - 33
 
 Death Cycle - Key 40 - 110
 
-Hand Gun Pose - Key 112
+Hand Gun Pose/animation - Key 112 - 132
 
-Rifle Gun Pose - Key 113
+Rifle Gun Pose/animation - Key 135 - 160
