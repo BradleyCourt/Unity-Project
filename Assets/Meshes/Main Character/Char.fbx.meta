@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 82c0291ae8c3a1c4289d0fdf56c85963
-timeCreated: 1479096918
+guid: c5e8e2d3ea1a4e142add05cf297e9897
+timeCreated: 1479171600
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
@@ -117,7 +117,11 @@ ModelImporter:
     400108: Rig:wrist_R_JNT
     4300000: Hair_MESH
     4300002: Char_MESH
-    7400000: Take 001
+    7400000: RunForward
+    7400002: Death
+    7400004: WeaponPose_Handgun
+    7400006: WeaponPose_Rifle
+    7400008: Take 001
     9500000: //RootNode
     13700000: Char_MESH
     13700002: Hair_MESH
@@ -141,7 +145,559 @@ ModelImporter:
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: RunForward
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 33
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Char_MESH
+        weight: 1
+      - path: Hair_MESH
+        weight: 1
+      - path: Rig:root_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:neck_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:neck_JNT/Rig:head_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:neck_JNT/Rig:head_JNT/Rig:head_N
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_L_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_L_JNT/Rig:shoulder2_L_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_L_JNT/Rig:shoulder2_L_JNT/Rig:arm1_L_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_L_JNT/Rig:shoulder2_L_JNT/Rig:arm1_L_JNT/Rig:arm2_L_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_L_JNT/Rig:shoulder2_L_JNT/Rig:arm1_L_JNT/Rig:arm2_L_JNT/Rig:wrist_L_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_L_JNT/Rig:shoulder2_L_JNT/Rig:arm1_L_JNT/Rig:arm2_L_JNT/Rig:wrist_L_JNT/Rig:palm_L_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_L_JNT/Rig:shoulder2_L_JNT/Rig:arm1_L_JNT/Rig:arm2_L_JNT/Rig:wrist_L_JNT/Rig:palm_L_JNT/Rig:firstfinger1_L_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_L_JNT/Rig:shoulder2_L_JNT/Rig:arm1_L_JNT/Rig:arm2_L_JNT/Rig:wrist_L_JNT/Rig:palm_L_JNT/Rig:firstfinger1_L_JNT/Rig:firstfinger2_L_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_L_JNT/Rig:shoulder2_L_JNT/Rig:arm1_L_JNT/Rig:arm2_L_JNT/Rig:wrist_L_JNT/Rig:palm_L_JNT/Rig:firstfinger1_L_JNT/Rig:firstfinger2_L_JNT/Rig:firstfinger3_L_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_L_JNT/Rig:shoulder2_L_JNT/Rig:arm1_L_JNT/Rig:arm2_L_JNT/Rig:wrist_L_JNT/Rig:palm_L_JNT/Rig:firstfinger1_L_JNT/Rig:firstfinger2_L_JNT/Rig:firstfinger3_L_JNT/Rig:firstfinger_L_END
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_L_JNT/Rig:shoulder2_L_JNT/Rig:arm1_L_JNT/Rig:arm2_L_JNT/Rig:wrist_L_JNT/Rig:palm_L_JNT/Rig:midfinger1_L_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_L_JNT/Rig:shoulder2_L_JNT/Rig:arm1_L_JNT/Rig:arm2_L_JNT/Rig:wrist_L_JNT/Rig:palm_L_JNT/Rig:midfinger1_L_JNT/Rig:midfinger2_L_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_L_JNT/Rig:shoulder2_L_JNT/Rig:arm1_L_JNT/Rig:arm2_L_JNT/Rig:wrist_L_JNT/Rig:palm_L_JNT/Rig:midfinger1_L_JNT/Rig:midfinger2_L_JNT/Rig:midfinger3_L_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_L_JNT/Rig:shoulder2_L_JNT/Rig:arm1_L_JNT/Rig:arm2_L_JNT/Rig:wrist_L_JNT/Rig:palm_L_JNT/Rig:midfinger1_L_JNT/Rig:midfinger2_L_JNT/Rig:midfinger3_L_JNT/Rig:midfinger_L_END
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_L_JNT/Rig:shoulder2_L_JNT/Rig:arm1_L_JNT/Rig:arm2_L_JNT/Rig:wrist_L_JNT/Rig:palm_L_JNT/Rig:thumb1_L_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_L_JNT/Rig:shoulder2_L_JNT/Rig:arm1_L_JNT/Rig:arm2_L_JNT/Rig:wrist_L_JNT/Rig:palm_L_JNT/Rig:thumb1_L_JNT/Rig:thumb2_L_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_L_JNT/Rig:shoulder2_L_JNT/Rig:arm1_L_JNT/Rig:arm2_L_JNT/Rig:wrist_L_JNT/Rig:palm_L_JNT/Rig:thumb1_L_JNT/Rig:thumb2_L_JNT/Rig:thumb3_L_END
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_R_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_R_JNT/Rig:shoulder2_R_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_R_JNT/Rig:shoulder2_R_JNT/Rig:arm1_R_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_R_JNT/Rig:shoulder2_R_JNT/Rig:arm1_R_JNT/Rig:arm2_R_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_R_JNT/Rig:shoulder2_R_JNT/Rig:arm1_R_JNT/Rig:arm2_R_JNT/Rig:wrist_R_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_R_JNT/Rig:shoulder2_R_JNT/Rig:arm1_R_JNT/Rig:arm2_R_JNT/Rig:wrist_R_JNT/Rig:palm_R_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_R_JNT/Rig:shoulder2_R_JNT/Rig:arm1_R_JNT/Rig:arm2_R_JNT/Rig:wrist_R_JNT/Rig:palm_R_JNT/Rig:firstfinger1_R_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_R_JNT/Rig:shoulder2_R_JNT/Rig:arm1_R_JNT/Rig:arm2_R_JNT/Rig:wrist_R_JNT/Rig:palm_R_JNT/Rig:firstfinger1_R_JNT/Rig:firstfinger2_R_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_R_JNT/Rig:shoulder2_R_JNT/Rig:arm1_R_JNT/Rig:arm2_R_JNT/Rig:wrist_R_JNT/Rig:palm_R_JNT/Rig:firstfinger1_R_JNT/Rig:firstfinger2_R_JNT/Rig:firstfinger3_R_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_R_JNT/Rig:shoulder2_R_JNT/Rig:arm1_R_JNT/Rig:arm2_R_JNT/Rig:wrist_R_JNT/Rig:palm_R_JNT/Rig:firstfinger1_R_JNT/Rig:firstfinger2_R_JNT/Rig:firstfinger3_R_JNT/Rig:firstfinger_R_END
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_R_JNT/Rig:shoulder2_R_JNT/Rig:arm1_R_JNT/Rig:arm2_R_JNT/Rig:wrist_R_JNT/Rig:palm_R_JNT/Rig:midfinger1_R_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_R_JNT/Rig:shoulder2_R_JNT/Rig:arm1_R_JNT/Rig:arm2_R_JNT/Rig:wrist_R_JNT/Rig:palm_R_JNT/Rig:midfinger1_R_JNT/Rig:midfinger2_R_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_R_JNT/Rig:shoulder2_R_JNT/Rig:arm1_R_JNT/Rig:arm2_R_JNT/Rig:wrist_R_JNT/Rig:palm_R_JNT/Rig:midfinger1_R_JNT/Rig:midfinger2_R_JNT/Rig:midfinger3_R_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_R_JNT/Rig:shoulder2_R_JNT/Rig:arm1_R_JNT/Rig:arm2_R_JNT/Rig:wrist_R_JNT/Rig:palm_R_JNT/Rig:midfinger1_R_JNT/Rig:midfinger2_R_JNT/Rig:midfinger3_R_JNT/Rig:midfinger_R_END
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_R_JNT/Rig:shoulder2_R_JNT/Rig:arm1_R_JNT/Rig:arm2_R_JNT/Rig:wrist_R_JNT/Rig:palm_R_JNT/Rig:thumb1_R_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_R_JNT/Rig:shoulder2_R_JNT/Rig:arm1_R_JNT/Rig:arm2_R_JNT/Rig:wrist_R_JNT/Rig:palm_R_JNT/Rig:thumb1_R_JNT/Rig:thumb2_R_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_R_JNT/Rig:shoulder2_R_JNT/Rig:arm1_R_JNT/Rig:arm2_R_JNT/Rig:wrist_R_JNT/Rig:palm_R_JNT/Rig:thumb1_R_JNT/Rig:thumb2_R_JNT/Rig:thumb3_R_END
+        weight: 1
+      - path: Rig:root_JNT/Rig:hip_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:hip_JNT/Rig:hip_END
+        weight: 1
+      - path: Rig:root_JNT/Rig:hip_JNT/Rig:leg1_L_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:hip_JNT/Rig:leg1_L_JNT/Rig:leg2_L_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:hip_JNT/Rig:leg1_L_JNT/Rig:leg2_L_JNT/Rig:ball_L_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:hip_JNT/Rig:leg1_L_JNT/Rig:leg2_L_JNT/Rig:ball_L_JNT/Rig:foot_L_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:hip_JNT/Rig:leg1_L_JNT/Rig:leg2_L_JNT/Rig:ball_L_JNT/Rig:foot_L_JNT/Rig:toes_L_End
+        weight: 1
+      - path: Rig:root_JNT/Rig:hip_JNT/Rig:leg1_R_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:hip_JNT/Rig:leg1_R_JNT/Rig:leg2_R_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:hip_JNT/Rig:leg1_R_JNT/Rig:leg2_R_JNT/Rig:ball_R_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:hip_JNT/Rig:leg1_R_JNT/Rig:leg2_R_JNT/Rig:ball_R_JNT/Rig:foot_R_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:hip_JNT/Rig:leg1_R_JNT/Rig:leg2_R_JNT/Rig:ball_R_JNT/Rig:foot_R_JNT/Rig:toes_R_End
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 1
+    - serializedVersion: 16
+      name: Death
+      takeName: Take 001
+      firstFrame: 40
+      lastFrame: 110
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Char_MESH
+        weight: 1
+      - path: Hair_MESH
+        weight: 1
+      - path: Rig:root_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:neck_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:neck_JNT/Rig:head_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:neck_JNT/Rig:head_JNT/Rig:head_N
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_L_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_L_JNT/Rig:shoulder2_L_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_L_JNT/Rig:shoulder2_L_JNT/Rig:arm1_L_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_L_JNT/Rig:shoulder2_L_JNT/Rig:arm1_L_JNT/Rig:arm2_L_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_L_JNT/Rig:shoulder2_L_JNT/Rig:arm1_L_JNT/Rig:arm2_L_JNT/Rig:wrist_L_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_L_JNT/Rig:shoulder2_L_JNT/Rig:arm1_L_JNT/Rig:arm2_L_JNT/Rig:wrist_L_JNT/Rig:palm_L_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_L_JNT/Rig:shoulder2_L_JNT/Rig:arm1_L_JNT/Rig:arm2_L_JNT/Rig:wrist_L_JNT/Rig:palm_L_JNT/Rig:firstfinger1_L_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_L_JNT/Rig:shoulder2_L_JNT/Rig:arm1_L_JNT/Rig:arm2_L_JNT/Rig:wrist_L_JNT/Rig:palm_L_JNT/Rig:firstfinger1_L_JNT/Rig:firstfinger2_L_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_L_JNT/Rig:shoulder2_L_JNT/Rig:arm1_L_JNT/Rig:arm2_L_JNT/Rig:wrist_L_JNT/Rig:palm_L_JNT/Rig:firstfinger1_L_JNT/Rig:firstfinger2_L_JNT/Rig:firstfinger3_L_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_L_JNT/Rig:shoulder2_L_JNT/Rig:arm1_L_JNT/Rig:arm2_L_JNT/Rig:wrist_L_JNT/Rig:palm_L_JNT/Rig:firstfinger1_L_JNT/Rig:firstfinger2_L_JNT/Rig:firstfinger3_L_JNT/Rig:firstfinger_L_END
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_L_JNT/Rig:shoulder2_L_JNT/Rig:arm1_L_JNT/Rig:arm2_L_JNT/Rig:wrist_L_JNT/Rig:palm_L_JNT/Rig:midfinger1_L_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_L_JNT/Rig:shoulder2_L_JNT/Rig:arm1_L_JNT/Rig:arm2_L_JNT/Rig:wrist_L_JNT/Rig:palm_L_JNT/Rig:midfinger1_L_JNT/Rig:midfinger2_L_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_L_JNT/Rig:shoulder2_L_JNT/Rig:arm1_L_JNT/Rig:arm2_L_JNT/Rig:wrist_L_JNT/Rig:palm_L_JNT/Rig:midfinger1_L_JNT/Rig:midfinger2_L_JNT/Rig:midfinger3_L_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_L_JNT/Rig:shoulder2_L_JNT/Rig:arm1_L_JNT/Rig:arm2_L_JNT/Rig:wrist_L_JNT/Rig:palm_L_JNT/Rig:midfinger1_L_JNT/Rig:midfinger2_L_JNT/Rig:midfinger3_L_JNT/Rig:midfinger_L_END
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_L_JNT/Rig:shoulder2_L_JNT/Rig:arm1_L_JNT/Rig:arm2_L_JNT/Rig:wrist_L_JNT/Rig:palm_L_JNT/Rig:thumb1_L_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_L_JNT/Rig:shoulder2_L_JNT/Rig:arm1_L_JNT/Rig:arm2_L_JNT/Rig:wrist_L_JNT/Rig:palm_L_JNT/Rig:thumb1_L_JNT/Rig:thumb2_L_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_L_JNT/Rig:shoulder2_L_JNT/Rig:arm1_L_JNT/Rig:arm2_L_JNT/Rig:wrist_L_JNT/Rig:palm_L_JNT/Rig:thumb1_L_JNT/Rig:thumb2_L_JNT/Rig:thumb3_L_END
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_R_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_R_JNT/Rig:shoulder2_R_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_R_JNT/Rig:shoulder2_R_JNT/Rig:arm1_R_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_R_JNT/Rig:shoulder2_R_JNT/Rig:arm1_R_JNT/Rig:arm2_R_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_R_JNT/Rig:shoulder2_R_JNT/Rig:arm1_R_JNT/Rig:arm2_R_JNT/Rig:wrist_R_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_R_JNT/Rig:shoulder2_R_JNT/Rig:arm1_R_JNT/Rig:arm2_R_JNT/Rig:wrist_R_JNT/Rig:palm_R_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_R_JNT/Rig:shoulder2_R_JNT/Rig:arm1_R_JNT/Rig:arm2_R_JNT/Rig:wrist_R_JNT/Rig:palm_R_JNT/Rig:firstfinger1_R_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_R_JNT/Rig:shoulder2_R_JNT/Rig:arm1_R_JNT/Rig:arm2_R_JNT/Rig:wrist_R_JNT/Rig:palm_R_JNT/Rig:firstfinger1_R_JNT/Rig:firstfinger2_R_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_R_JNT/Rig:shoulder2_R_JNT/Rig:arm1_R_JNT/Rig:arm2_R_JNT/Rig:wrist_R_JNT/Rig:palm_R_JNT/Rig:firstfinger1_R_JNT/Rig:firstfinger2_R_JNT/Rig:firstfinger3_R_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_R_JNT/Rig:shoulder2_R_JNT/Rig:arm1_R_JNT/Rig:arm2_R_JNT/Rig:wrist_R_JNT/Rig:palm_R_JNT/Rig:firstfinger1_R_JNT/Rig:firstfinger2_R_JNT/Rig:firstfinger3_R_JNT/Rig:firstfinger_R_END
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_R_JNT/Rig:shoulder2_R_JNT/Rig:arm1_R_JNT/Rig:arm2_R_JNT/Rig:wrist_R_JNT/Rig:palm_R_JNT/Rig:midfinger1_R_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_R_JNT/Rig:shoulder2_R_JNT/Rig:arm1_R_JNT/Rig:arm2_R_JNT/Rig:wrist_R_JNT/Rig:palm_R_JNT/Rig:midfinger1_R_JNT/Rig:midfinger2_R_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_R_JNT/Rig:shoulder2_R_JNT/Rig:arm1_R_JNT/Rig:arm2_R_JNT/Rig:wrist_R_JNT/Rig:palm_R_JNT/Rig:midfinger1_R_JNT/Rig:midfinger2_R_JNT/Rig:midfinger3_R_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_R_JNT/Rig:shoulder2_R_JNT/Rig:arm1_R_JNT/Rig:arm2_R_JNT/Rig:wrist_R_JNT/Rig:palm_R_JNT/Rig:midfinger1_R_JNT/Rig:midfinger2_R_JNT/Rig:midfinger3_R_JNT/Rig:midfinger_R_END
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_R_JNT/Rig:shoulder2_R_JNT/Rig:arm1_R_JNT/Rig:arm2_R_JNT/Rig:wrist_R_JNT/Rig:palm_R_JNT/Rig:thumb1_R_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_R_JNT/Rig:shoulder2_R_JNT/Rig:arm1_R_JNT/Rig:arm2_R_JNT/Rig:wrist_R_JNT/Rig:palm_R_JNT/Rig:thumb1_R_JNT/Rig:thumb2_R_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_R_JNT/Rig:shoulder2_R_JNT/Rig:arm1_R_JNT/Rig:arm2_R_JNT/Rig:wrist_R_JNT/Rig:palm_R_JNT/Rig:thumb1_R_JNT/Rig:thumb2_R_JNT/Rig:thumb3_R_END
+        weight: 1
+      - path: Rig:root_JNT/Rig:hip_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:hip_JNT/Rig:hip_END
+        weight: 1
+      - path: Rig:root_JNT/Rig:hip_JNT/Rig:leg1_L_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:hip_JNT/Rig:leg1_L_JNT/Rig:leg2_L_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:hip_JNT/Rig:leg1_L_JNT/Rig:leg2_L_JNT/Rig:ball_L_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:hip_JNT/Rig:leg1_L_JNT/Rig:leg2_L_JNT/Rig:ball_L_JNT/Rig:foot_L_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:hip_JNT/Rig:leg1_L_JNT/Rig:leg2_L_JNT/Rig:ball_L_JNT/Rig:foot_L_JNT/Rig:toes_L_End
+        weight: 1
+      - path: Rig:root_JNT/Rig:hip_JNT/Rig:leg1_R_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:hip_JNT/Rig:leg1_R_JNT/Rig:leg2_R_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:hip_JNT/Rig:leg1_R_JNT/Rig:leg2_R_JNT/Rig:ball_R_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:hip_JNT/Rig:leg1_R_JNT/Rig:leg2_R_JNT/Rig:ball_R_JNT/Rig:foot_R_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:hip_JNT/Rig:leg1_R_JNT/Rig:leg2_R_JNT/Rig:ball_R_JNT/Rig:foot_R_JNT/Rig:toes_R_End
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 1
+    - serializedVersion: 16
+      name: WeaponPose_Handgun
+      takeName: Take 001
+      firstFrame: 112
+      lastFrame: 132
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Char_MESH
+        weight: 1
+      - path: Hair_MESH
+        weight: 1
+      - path: Rig:root_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:neck_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:neck_JNT/Rig:head_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:neck_JNT/Rig:head_JNT/Rig:head_N
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_L_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_L_JNT/Rig:shoulder2_L_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_L_JNT/Rig:shoulder2_L_JNT/Rig:arm1_L_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_L_JNT/Rig:shoulder2_L_JNT/Rig:arm1_L_JNT/Rig:arm2_L_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_L_JNT/Rig:shoulder2_L_JNT/Rig:arm1_L_JNT/Rig:arm2_L_JNT/Rig:wrist_L_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_L_JNT/Rig:shoulder2_L_JNT/Rig:arm1_L_JNT/Rig:arm2_L_JNT/Rig:wrist_L_JNT/Rig:palm_L_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_L_JNT/Rig:shoulder2_L_JNT/Rig:arm1_L_JNT/Rig:arm2_L_JNT/Rig:wrist_L_JNT/Rig:palm_L_JNT/Rig:firstfinger1_L_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_L_JNT/Rig:shoulder2_L_JNT/Rig:arm1_L_JNT/Rig:arm2_L_JNT/Rig:wrist_L_JNT/Rig:palm_L_JNT/Rig:firstfinger1_L_JNT/Rig:firstfinger2_L_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_L_JNT/Rig:shoulder2_L_JNT/Rig:arm1_L_JNT/Rig:arm2_L_JNT/Rig:wrist_L_JNT/Rig:palm_L_JNT/Rig:firstfinger1_L_JNT/Rig:firstfinger2_L_JNT/Rig:firstfinger3_L_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_L_JNT/Rig:shoulder2_L_JNT/Rig:arm1_L_JNT/Rig:arm2_L_JNT/Rig:wrist_L_JNT/Rig:palm_L_JNT/Rig:firstfinger1_L_JNT/Rig:firstfinger2_L_JNT/Rig:firstfinger3_L_JNT/Rig:firstfinger_L_END
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_L_JNT/Rig:shoulder2_L_JNT/Rig:arm1_L_JNT/Rig:arm2_L_JNT/Rig:wrist_L_JNT/Rig:palm_L_JNT/Rig:midfinger1_L_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_L_JNT/Rig:shoulder2_L_JNT/Rig:arm1_L_JNT/Rig:arm2_L_JNT/Rig:wrist_L_JNT/Rig:palm_L_JNT/Rig:midfinger1_L_JNT/Rig:midfinger2_L_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_L_JNT/Rig:shoulder2_L_JNT/Rig:arm1_L_JNT/Rig:arm2_L_JNT/Rig:wrist_L_JNT/Rig:palm_L_JNT/Rig:midfinger1_L_JNT/Rig:midfinger2_L_JNT/Rig:midfinger3_L_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_L_JNT/Rig:shoulder2_L_JNT/Rig:arm1_L_JNT/Rig:arm2_L_JNT/Rig:wrist_L_JNT/Rig:palm_L_JNT/Rig:midfinger1_L_JNT/Rig:midfinger2_L_JNT/Rig:midfinger3_L_JNT/Rig:midfinger_L_END
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_L_JNT/Rig:shoulder2_L_JNT/Rig:arm1_L_JNT/Rig:arm2_L_JNT/Rig:wrist_L_JNT/Rig:palm_L_JNT/Rig:thumb1_L_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_L_JNT/Rig:shoulder2_L_JNT/Rig:arm1_L_JNT/Rig:arm2_L_JNT/Rig:wrist_L_JNT/Rig:palm_L_JNT/Rig:thumb1_L_JNT/Rig:thumb2_L_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_L_JNT/Rig:shoulder2_L_JNT/Rig:arm1_L_JNT/Rig:arm2_L_JNT/Rig:wrist_L_JNT/Rig:palm_L_JNT/Rig:thumb1_L_JNT/Rig:thumb2_L_JNT/Rig:thumb3_L_END
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_R_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_R_JNT/Rig:shoulder2_R_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_R_JNT/Rig:shoulder2_R_JNT/Rig:arm1_R_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_R_JNT/Rig:shoulder2_R_JNT/Rig:arm1_R_JNT/Rig:arm2_R_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_R_JNT/Rig:shoulder2_R_JNT/Rig:arm1_R_JNT/Rig:arm2_R_JNT/Rig:wrist_R_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_R_JNT/Rig:shoulder2_R_JNT/Rig:arm1_R_JNT/Rig:arm2_R_JNT/Rig:wrist_R_JNT/Rig:palm_R_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_R_JNT/Rig:shoulder2_R_JNT/Rig:arm1_R_JNT/Rig:arm2_R_JNT/Rig:wrist_R_JNT/Rig:palm_R_JNT/Rig:firstfinger1_R_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_R_JNT/Rig:shoulder2_R_JNT/Rig:arm1_R_JNT/Rig:arm2_R_JNT/Rig:wrist_R_JNT/Rig:palm_R_JNT/Rig:firstfinger1_R_JNT/Rig:firstfinger2_R_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_R_JNT/Rig:shoulder2_R_JNT/Rig:arm1_R_JNT/Rig:arm2_R_JNT/Rig:wrist_R_JNT/Rig:palm_R_JNT/Rig:firstfinger1_R_JNT/Rig:firstfinger2_R_JNT/Rig:firstfinger3_R_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_R_JNT/Rig:shoulder2_R_JNT/Rig:arm1_R_JNT/Rig:arm2_R_JNT/Rig:wrist_R_JNT/Rig:palm_R_JNT/Rig:firstfinger1_R_JNT/Rig:firstfinger2_R_JNT/Rig:firstfinger3_R_JNT/Rig:firstfinger_R_END
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_R_JNT/Rig:shoulder2_R_JNT/Rig:arm1_R_JNT/Rig:arm2_R_JNT/Rig:wrist_R_JNT/Rig:palm_R_JNT/Rig:midfinger1_R_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_R_JNT/Rig:shoulder2_R_JNT/Rig:arm1_R_JNT/Rig:arm2_R_JNT/Rig:wrist_R_JNT/Rig:palm_R_JNT/Rig:midfinger1_R_JNT/Rig:midfinger2_R_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_R_JNT/Rig:shoulder2_R_JNT/Rig:arm1_R_JNT/Rig:arm2_R_JNT/Rig:wrist_R_JNT/Rig:palm_R_JNT/Rig:midfinger1_R_JNT/Rig:midfinger2_R_JNT/Rig:midfinger3_R_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_R_JNT/Rig:shoulder2_R_JNT/Rig:arm1_R_JNT/Rig:arm2_R_JNT/Rig:wrist_R_JNT/Rig:palm_R_JNT/Rig:midfinger1_R_JNT/Rig:midfinger2_R_JNT/Rig:midfinger3_R_JNT/Rig:midfinger_R_END
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_R_JNT/Rig:shoulder2_R_JNT/Rig:arm1_R_JNT/Rig:arm2_R_JNT/Rig:wrist_R_JNT/Rig:palm_R_JNT/Rig:thumb1_R_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_R_JNT/Rig:shoulder2_R_JNT/Rig:arm1_R_JNT/Rig:arm2_R_JNT/Rig:wrist_R_JNT/Rig:palm_R_JNT/Rig:thumb1_R_JNT/Rig:thumb2_R_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_R_JNT/Rig:shoulder2_R_JNT/Rig:arm1_R_JNT/Rig:arm2_R_JNT/Rig:wrist_R_JNT/Rig:palm_R_JNT/Rig:thumb1_R_JNT/Rig:thumb2_R_JNT/Rig:thumb3_R_END
+        weight: 1
+      - path: Rig:root_JNT/Rig:hip_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:hip_JNT/Rig:hip_END
+        weight: 1
+      - path: Rig:root_JNT/Rig:hip_JNT/Rig:leg1_L_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:hip_JNT/Rig:leg1_L_JNT/Rig:leg2_L_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:hip_JNT/Rig:leg1_L_JNT/Rig:leg2_L_JNT/Rig:ball_L_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:hip_JNT/Rig:leg1_L_JNT/Rig:leg2_L_JNT/Rig:ball_L_JNT/Rig:foot_L_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:hip_JNT/Rig:leg1_L_JNT/Rig:leg2_L_JNT/Rig:ball_L_JNT/Rig:foot_L_JNT/Rig:toes_L_End
+        weight: 1
+      - path: Rig:root_JNT/Rig:hip_JNT/Rig:leg1_R_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:hip_JNT/Rig:leg1_R_JNT/Rig:leg2_R_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:hip_JNT/Rig:leg1_R_JNT/Rig:leg2_R_JNT/Rig:ball_R_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:hip_JNT/Rig:leg1_R_JNT/Rig:leg2_R_JNT/Rig:ball_R_JNT/Rig:foot_R_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:hip_JNT/Rig:leg1_R_JNT/Rig:leg2_R_JNT/Rig:ball_R_JNT/Rig:foot_R_JNT/Rig:toes_R_End
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 112
+    - serializedVersion: 16
+      name: WeaponPose_Rifle
+      takeName: Take 001
+      firstFrame: 135
+      lastFrame: 160
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 1
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Char_MESH
+        weight: 1
+      - path: Hair_MESH
+        weight: 1
+      - path: Rig:root_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:neck_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:neck_JNT/Rig:head_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:neck_JNT/Rig:head_JNT/Rig:head_N
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_L_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_L_JNT/Rig:shoulder2_L_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_L_JNT/Rig:shoulder2_L_JNT/Rig:arm1_L_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_L_JNT/Rig:shoulder2_L_JNT/Rig:arm1_L_JNT/Rig:arm2_L_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_L_JNT/Rig:shoulder2_L_JNT/Rig:arm1_L_JNT/Rig:arm2_L_JNT/Rig:wrist_L_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_L_JNT/Rig:shoulder2_L_JNT/Rig:arm1_L_JNT/Rig:arm2_L_JNT/Rig:wrist_L_JNT/Rig:palm_L_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_L_JNT/Rig:shoulder2_L_JNT/Rig:arm1_L_JNT/Rig:arm2_L_JNT/Rig:wrist_L_JNT/Rig:palm_L_JNT/Rig:firstfinger1_L_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_L_JNT/Rig:shoulder2_L_JNT/Rig:arm1_L_JNT/Rig:arm2_L_JNT/Rig:wrist_L_JNT/Rig:palm_L_JNT/Rig:firstfinger1_L_JNT/Rig:firstfinger2_L_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_L_JNT/Rig:shoulder2_L_JNT/Rig:arm1_L_JNT/Rig:arm2_L_JNT/Rig:wrist_L_JNT/Rig:palm_L_JNT/Rig:firstfinger1_L_JNT/Rig:firstfinger2_L_JNT/Rig:firstfinger3_L_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_L_JNT/Rig:shoulder2_L_JNT/Rig:arm1_L_JNT/Rig:arm2_L_JNT/Rig:wrist_L_JNT/Rig:palm_L_JNT/Rig:firstfinger1_L_JNT/Rig:firstfinger2_L_JNT/Rig:firstfinger3_L_JNT/Rig:firstfinger_L_END
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_L_JNT/Rig:shoulder2_L_JNT/Rig:arm1_L_JNT/Rig:arm2_L_JNT/Rig:wrist_L_JNT/Rig:palm_L_JNT/Rig:midfinger1_L_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_L_JNT/Rig:shoulder2_L_JNT/Rig:arm1_L_JNT/Rig:arm2_L_JNT/Rig:wrist_L_JNT/Rig:palm_L_JNT/Rig:midfinger1_L_JNT/Rig:midfinger2_L_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_L_JNT/Rig:shoulder2_L_JNT/Rig:arm1_L_JNT/Rig:arm2_L_JNT/Rig:wrist_L_JNT/Rig:palm_L_JNT/Rig:midfinger1_L_JNT/Rig:midfinger2_L_JNT/Rig:midfinger3_L_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_L_JNT/Rig:shoulder2_L_JNT/Rig:arm1_L_JNT/Rig:arm2_L_JNT/Rig:wrist_L_JNT/Rig:palm_L_JNT/Rig:midfinger1_L_JNT/Rig:midfinger2_L_JNT/Rig:midfinger3_L_JNT/Rig:midfinger_L_END
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_L_JNT/Rig:shoulder2_L_JNT/Rig:arm1_L_JNT/Rig:arm2_L_JNT/Rig:wrist_L_JNT/Rig:palm_L_JNT/Rig:thumb1_L_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_L_JNT/Rig:shoulder2_L_JNT/Rig:arm1_L_JNT/Rig:arm2_L_JNT/Rig:wrist_L_JNT/Rig:palm_L_JNT/Rig:thumb1_L_JNT/Rig:thumb2_L_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_L_JNT/Rig:shoulder2_L_JNT/Rig:arm1_L_JNT/Rig:arm2_L_JNT/Rig:wrist_L_JNT/Rig:palm_L_JNT/Rig:thumb1_L_JNT/Rig:thumb2_L_JNT/Rig:thumb3_L_END
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_R_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_R_JNT/Rig:shoulder2_R_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_R_JNT/Rig:shoulder2_R_JNT/Rig:arm1_R_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_R_JNT/Rig:shoulder2_R_JNT/Rig:arm1_R_JNT/Rig:arm2_R_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_R_JNT/Rig:shoulder2_R_JNT/Rig:arm1_R_JNT/Rig:arm2_R_JNT/Rig:wrist_R_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_R_JNT/Rig:shoulder2_R_JNT/Rig:arm1_R_JNT/Rig:arm2_R_JNT/Rig:wrist_R_JNT/Rig:palm_R_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_R_JNT/Rig:shoulder2_R_JNT/Rig:arm1_R_JNT/Rig:arm2_R_JNT/Rig:wrist_R_JNT/Rig:palm_R_JNT/Rig:firstfinger1_R_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_R_JNT/Rig:shoulder2_R_JNT/Rig:arm1_R_JNT/Rig:arm2_R_JNT/Rig:wrist_R_JNT/Rig:palm_R_JNT/Rig:firstfinger1_R_JNT/Rig:firstfinger2_R_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_R_JNT/Rig:shoulder2_R_JNT/Rig:arm1_R_JNT/Rig:arm2_R_JNT/Rig:wrist_R_JNT/Rig:palm_R_JNT/Rig:firstfinger1_R_JNT/Rig:firstfinger2_R_JNT/Rig:firstfinger3_R_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_R_JNT/Rig:shoulder2_R_JNT/Rig:arm1_R_JNT/Rig:arm2_R_JNT/Rig:wrist_R_JNT/Rig:palm_R_JNT/Rig:firstfinger1_R_JNT/Rig:firstfinger2_R_JNT/Rig:firstfinger3_R_JNT/Rig:firstfinger_R_END
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_R_JNT/Rig:shoulder2_R_JNT/Rig:arm1_R_JNT/Rig:arm2_R_JNT/Rig:wrist_R_JNT/Rig:palm_R_JNT/Rig:midfinger1_R_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_R_JNT/Rig:shoulder2_R_JNT/Rig:arm1_R_JNT/Rig:arm2_R_JNT/Rig:wrist_R_JNT/Rig:palm_R_JNT/Rig:midfinger1_R_JNT/Rig:midfinger2_R_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_R_JNT/Rig:shoulder2_R_JNT/Rig:arm1_R_JNT/Rig:arm2_R_JNT/Rig:wrist_R_JNT/Rig:palm_R_JNT/Rig:midfinger1_R_JNT/Rig:midfinger2_R_JNT/Rig:midfinger3_R_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_R_JNT/Rig:shoulder2_R_JNT/Rig:arm1_R_JNT/Rig:arm2_R_JNT/Rig:wrist_R_JNT/Rig:palm_R_JNT/Rig:midfinger1_R_JNT/Rig:midfinger2_R_JNT/Rig:midfinger3_R_JNT/Rig:midfinger_R_END
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_R_JNT/Rig:shoulder2_R_JNT/Rig:arm1_R_JNT/Rig:arm2_R_JNT/Rig:wrist_R_JNT/Rig:palm_R_JNT/Rig:thumb1_R_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_R_JNT/Rig:shoulder2_R_JNT/Rig:arm1_R_JNT/Rig:arm2_R_JNT/Rig:wrist_R_JNT/Rig:palm_R_JNT/Rig:thumb1_R_JNT/Rig:thumb2_R_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:chest1_JNT/Rig:chest2_JNT/Rig:shoulder1_R_JNT/Rig:shoulder2_R_JNT/Rig:arm1_R_JNT/Rig:arm2_R_JNT/Rig:wrist_R_JNT/Rig:palm_R_JNT/Rig:thumb1_R_JNT/Rig:thumb2_R_JNT/Rig:thumb3_R_END
+        weight: 1
+      - path: Rig:root_JNT/Rig:hip_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:hip_JNT/Rig:hip_END
+        weight: 1
+      - path: Rig:root_JNT/Rig:hip_JNT/Rig:leg1_L_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:hip_JNT/Rig:leg1_L_JNT/Rig:leg2_L_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:hip_JNT/Rig:leg1_L_JNT/Rig:leg2_L_JNT/Rig:ball_L_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:hip_JNT/Rig:leg1_L_JNT/Rig:leg2_L_JNT/Rig:ball_L_JNT/Rig:foot_L_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:hip_JNT/Rig:leg1_L_JNT/Rig:leg2_L_JNT/Rig:ball_L_JNT/Rig:foot_L_JNT/Rig:toes_L_End
+        weight: 1
+      - path: Rig:root_JNT/Rig:hip_JNT/Rig:leg1_R_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:hip_JNT/Rig:leg1_R_JNT/Rig:leg2_R_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:hip_JNT/Rig:leg1_R_JNT/Rig:leg2_R_JNT/Rig:ball_R_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:hip_JNT/Rig:leg1_R_JNT/Rig:leg2_R_JNT/Rig:ball_R_JNT/Rig:foot_R_JNT
+        weight: 1
+      - path: Rig:root_JNT/Rig:hip_JNT/Rig:leg1_R_JNT/Rig:leg2_R_JNT/Rig:ball_R_JNT/Rig:foot_R_JNT/Rig:toes_R_End
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 113
     isReadable: 1
   meshes:
     lODScreenPercentages: []
