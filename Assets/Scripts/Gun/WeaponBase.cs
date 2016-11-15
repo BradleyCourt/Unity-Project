@@ -5,7 +5,6 @@ public class WeaponBase : MonoBehaviour
 {
     public GameObject projectile;
     [Space()]
-   
     public int damage = 10;
     public float fireRate = 3f;
     public float nextFireTime = 25.5f;
