@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class WeaponBase : MonoBehaviour
-{
+{   
     public GameObject projectile;
     [Space()]
     public int damage = 10;

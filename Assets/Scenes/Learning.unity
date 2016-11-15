@@ -1746,7 +1746,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
-  health: 50
+  health: 100
   isDead: 0
 --- !u!114 &748724643
 MonoBehaviour:
@@ -2100,7 +2100,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30311a4da6d3a844698a009cead374f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gun: {fileID: 0}
   projectile: {fileID: 100120, guid: 890c88766af4de045ad88bb01e0975a9, type: 2}
   damage: 50
   fireRate: 0.05
@@ -4456,7 +4455,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30311a4da6d3a844698a009cead374f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gun: {fileID: 100000, guid: d107ff8b8e6cae64799a59cec7fa7f13, type: 3}
   projectile: {fileID: 100120, guid: 890c88766af4de045ad88bb01e0975a9, type: 2}
   damage: 10
   fireRate: 0.3
