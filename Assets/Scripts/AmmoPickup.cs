@@ -28,8 +28,9 @@ public class AmmoPickup : MonoBehaviour
             //    if (w != null)
             //        w.ammoCapacity += ammoToGive;
             //}
+            Destroy(gameObject);
         }
-        Destroy(gameObject);
+        
     }
 
     // Update is called once per frame
