@@ -28,7 +28,7 @@ public class AmmoPickup : MonoBehaviour
             //    if (w != null)
             //        w.ammoCapacity += ammoToGive;
             //}
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
         
     }
