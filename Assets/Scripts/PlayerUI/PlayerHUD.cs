@@ -87,9 +87,13 @@ public class PlayerHUD : MonoBehaviour
 			GameObject oldIcon;
 			for (int i = 0; i < decreaseBy; i += 1)
 			{
-				oldIcon = bulletIcons[(bulletIcons.Count - 1) - i];
-				bulletIcons.Remove(oldIcon);
-				Destroy(oldIcon);
+                int index = (bulletIcons.Count - 1) - i;
+                if (index >= 0 && index < bulletIcons.Count)
+                {
+                    oldIcon = bulletIcons[index];
+                    bulletIcons.Remove(oldIcon);
+                    Destroy(oldIcon);
+                }
 			}
 		}
 

@@ -25,11 +25,6 @@ public class CombatController : MonoBehaviour
     void Start()
     {
 
-        GameObject obj = GameObject.Find("Magazine");
-        if (obj == null)
-        {
-            magazineText = obj.GetComponent<Text>();
-        }
     }
 
     public void WeaponSwitch()
