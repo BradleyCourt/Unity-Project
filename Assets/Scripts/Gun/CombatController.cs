@@ -147,7 +147,7 @@ public class CombatController : MonoBehaviour
             selectedWeapon.currentAmmo--;
             selectedWeapon.shotsFired++;
 
-            GameObject obj = Instantiate(selectedWeapon.projectile, Target.transform.position, Quaternion.identity) as GameObject;
+            GameObject obj = Instantiate(selectedWeapon.projectile, Target.transform.position, Target.transform.rotation) as GameObject;
             Destroy(obj, selectedWeapon.bulletLifeTime);
 
             Rigidbody body = obj.GetComponent<Rigidbody>();
