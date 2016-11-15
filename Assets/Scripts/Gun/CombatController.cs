@@ -24,8 +24,12 @@ public class CombatController : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+
         GameObject obj = GameObject.Find("Magazine");
-        magazineText = obj.GetComponent<Text>();
+        if (obj == null)
+        {
+            magazineText = obj.GetComponent<Text>();
+        }
     }
 
     public void WeaponSwitch()
@@ -46,13 +50,17 @@ public class CombatController : MonoBehaviour
                 {
                     // the gun your holding is not the same as the gun you are trying to switch to
                     // switch weapon
+                    selectedWeapon.gameObject.SetActive(false);
                     weaponID = i;
                     selectedWeapon = weapons[weaponID];
                     StopAllCoroutines();
                     isReloading = false;
                     coroutinerun = false;
+                    selectedWeapon.gameObject.SetActive(true);
+                    // turn off mesh add next mesh
                     break;
                 }
+             
             }
         }
         // Gamepad Weapon Switching
@@ -64,6 +72,7 @@ public class CombatController : MonoBehaviour
             StopAllCoroutines();
             isReloading = false;
             coroutinerun = false;
+            //turn off mesh add new mesh
         }
     }
 
