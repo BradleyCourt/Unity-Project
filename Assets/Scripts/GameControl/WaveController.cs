@@ -23,7 +23,7 @@ public class WaveController : MonoBehaviour
 
 	[Header("Spawning")]
 	[Tooltip("Possible spawn locations for enemies")]
-	public Transform[] spawnPoints;
+	public EnemySpawner[] spawnPoints;
 	[Tooltip("Spawnable enemies, spawn weighting, and minimum wave requirement")]
 	public GameObject enemy; //Change to array when more enemies
     [Tooltip("Object to store all the spawned enemies. Creates empty object if null")]
@@ -85,7 +85,7 @@ public class WaveController : MonoBehaviour
             enemyStorage = Instantiate(new GameObject("Enemies"));
         }
 
-
+        EnemySpawner.enemyStorage = enemyStorage;
         baseEnemiesPerWave -= enemyIncreasePerWave; //Accounts for spawnWave adding the increase during the initial wave
         StartCoroutine(SpawnWave());
 	}
@@ -105,11 +105,7 @@ public class WaveController : MonoBehaviour
             remainingSpawns -= enemiesPerPulse;
             for (int i = 0; i < enemiesPerPulse; i += 1)
             {
-                GameObject bob = Instantiate(enemy);
-                bob.GetComponent<AudioSource>().pitch = Random.Range(0.8f, 1.2f);
-                bob.transform.parent = enemyStorage.transform;
-                bob.transform.position = spawnPoints[i].transform.position;
-                //bob.GetComponent<AudioSource>(). = Random.Range(0.0f, 0.5f);
+                spawnPoints[i].SpawnEnemy(enemy);
             }
             yield return new WaitForSeconds(1 / enemiesPerSecond);
         }
