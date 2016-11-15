@@ -13,18 +13,18 @@ public class PauseScript : MonoBehaviour {
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            PauseGame();
+           // PauseGame();
         }
     }
 
 	// Update is called once per frame
 	void PauseGame()
     {
-        Time.timeScale = 0;
+       // Time.timeScale = 0;
 	}
 
     public void UnpauseGame()
     {
-        Time.timeScale = 1;
+        //Time.timeScale = 1;
     }
 }
