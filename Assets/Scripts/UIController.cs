@@ -59,6 +59,6 @@ public class UIController : MonoBehaviour {
     public void LoadLevel()
     {
         //Application.LoadLevel(Application.loadedLevel);
-        SceneManager.LoadScene("Learning");
+        SceneManager.LoadScene("Greybox");
     }
 }
