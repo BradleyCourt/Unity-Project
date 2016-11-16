@@ -116,7 +116,6 @@ public class WaveController : MonoBehaviour
         print(wavePausePeriod + " seconds until new wave");
         yield return new WaitForSeconds(wavePausePeriod);
         print("Starting next wave");
-        waveNumber += 1;
         if (audioSource != null)
         {
             audioSource.PlayOneShot(snd_WaveStart);

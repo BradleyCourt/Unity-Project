@@ -13,7 +13,8 @@ public class FollowPlayer : MonoBehaviour
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-        //GameObject player = GameObject.FindGameObjectWithTag("Player");
+        player = GameObject.FindGameObjectWithTag("Player");
+        Debug.LogWarning("Deal wit dis shit", player);
     }
     void Update()
     {
