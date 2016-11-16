@@ -16,7 +16,7 @@ public class HealthPack : MonoBehaviour {
         if (other.gameObject.tag == "Player" && ph.health != ph.maxHealth)
         {
             other.GetComponent<Health>().AffectHealth(healthToGive);
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }
 

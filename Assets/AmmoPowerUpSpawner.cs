@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PowerUpSpawner : MonoBehaviour
+public class AmmoPowerUpSpawner : MonoBehaviour
 {
     public GameObject Prefab;
     GameObject ammo;
