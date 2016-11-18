@@ -18,6 +18,9 @@ public class PlayerHUD : MonoBehaviour
 	[Header("Health Display")]
 	public ImageFillBar healthBar;
 	public PlayerHealth playerHealth;
+	[Header("Wave Display")]
+	public GameObject waveDisplay;
+	public float waveDisplayTime = 3.0f;
 
 	public static PlayerHUD instance;
 
@@ -32,26 +35,54 @@ public class PlayerHUD : MonoBehaviour
 			Destroy(this);
 		}
 	}
+
+	void Start()
+	{
+		//Assign updates to events and run initial update
+		if (WaveController.instance != null)
+		{
+			UpdateEnemyCounter();
+			WaveController.instance.OnEnemyDeath += UpdateEnemyCounter;
+			WaveController.instance.OnWaveStart += UpdateEnemyCounter;
+			WaveController.instance.OnWaveEnd += ShowWaveDisplay;
+		}
+
+		if (playerHealth != null)
+		{
+			UpdatePlayerHealth();
+			playerHealth.OnHealthChange += UpdatePlayerHealth;
+		}
+	}
+
+	void OnDestroy()
+	{
+		if (WaveController.instance != null)
+		{
+			WaveController.instance.OnEnemyDeath -= UpdateEnemyCounter;
+			WaveController.instance.OnWaveStart -= UpdateEnemyCounter;
+			WaveController.instance.OnWaveEnd -= ShowWaveDisplay;
+		}
+
+		if (playerHealth != null)
+		{
+			playerHealth.OnHealthChange -= UpdatePlayerHealth;
+		}
+	}
 	
 	// Update is called once per frame
 	void Update ()
 	{
-		UpdateEnemyCounter();
-		UpdatePlayerHealth();
 		UpdateWeaponDisplay();
 	}
 
 	public void UpdateEnemyCounter()
 	{
-		if (WaveController.instance != null)
-		{
-			enemiesRemainingText.text = WaveController.instance.RemainingEnemies.ToString();
-		}
+		enemiesRemainingText.text = WaveController.instance.RemainingEnemies.ToString();
 	}
 
 	public void UpdatePlayerHealth()
 	{
-		if (playerHealth != null && healthBar != null)
+		if (healthBar != null)
 		{
 			healthBar.UpdateBar(playerHealth.health, playerHealth.maxHealth);
 		}
@@ -98,5 +129,19 @@ public class PlayerHUD : MonoBehaviour
 		}
 
         
+	}
+
+	public void ShowWaveDisplay()
+	{
+		print("terry");
+		StartCoroutine(TimedWaveAnnoucement());
+	}
+
+	public IEnumerator TimedWaveAnnoucement()
+	{
+		waveDisplay.SetActive(true);
+		print("bob");
+		yield return new WaitForSeconds(waveDisplayTime);
+		waveDisplay.SetActive(false);
 	}
 }

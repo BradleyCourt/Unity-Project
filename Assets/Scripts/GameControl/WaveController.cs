@@ -38,7 +38,13 @@ public class WaveController : MonoBehaviour
 	[HideInInspector]
 	public int waveNumber; //Current wave number
 	[HideInInspector]
-	private int remainingEnemies; //Enemies left to be killed before the next wave spawns
+	private int remainingEnemies = 0; //Enemies left to be killed before the next wave spawns
+
+	//Events
+	public delegate void WaveEvent();
+	public event WaveEvent OnWaveEnd;
+	public event WaveEvent OnWaveStart;
+	public event WaveEvent OnEnemyDeath;
 
 	//Functionality
     public static WaveController instance;
@@ -54,26 +60,32 @@ public class WaveController : MonoBehaviour
         set
         {
             remainingEnemies = value;
-            if (remainingEnemies <= 0)
+			if (OnEnemyDeath != null) { OnEnemyDeath(); } //Broadcast Event
+
+			if (remainingEnemies <= 0)
             {
                 waveNumber += 1;
                 StartCoroutine(WavePause());
-            }
+				if (OnWaveEnd != null) { OnWaveEnd(); } //Broadcast Event
+			}
         }
     }
     #endregion Properties
 
+	void Awake()
+	{
+		if (instance == null || instance == this)
+		{
+			instance = this;
+		}
+		else
+		{
+			Destroy(this);
+		}
+	}
+
     void Start ()
     {
-        if (instance == null || instance == this)
-        {
-            instance = this;
-        }
-        else
-        {
-            Destroy(this);
-        }
-
         audioSource = gameObject.GetComponent<AudioSource>();
         if (audioSource == null)
         {
@@ -87,7 +99,7 @@ public class WaveController : MonoBehaviour
 
         EnemySpawner.enemyStorage = enemyStorage;
         baseEnemiesPerWave -= enemyIncreasePerWave; //Accounts for spawnWave adding the increase during the initial wave
-        StartCoroutine(SpawnWave());
+        StartCoroutine(WavePause());
 	}
 
     IEnumerator SpawnWave()
@@ -98,7 +110,9 @@ public class WaveController : MonoBehaviour
         print("EPS: " + enemiesPerSecond);
         print("Enemies this wave: " + remainingSpawns);
 
-        int enemiesPerPulse;
+		if (OnWaveStart != null) { OnWaveStart(); } //Broadcast Event
+
+		int enemiesPerPulse;
         while (remainingSpawns > 0)
         {
             enemiesPerPulse = (remainingSpawns < spawnPoints.Length) ? remainingSpawns : spawnPoints.Length;
@@ -116,10 +130,11 @@ public class WaveController : MonoBehaviour
         print(wavePausePeriod + " seconds until new wave");
         yield return new WaitForSeconds(wavePausePeriod);
         print("Starting next wave");
-        if (audioSource != null)
-        {
-            audioSource.PlayOneShot(snd_WaveStart);
-        }
+		
+		//if (audioSource != null)
+  //      {
+  //          audioSource.PlayOneShot(snd_WaveStart);
+  //      }
         StartCoroutine(SpawnWave());
     }
 

@@ -33,7 +33,7 @@ public class UIController : MonoBehaviour {
         {
             if (playerHealth.isDead)
             {
-                print("Player Dead - Game Over");
+                //print("Player Dead - Game Over");
                 gameOverPanel.SetActive(true);
             }
         }

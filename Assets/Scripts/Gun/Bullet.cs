@@ -15,11 +15,10 @@ public class Bullet : MonoBehaviour {
 
     void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject != owner && other.gameObject.GetComponent<Health>())
-        {
-            other.gameObject.GetComponent<Health>().AffectHealth(-bulletDamage);
-        }
-        Debug.Log("collided");
+		if (other.gameObject != owner && other.gameObject.GetComponent<Health>())
+		{
+			other.gameObject.GetComponent<Health>().AffectHealth(-bulletDamage);
+		}
         Destroy(gameObject);
     }
 }

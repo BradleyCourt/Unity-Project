@@ -13,15 +13,14 @@ public class PlayerHealth : Health
         topDownController = GetComponent<TopDownController>();
         combatController = GetComponent<CombatController>();
         lookScript = GetComponentInChildren<LookScript>();
-    }
+	}
 
-
-    public override void Death()
+	public override void Death()
     {
         combatController.enabled = false;
         topDownController.enabled = false;
         lookScript.enabled = false;
-        Debug.Log("You are dead - Game Over");
+        //Debug.Log("You are dead - Game Over");
     }
 
 }

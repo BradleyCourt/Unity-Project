@@ -12,29 +12,29 @@ public abstract class Health : MonoBehaviour
     public int health;
     [Tooltip("Is agent dead or not")]
     public bool isDead;
-    
 
+	//Health Events. Not shown in inspector, used for animation system and UI
+	public delegate void HealthEvent();
+	public event HealthEvent OnDeath;
+	public event HealthEvent OnHealthChange;
 
-    public abstract void Death();
-    
+	public abstract void Death();
     
     public void AffectHealth(int healthDelta)
     { 
         health += healthDelta;
-  
-        if (health > maxHealth)
+
+		if (OnHealthChange != null) { OnHealthChange(); } //Broadcast event
+
+		if (health > maxHealth)
         {
             health = maxHealth;
         }
-        if (health <= 0)
+        if (health <= 0 && isDead == false)
         {
             isDead = true;
-            Death();
+			if (OnDeath != null) { OnDeath(); } // Broadcast event
+			Death();
         }
-    }
-    // Update is called once per frame
-    void Update()
-    {
-       
     }
 }   
