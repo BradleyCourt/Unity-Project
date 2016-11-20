@@ -49,14 +49,6 @@ public class UIController : MonoBehaviour {
         Application.Quit();
     }
 
-    void EnterMainMenu()
-    {
-        //if (Input.GetKeyDown("Escape"))
-        //{
-        //    pauseMenu.SetActive(true);
-        //}
-    }
-
     public void LoadLevel()
     {
         SceneManager.LoadScene("Greybox");
