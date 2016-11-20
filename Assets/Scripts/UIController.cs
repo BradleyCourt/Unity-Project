@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class UIController : MonoBehaviour {
 
     public GameObject gameOverPanel;
-    public GameObject menuPanel;
+    public GameObject pauseMenu;
 
     public PlayerHealth playerHealth;
     public GameObject player;
@@ -33,12 +33,13 @@ public class UIController : MonoBehaviour {
         {
             if (playerHealth.isDead)
             {
-                print("Player Dead - Game Over");
+                //print("Player Dead - Game Over");
                 gameOverPanel.SetActive(true);
             }
         }
         else
         {
+            //kill yourself
             //Do Nothing
         }
 	}
@@ -48,17 +49,16 @@ public class UIController : MonoBehaviour {
         Application.Quit();
     }
 
-    //void EnterMainMenu()
-    //{
-    //    if (Input.GetKeyDown("Escape"))
-    //    {
-    //        menuPanel
-    //    }
-    //}
+    void EnterMainMenu()
+    {
+        //if (Input.GetKeyDown("Escape"))
+        //{
+        //    pauseMenu.SetActive(true);
+        //}
+    }
 
     public void LoadLevel()
     {
-        //Application.LoadLevel(Application.loadedLevel);
         SceneManager.LoadScene("Greybox");
     }
 }

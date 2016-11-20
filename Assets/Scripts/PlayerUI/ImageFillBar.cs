@@ -14,7 +14,7 @@ public class ImageFillBar : MonoBehaviour
 	float fillBarMaxWidth = 0;
 	float fillBarMaxHeight = 0;
 
-	public void Start()
+	public void Awake()
 	{
 		RectTransform fillRect = fillBarImage.GetComponent<RectTransform>();
 		RectTransform maskRect = fillBarMask.GetComponent<RectTransform>();

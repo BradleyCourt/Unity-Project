@@ -4,28 +4,23 @@ using System.Collections;
 public class PauseScript : MonoBehaviour
 {
 
-	// Use this for initialization
-	void Start ()
+    public GameObject PauseMenu;
+    private bool paused;
+    private int state = 0;
+    // Use this for initialization
+    void Start()
     {
-	
-	}
-	
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-           // PauseGame();
-        }
+
     }
 
-	// Update is called once per frame
-	void PauseGame()
+    void Update()
     {
-       // Time.timeScale = 0;
-	}
-
-    public void UnpauseGame()
-    {
-        //Time.timeScale = 1;
+        if (Input.GetButtonDown("Escape"))
+        {
+            state = ((state + 1) % 2);
+            paused = state == 0;
+            PauseMenu.SetActive(paused);
+            Time.timeScale = state % 2;
+        }
     }
 }

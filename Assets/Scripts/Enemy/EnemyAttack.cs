@@ -16,6 +16,11 @@ public class EnemyAttack : MonoBehaviour {
     [Tooltip("Amount of health to take away")]
     public int attackDamage;
 
+    void Start()
+    {
+        target = GameObject.FindGameObjectWithTag("Player");
+    }
+
 
     void Update()
     {

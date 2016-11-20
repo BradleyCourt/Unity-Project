@@ -23,7 +23,7 @@ public class WaveController : MonoBehaviour
 
 	[Header("Spawning")]
 	[Tooltip("Possible spawn locations for enemies")]
-	public Transform[] spawnPoints;
+	public EnemySpawner[] spawnPoints;
 	[Tooltip("Spawnable enemies, spawn weighting, and minimum wave requirement")]
 	public GameObject enemy; //Change to array when more enemies
     [Tooltip("Object to store all the spawned enemies. Creates empty object if null")]
@@ -38,7 +38,13 @@ public class WaveController : MonoBehaviour
 	[HideInInspector]
 	public int waveNumber; //Current wave number
 	[HideInInspector]
-	private int remainingEnemies; //Enemies left to be killed before the next wave spawns
+	private int remainingEnemies = 0; //Enemies left to be killed before the next wave spawns
+
+	//Events
+	public delegate void WaveEvent();
+	public event WaveEvent OnWaveEnd;
+	public event WaveEvent OnWaveStart;
+	public event WaveEvent OnEnemyDeath;
 
 	//Functionality
     public static WaveController instance;
@@ -54,26 +60,32 @@ public class WaveController : MonoBehaviour
         set
         {
             remainingEnemies = value;
-            if (remainingEnemies <= 0)
+			if (OnEnemyDeath != null) { OnEnemyDeath(); } //Broadcast Event
+
+			if (remainingEnemies <= 0)
             {
                 waveNumber += 1;
                 StartCoroutine(WavePause());
-            }
+				if (OnWaveEnd != null) { OnWaveEnd(); } //Broadcast Event
+			}
         }
     }
     #endregion Properties
 
+	void Awake()
+	{
+		if (instance == null || instance == this)
+		{
+			instance = this;
+		}
+		else
+		{
+			Destroy(this);
+		}
+	}
+
     void Start ()
     {
-        if (instance == null || instance == this)
-        {
-            instance = this;
-        }
-        else
-        {
-            Destroy(this);
-        }
-
         audioSource = gameObject.GetComponent<AudioSource>();
         if (audioSource == null)
         {
@@ -85,9 +97,9 @@ public class WaveController : MonoBehaviour
             enemyStorage = Instantiate(new GameObject("Enemies"));
         }
 
-
+        EnemySpawner.enemyStorage = enemyStorage;
         baseEnemiesPerWave -= enemyIncreasePerWave; //Accounts for spawnWave adding the increase during the initial wave
-        StartCoroutine(SpawnWave());
+        StartCoroutine(WavePause());
 	}
 
     IEnumerator SpawnWave()
@@ -98,18 +110,16 @@ public class WaveController : MonoBehaviour
         print("EPS: " + enemiesPerSecond);
         print("Enemies this wave: " + remainingSpawns);
 
-        int enemiesPerPulse;
+		if (OnWaveStart != null) { OnWaveStart(); } //Broadcast Event
+
+		int enemiesPerPulse;
         while (remainingSpawns > 0)
         {
             enemiesPerPulse = (remainingSpawns < spawnPoints.Length) ? remainingSpawns : spawnPoints.Length;
             remainingSpawns -= enemiesPerPulse;
             for (int i = 0; i < enemiesPerPulse; i += 1)
             {
-                GameObject bob = Instantiate(enemy);
-                bob.GetComponent<AudioSource>().pitch = Random.Range(0.8f, 1.2f);
-                bob.transform.parent = enemyStorage.transform;
-                bob.transform.position = spawnPoints[i].transform.position;
-                //bob.GetComponent<AudioSource>(). = Random.Range(0.0f, 0.5f);
+                spawnPoints[i].SpawnEnemy(enemy);
             }
             yield return new WaitForSeconds(1 / enemiesPerSecond);
         }
@@ -120,11 +130,11 @@ public class WaveController : MonoBehaviour
         print(wavePausePeriod + " seconds until new wave");
         yield return new WaitForSeconds(wavePausePeriod);
         print("Starting next wave");
-        waveNumber += 1;
-        if (audioSource != null)
-        {
-            audioSource.PlayOneShot(snd_WaveStart);
-        }
+		
+		//if (audioSource != null)
+  //      {
+  //          audioSource.PlayOneShot(snd_WaveStart);
+  //      }
         StartCoroutine(SpawnWave());
     }
 

@@ -21,6 +21,10 @@ public class CombatController : MonoBehaviour
     bool isReloading = false;
     InputDevice device;
 
+	//Weapon Events. Not shown in inspector, used for animation system and UI
+	public delegate void WeaponEvent(int weaponID);
+	public event WeaponEvent OnWeaponSwitch;
+
     // Use this for initialization
     void Start()
     {
@@ -69,6 +73,8 @@ public class CombatController : MonoBehaviour
             coroutinerun = false;
             //turn off mesh add new mesh
         }
+
+		if (OnWeaponSwitch != null) { OnWeaponSwitch(weaponID); } //Broadcast Event
     }
 
     // Update is called once per frame
