@@ -18,6 +18,10 @@ public class UIController : MonoBehaviour {
         {
             player = GameObject.FindGameObjectWithTag("Player");
             playerHealth = player.GetComponent<PlayerHealth>();
+            if (playerHealth != null)
+            {
+                playerHealth.OnDeath += GameOverActive;
+            }
             gameOverPanel.SetActive(false);
         }
         else
@@ -25,23 +29,15 @@ public class UIController : MonoBehaviour {
             //Do Nothing
         }
 	}
-	
-	// Update is called once per frame
-	void Update ()
+
+    void OnDestroy()
     {
-        if (GameObject.FindGameObjectWithTag("Player"))
-        {
-            if (playerHealth.isDead)
-            {
-                //print("Player Dead - Game Over");
-                gameOverPanel.SetActive(true);
-            }
-        }
-        else
-        {
-            //kill yourself
-            //Do Nothing
-        }
+        playerHealth.OnDeath -= GameOverActive;
+    }
+
+	void GameOverActive ()
+    {
+        gameOverPanel.SetActive(true);
 	}
 
     public void QuitGame()
