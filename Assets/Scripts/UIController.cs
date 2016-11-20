@@ -32,7 +32,11 @@ public class UIController : MonoBehaviour {
 
     void OnDestroy()
     {
-        playerHealth.OnDeath -= GameOverActive;
+        if (playerHealth != null)
+        {
+            playerHealth.OnDeath -= GameOverActive;
+        }
+        
     }
 
 	void GameOverActive ()
