@@ -7,3 +7,5 @@ Death Cycle - Key 40 - 110
 Hand Gun Pose/animation - Key 112 - 132
 
 Rifle Gun Pose/animation - Key 135 - 160
+
+Leg idel state - Key 160 - 200

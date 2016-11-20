@@ -44,7 +44,7 @@ public class PlayerHUD : MonoBehaviour
 			UpdateEnemyCounter();
 			WaveController.instance.OnEnemyDeath += UpdateEnemyCounter;
 			WaveController.instance.OnWaveStart += UpdateEnemyCounter;
-			WaveController.instance.OnWaveEnd += ShowWaveDisplay;
+			WaveController.instance.OnWaveStart += ShowWaveDisplay;
 		}
 
 		if (playerHealth != null)

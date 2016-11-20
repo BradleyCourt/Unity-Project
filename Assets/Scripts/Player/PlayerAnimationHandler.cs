@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class AnimationHandler : MonoBehaviour
+public class PlayerAnimationHandler : MonoBehaviour
 {
     public Animator animCont;
     public PlayerHealth playerHP;
