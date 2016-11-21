@@ -23,12 +23,13 @@ GameObject:
   - 23: {fileID: 23000010166369528}
   - 95: {fileID: 95000014212872764}
   - 136: {fileID: 136000011096039684}
+  - 208: {fileID: 208000013384205616}
   m_Layer: 0
   m_Name: Stool_mesh_lowpoly
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &4000011643101688
 Transform:
@@ -105,7 +106,22 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.7981636
-  m_Height: 2.9026303
+  m_Radius: 1
+  m_Height: 5
   m_Direction: 1
-  m_Center: {x: -0.011076629, y: -0.004780233, z: 0}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!208 &208000013384205616
+NavMeshObstacle:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010335546278}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 0
+  m_Extents: {x: 1, y: 2.5, z: 1}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
