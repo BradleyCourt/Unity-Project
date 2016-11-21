@@ -48,7 +48,6 @@ public class WaveController : MonoBehaviour
 
 	//Functionality
     public static WaveController instance;
-    AudioSource audioSource;
 
     #region Properties
     public int RemainingEnemies
@@ -86,11 +85,6 @@ public class WaveController : MonoBehaviour
 
     void Start ()
     {
-        audioSource = gameObject.GetComponent<AudioSource>();
-        if (audioSource == null)
-        {
-            Debug.LogWarning("No AudioSource Found!", gameObject);
-        }
 
         if (enemyStorage == null)
         {
@@ -130,11 +124,7 @@ public class WaveController : MonoBehaviour
         print(wavePausePeriod + " seconds until new wave");
         yield return new WaitForSeconds(wavePausePeriod);
         print("Starting next wave");
-		
-		//if (audioSource != null)
-  //      {
-  //          audioSource.PlayOneShot(snd_WaveStart);
-  //      }
+
         StartCoroutine(SpawnWave());
     }
 
