@@ -32,7 +32,11 @@ public class UIController : MonoBehaviour {
 
     void OnDestroy()
     {
-        playerHealth.OnDeath -= GameOverActive;
+        if (playerHealth != null)
+        {
+            playerHealth.OnDeath -= GameOverActive;
+        }
+        
     }
 
 	void GameOverActive ()
@@ -43,14 +47,6 @@ public class UIController : MonoBehaviour {
     public void QuitGame()
     {
         Application.Quit();
-    }
-
-    void EnterMainMenu()
-    {
-        //if (Input.GetKeyDown("Escape"))
-        //{
-        //    pauseMenu.SetActive(true);
-        //}
     }
 
     public void LoadLevel()
