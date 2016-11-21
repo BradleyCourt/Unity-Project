@@ -16,6 +16,9 @@ public class EnemyAttack : MonoBehaviour {
     [Tooltip("Amount of health to take away")]
     public int attackDamage;
 
+	public delegate void AttackEvent();
+	public event AttackEvent OnAttack; 
+
     void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player");
@@ -42,6 +45,7 @@ public class EnemyAttack : MonoBehaviour {
         float distance = Vector3.Distance(target.transform.position, transform.position);
         if (distance < attackRange)
         {
+			OnAttack();
             GameObject.FindGameObjectWithTag("Player").GetComponent<Health>().AffectHealth(-attackDamage);
         }
     }
