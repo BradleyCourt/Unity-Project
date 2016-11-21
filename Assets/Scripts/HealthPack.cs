@@ -1,14 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class HealthPack : MonoBehaviour {
+public class HealthPack : MonoBehaviour
+{
     public int healthToGive;
-
-	// Use this for initialization
-	void Start ()
-    {
-	
-	}
+	public delegate void PickupEvent();
+	public static event PickupEvent PickedUp;
 
     void OnTriggerEnter(Collider other)
     {
@@ -16,6 +13,7 @@ public class HealthPack : MonoBehaviour {
         if (other.gameObject.tag == "Player" && ph.health != ph.maxHealth)
         {
             other.GetComponent<Health>().AffectHealth(healthToGive);
+			PickedUp();
             gameObject.SetActive(false);
         }
     }
