@@ -28,7 +28,7 @@ public class CombatController : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-
+        Time.timeScale = 1;
     }
 
     public void WeaponSwitch()
