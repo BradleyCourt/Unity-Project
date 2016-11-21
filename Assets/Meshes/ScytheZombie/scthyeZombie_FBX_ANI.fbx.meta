@@ -1,0 +1,584 @@
+fileFormatVersion: 2
+guid: 8541c44f944c4d84ba9a3a9b0be9e64a
+timeCreated: 1479699996
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: armBlade_L_JNT_END
+    100002: armBlade_R_JNT_END
+    100004: armBone_L_JNT
+    100006: armBone_R_JNT
+    100008: armClavicle_L_JNT1
+    100010: armClavicle_R_JNT
+    100012: armElbow_L_JNT
+    100014: armElbow_R_JNT
+    100016: armScythe_L_JNT
+    100018: armScythe_R_JNT
+    100020: armShoulder_L_JNT
+    100022: armShoulder_R_JNT
+    100024: armWrist_L_JNT
+    100026: armWrist_R_JNTT
+    100028: Clothess
+    100030: footMid_L_JNT
+    100032: footMid_R_JNT
+    100034: hand_L_JNT
+    100036: hand_R_JNT
+    100038: head_JNT_END
+    100040: jaw_JNT
+    100042: legAnkle_L_JNT
+    100044: legAnkle_R_JNT
+    100046: legHip_L_JNT
+    100048: legHip_R_JNT
+    100050: legKnee_L_JNT
+    100052: legKnee_R_JNT
+    100054: legToe_L_JNT_END
+    100056: legToe_R_JNT_END
+    100058: pants_MDL
+    100060: //RootNode
+    100062: scytheZombie_MDL
+    100064: scytheZombie_RIG
+    100066: shoes
+    100068: spineLower_JNT
+    100070: spineNeck_JNT
+    100072: spineRoot_JNT
+    100074: spineShoulder_JNT
+    100076: spineUpper
+    400000: armBlade_L_JNT_END
+    400002: armBlade_R_JNT_END
+    400004: armBone_L_JNT
+    400006: armBone_R_JNT
+    400008: armClavicle_L_JNT1
+    400010: armClavicle_R_JNT
+    400012: armElbow_L_JNT
+    400014: armElbow_R_JNT
+    400016: armScythe_L_JNT
+    400018: armScythe_R_JNT
+    400020: armShoulder_L_JNT
+    400022: armShoulder_R_JNT
+    400024: armWrist_L_JNT
+    400026: armWrist_R_JNTT
+    400028: Clothess
+    400030: footMid_L_JNT
+    400032: footMid_R_JNT
+    400034: hand_L_JNT
+    400036: hand_R_JNT
+    400038: head_JNT_END
+    400040: jaw_JNT
+    400042: legAnkle_L_JNT
+    400044: legAnkle_R_JNT
+    400046: legHip_L_JNT
+    400048: legHip_R_JNT
+    400050: legKnee_L_JNT
+    400052: legKnee_R_JNT
+    400054: legToe_L_JNT_END
+    400056: legToe_R_JNT_END
+    400058: pants_MDL
+    400060: //RootNode
+    400062: scytheZombie_MDL
+    400064: scytheZombie_RIG
+    400066: shoes
+    400068: spineLower_JNT
+    400070: spineNeck_JNT
+    400072: spineRoot_JNT
+    400074: spineShoulder_JNT
+    400076: spineUpper
+    4300000: scytheZombie_MDL
+    4300002: pants_MDL
+    4300004: shoes
+    7400000: Idle
+    7400002: WalkForward
+    7400004: Attack
+    7400006: Death
+    9500000: //RootNode
+    13700000: pants_MDL
+    13700002: scytheZombie_MDL
+    13700004: shoes
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Idle
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 24
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Clothess
+        weight: 1
+      - path: Clothess/pants_MDL
+        weight: 1
+      - path: scytheZombie_MDL
+        weight: 1
+      - path: scytheZombie_RIG
+        weight: 1
+      - path: scytheZombie_RIG/spineRoot_JNT
+        weight: 1
+      - path: scytheZombie_RIG/spineRoot_JNT/legHip_L_JNT
+        weight: 1
+      - path: scytheZombie_RIG/spineRoot_JNT/legHip_L_JNT/legKnee_L_JNT
+        weight: 1
+      - path: scytheZombie_RIG/spineRoot_JNT/legHip_L_JNT/legKnee_L_JNT/legAnkle_L_JNT
+        weight: 1
+      - path: scytheZombie_RIG/spineRoot_JNT/legHip_L_JNT/legKnee_L_JNT/legAnkle_L_JNT/footMid_L_JNT
+        weight: 1
+      - path: scytheZombie_RIG/spineRoot_JNT/legHip_L_JNT/legKnee_L_JNT/legAnkle_L_JNT/footMid_L_JNT/legToe_L_JNT_END
+        weight: 1
+      - path: scytheZombie_RIG/spineRoot_JNT/legHip_R_JNT
+        weight: 1
+      - path: scytheZombie_RIG/spineRoot_JNT/legHip_R_JNT/legKnee_R_JNT
+        weight: 1
+      - path: scytheZombie_RIG/spineRoot_JNT/legHip_R_JNT/legKnee_R_JNT/legAnkle_R_JNT
+        weight: 1
+      - path: scytheZombie_RIG/spineRoot_JNT/legHip_R_JNT/legKnee_R_JNT/legAnkle_R_JNT/footMid_R_JNT
+        weight: 1
+      - path: scytheZombie_RIG/spineRoot_JNT/legHip_R_JNT/legKnee_R_JNT/legAnkle_R_JNT/footMid_R_JNT/legToe_R_JNT_END
+        weight: 1
+      - path: scytheZombie_RIG/spineRoot_JNT/spineLower_JNT
+        weight: 1
+      - path: scytheZombie_RIG/spineRoot_JNT/spineLower_JNT/spineUpper
+        weight: 1
+      - path: scytheZombie_RIG/spineRoot_JNT/spineLower_JNT/spineUpper/spineShoulder_JNT
+        weight: 1
+      - path: scytheZombie_RIG/spineRoot_JNT/spineLower_JNT/spineUpper/spineShoulder_JNT/armClavicle_L_JNT1
+        weight: 1
+      - path: scytheZombie_RIG/spineRoot_JNT/spineLower_JNT/spineUpper/spineShoulder_JNT/armClavicle_L_JNT1/armShoulder_L_JNT
+        weight: 1
+      - path: scytheZombie_RIG/spineRoot_JNT/spineLower_JNT/spineUpper/spineShoulder_JNT/armClavicle_L_JNT1/armShoulder_L_JNT/armElbow_L_JNT
+        weight: 1
+      - path: scytheZombie_RIG/spineRoot_JNT/spineLower_JNT/spineUpper/spineShoulder_JNT/armClavicle_L_JNT1/armShoulder_L_JNT/armElbow_L_JNT/armWrist_L_JNT
+        weight: 1
+      - path: scytheZombie_RIG/spineRoot_JNT/spineLower_JNT/spineUpper/spineShoulder_JNT/armClavicle_L_JNT1/armShoulder_L_JNT/armElbow_L_JNT/armWrist_L_JNT/armBone_L_JNT
+        weight: 1
+      - path: scytheZombie_RIG/spineRoot_JNT/spineLower_JNT/spineUpper/spineShoulder_JNT/armClavicle_L_JNT1/armShoulder_L_JNT/armElbow_L_JNT/armWrist_L_JNT/armBone_L_JNT/armScythe_L_JNT
+        weight: 1
+      - path: scytheZombie_RIG/spineRoot_JNT/spineLower_JNT/spineUpper/spineShoulder_JNT/armClavicle_L_JNT1/armShoulder_L_JNT/armElbow_L_JNT/armWrist_L_JNT/armBone_L_JNT/armScythe_L_JNT/armBlade_L_JNT_END
+        weight: 1
+      - path: scytheZombie_RIG/spineRoot_JNT/spineLower_JNT/spineUpper/spineShoulder_JNT/armClavicle_L_JNT1/armShoulder_L_JNT/armElbow_L_JNT/armWrist_L_JNT/hand_L_JNT
+        weight: 1
+      - path: scytheZombie_RIG/spineRoot_JNT/spineLower_JNT/spineUpper/spineShoulder_JNT/armClavicle_R_JNT
+        weight: 1
+      - path: scytheZombie_RIG/spineRoot_JNT/spineLower_JNT/spineUpper/spineShoulder_JNT/armClavicle_R_JNT/armShoulder_R_JNT
+        weight: 1
+      - path: scytheZombie_RIG/spineRoot_JNT/spineLower_JNT/spineUpper/spineShoulder_JNT/armClavicle_R_JNT/armShoulder_R_JNT/armElbow_R_JNT
+        weight: 1
+      - path: scytheZombie_RIG/spineRoot_JNT/spineLower_JNT/spineUpper/spineShoulder_JNT/armClavicle_R_JNT/armShoulder_R_JNT/armElbow_R_JNT/armWrist_R_JNTT
+        weight: 1
+      - path: scytheZombie_RIG/spineRoot_JNT/spineLower_JNT/spineUpper/spineShoulder_JNT/armClavicle_R_JNT/armShoulder_R_JNT/armElbow_R_JNT/armWrist_R_JNTT/armBone_R_JNT
+        weight: 1
+      - path: scytheZombie_RIG/spineRoot_JNT/spineLower_JNT/spineUpper/spineShoulder_JNT/armClavicle_R_JNT/armShoulder_R_JNT/armElbow_R_JNT/armWrist_R_JNTT/armBone_R_JNT/armScythe_R_JNT
+        weight: 1
+      - path: scytheZombie_RIG/spineRoot_JNT/spineLower_JNT/spineUpper/spineShoulder_JNT/armClavicle_R_JNT/armShoulder_R_JNT/armElbow_R_JNT/armWrist_R_JNTT/armBone_R_JNT/armScythe_R_JNT/armBlade_R_JNT_END
+        weight: 1
+      - path: scytheZombie_RIG/spineRoot_JNT/spineLower_JNT/spineUpper/spineShoulder_JNT/armClavicle_R_JNT/armShoulder_R_JNT/armElbow_R_JNT/armWrist_R_JNTT/hand_R_JNT
+        weight: 1
+      - path: scytheZombie_RIG/spineRoot_JNT/spineLower_JNT/spineUpper/spineShoulder_JNT/spineNeck_JNT
+        weight: 1
+      - path: scytheZombie_RIG/spineRoot_JNT/spineLower_JNT/spineUpper/spineShoulder_JNT/spineNeck_JNT/head_JNT_END
+        weight: 1
+      - path: scytheZombie_RIG/spineRoot_JNT/spineLower_JNT/spineUpper/spineShoulder_JNT/spineNeck_JNT/jaw_JNT
+        weight: 1
+      - path: shoes
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 1
+    - serializedVersion: 16
+      name: WalkForward
+      takeName: Take 001
+      firstFrame: 26
+      lastFrame: 73
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Clothess
+        weight: 1
+      - path: Clothess/pants_MDL
+        weight: 1
+      - path: scytheZombie_MDL
+        weight: 1
+      - path: scytheZombie_RIG
+        weight: 1
+      - path: scytheZombie_RIG/spineRoot_JNT
+        weight: 1
+      - path: scytheZombie_RIG/spineRoot_JNT/legHip_L_JNT
+        weight: 1
+      - path: scytheZombie_RIG/spineRoot_JNT/legHip_L_JNT/legKnee_L_JNT
+        weight: 1
+      - path: scytheZombie_RIG/spineRoot_JNT/legHip_L_JNT/legKnee_L_JNT/legAnkle_L_JNT
+        weight: 1
+      - path: scytheZombie_RIG/spineRoot_JNT/legHip_L_JNT/legKnee_L_JNT/legAnkle_L_JNT/footMid_L_JNT
+        weight: 1
+      - path: scytheZombie_RIG/spineRoot_JNT/legHip_L_JNT/legKnee_L_JNT/legAnkle_L_JNT/footMid_L_JNT/legToe_L_JNT_END
+        weight: 1
+      - path: scytheZombie_RIG/spineRoot_JNT/legHip_R_JNT
+        weight: 1
+      - path: scytheZombie_RIG/spineRoot_JNT/legHip_R_JNT/legKnee_R_JNT
+        weight: 1
+      - path: scytheZombie_RIG/spineRoot_JNT/legHip_R_JNT/legKnee_R_JNT/legAnkle_R_JNT
+        weight: 1
+      - path: scytheZombie_RIG/spineRoot_JNT/legHip_R_JNT/legKnee_R_JNT/legAnkle_R_JNT/footMid_R_JNT
+        weight: 1
+      - path: scytheZombie_RIG/spineRoot_JNT/legHip_R_JNT/legKnee_R_JNT/legAnkle_R_JNT/footMid_R_JNT/legToe_R_JNT_END
+        weight: 1
+      - path: scytheZombie_RIG/spineRoot_JNT/spineLower_JNT
+        weight: 1
+      - path: scytheZombie_RIG/spineRoot_JNT/spineLower_JNT/spineUpper
+        weight: 1
+      - path: scytheZombie_RIG/spineRoot_JNT/spineLower_JNT/spineUpper/spineShoulder_JNT
+        weight: 1
+      - path: scytheZombie_RIG/spineRoot_JNT/spineLower_JNT/spineUpper/spineShoulder_JNT/armClavicle_L_JNT1
+        weight: 1
+      - path: scytheZombie_RIG/spineRoot_JNT/spineLower_JNT/spineUpper/spineShoulder_JNT/armClavicle_L_JNT1/armShoulder_L_JNT
+        weight: 1
+      - path: scytheZombie_RIG/spineRoot_JNT/spineLower_JNT/spineUpper/spineShoulder_JNT/armClavicle_L_JNT1/armShoulder_L_JNT/armElbow_L_JNT
+        weight: 1
+      - path: scytheZombie_RIG/spineRoot_JNT/spineLower_JNT/spineUpper/spineShoulder_JNT/armClavicle_L_JNT1/armShoulder_L_JNT/armElbow_L_JNT/armWrist_L_JNT
+        weight: 1
+      - path: scytheZombie_RIG/spineRoot_JNT/spineLower_JNT/spineUpper/spineShoulder_JNT/armClavicle_L_JNT1/armShoulder_L_JNT/armElbow_L_JNT/armWrist_L_JNT/armBone_L_JNT
+        weight: 1
+      - path: scytheZombie_RIG/spineRoot_JNT/spineLower_JNT/spineUpper/spineShoulder_JNT/armClavicle_L_JNT1/armShoulder_L_JNT/armElbow_L_JNT/armWrist_L_JNT/armBone_L_JNT/armScythe_L_JNT
+        weight: 1
+      - path: scytheZombie_RIG/spineRoot_JNT/spineLower_JNT/spineUpper/spineShoulder_JNT/armClavicle_L_JNT1/armShoulder_L_JNT/armElbow_L_JNT/armWrist_L_JNT/armBone_L_JNT/armScythe_L_JNT/armBlade_L_JNT_END
+        weight: 1
+      - path: scytheZombie_RIG/spineRoot_JNT/spineLower_JNT/spineUpper/spineShoulder_JNT/armClavicle_L_JNT1/armShoulder_L_JNT/armElbow_L_JNT/armWrist_L_JNT/hand_L_JNT
+        weight: 1
+      - path: scytheZombie_RIG/spineRoot_JNT/spineLower_JNT/spineUpper/spineShoulder_JNT/armClavicle_R_JNT
+        weight: 1
+      - path: scytheZombie_RIG/spineRoot_JNT/spineLower_JNT/spineUpper/spineShoulder_JNT/armClavicle_R_JNT/armShoulder_R_JNT
+        weight: 1
+      - path: scytheZombie_RIG/spineRoot_JNT/spineLower_JNT/spineUpper/spineShoulder_JNT/armClavicle_R_JNT/armShoulder_R_JNT/armElbow_R_JNT
+        weight: 1
+      - path: scytheZombie_RIG/spineRoot_JNT/spineLower_JNT/spineUpper/spineShoulder_JNT/armClavicle_R_JNT/armShoulder_R_JNT/armElbow_R_JNT/armWrist_R_JNTT
+        weight: 1
+      - path: scytheZombie_RIG/spineRoot_JNT/spineLower_JNT/spineUpper/spineShoulder_JNT/armClavicle_R_JNT/armShoulder_R_JNT/armElbow_R_JNT/armWrist_R_JNTT/armBone_R_JNT
+        weight: 1
+      - path: scytheZombie_RIG/spineRoot_JNT/spineLower_JNT/spineUpper/spineShoulder_JNT/armClavicle_R_JNT/armShoulder_R_JNT/armElbow_R_JNT/armWrist_R_JNTT/armBone_R_JNT/armScythe_R_JNT
+        weight: 1
+      - path: scytheZombie_RIG/spineRoot_JNT/spineLower_JNT/spineUpper/spineShoulder_JNT/armClavicle_R_JNT/armShoulder_R_JNT/armElbow_R_JNT/armWrist_R_JNTT/armBone_R_JNT/armScythe_R_JNT/armBlade_R_JNT_END
+        weight: 1
+      - path: scytheZombie_RIG/spineRoot_JNT/spineLower_JNT/spineUpper/spineShoulder_JNT/armClavicle_R_JNT/armShoulder_R_JNT/armElbow_R_JNT/armWrist_R_JNTT/hand_R_JNT
+        weight: 1
+      - path: scytheZombie_RIG/spineRoot_JNT/spineLower_JNT/spineUpper/spineShoulder_JNT/spineNeck_JNT
+        weight: 1
+      - path: scytheZombie_RIG/spineRoot_JNT/spineLower_JNT/spineUpper/spineShoulder_JNT/spineNeck_JNT/head_JNT_END
+        weight: 1
+      - path: scytheZombie_RIG/spineRoot_JNT/spineLower_JNT/spineUpper/spineShoulder_JNT/spineNeck_JNT/jaw_JNT
+        weight: 1
+      - path: shoes
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 1
+    - serializedVersion: 16
+      name: Attack
+      takeName: Take 001
+      firstFrame: 73
+      lastFrame: 95
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Clothess
+        weight: 1
+      - path: Clothess/pants_MDL
+        weight: 1
+      - path: scytheZombie_MDL
+        weight: 1
+      - path: scytheZombie_RIG
+        weight: 1
+      - path: scytheZombie_RIG/spineRoot_JNT
+        weight: 1
+      - path: scytheZombie_RIG/spineRoot_JNT/legHip_L_JNT
+        weight: 1
+      - path: scytheZombie_RIG/spineRoot_JNT/legHip_L_JNT/legKnee_L_JNT
+        weight: 1
+      - path: scytheZombie_RIG/spineRoot_JNT/legHip_L_JNT/legKnee_L_JNT/legAnkle_L_JNT
+        weight: 1
+      - path: scytheZombie_RIG/spineRoot_JNT/legHip_L_JNT/legKnee_L_JNT/legAnkle_L_JNT/footMid_L_JNT
+        weight: 1
+      - path: scytheZombie_RIG/spineRoot_JNT/legHip_L_JNT/legKnee_L_JNT/legAnkle_L_JNT/footMid_L_JNT/legToe_L_JNT_END
+        weight: 1
+      - path: scytheZombie_RIG/spineRoot_JNT/legHip_R_JNT
+        weight: 1
+      - path: scytheZombie_RIG/spineRoot_JNT/legHip_R_JNT/legKnee_R_JNT
+        weight: 1
+      - path: scytheZombie_RIG/spineRoot_JNT/legHip_R_JNT/legKnee_R_JNT/legAnkle_R_JNT
+        weight: 1
+      - path: scytheZombie_RIG/spineRoot_JNT/legHip_R_JNT/legKnee_R_JNT/legAnkle_R_JNT/footMid_R_JNT
+        weight: 1
+      - path: scytheZombie_RIG/spineRoot_JNT/legHip_R_JNT/legKnee_R_JNT/legAnkle_R_JNT/footMid_R_JNT/legToe_R_JNT_END
+        weight: 1
+      - path: scytheZombie_RIG/spineRoot_JNT/spineLower_JNT
+        weight: 1
+      - path: scytheZombie_RIG/spineRoot_JNT/spineLower_JNT/spineUpper
+        weight: 1
+      - path: scytheZombie_RIG/spineRoot_JNT/spineLower_JNT/spineUpper/spineShoulder_JNT
+        weight: 1
+      - path: scytheZombie_RIG/spineRoot_JNT/spineLower_JNT/spineUpper/spineShoulder_JNT/armClavicle_L_JNT1
+        weight: 1
+      - path: scytheZombie_RIG/spineRoot_JNT/spineLower_JNT/spineUpper/spineShoulder_JNT/armClavicle_L_JNT1/armShoulder_L_JNT
+        weight: 1
+      - path: scytheZombie_RIG/spineRoot_JNT/spineLower_JNT/spineUpper/spineShoulder_JNT/armClavicle_L_JNT1/armShoulder_L_JNT/armElbow_L_JNT
+        weight: 1
+      - path: scytheZombie_RIG/spineRoot_JNT/spineLower_JNT/spineUpper/spineShoulder_JNT/armClavicle_L_JNT1/armShoulder_L_JNT/armElbow_L_JNT/armWrist_L_JNT
+        weight: 1
+      - path: scytheZombie_RIG/spineRoot_JNT/spineLower_JNT/spineUpper/spineShoulder_JNT/armClavicle_L_JNT1/armShoulder_L_JNT/armElbow_L_JNT/armWrist_L_JNT/armBone_L_JNT
+        weight: 1
+      - path: scytheZombie_RIG/spineRoot_JNT/spineLower_JNT/spineUpper/spineShoulder_JNT/armClavicle_L_JNT1/armShoulder_L_JNT/armElbow_L_JNT/armWrist_L_JNT/armBone_L_JNT/armScythe_L_JNT
+        weight: 1
+      - path: scytheZombie_RIG/spineRoot_JNT/spineLower_JNT/spineUpper/spineShoulder_JNT/armClavicle_L_JNT1/armShoulder_L_JNT/armElbow_L_JNT/armWrist_L_JNT/armBone_L_JNT/armScythe_L_JNT/armBlade_L_JNT_END
+        weight: 1
+      - path: scytheZombie_RIG/spineRoot_JNT/spineLower_JNT/spineUpper/spineShoulder_JNT/armClavicle_L_JNT1/armShoulder_L_JNT/armElbow_L_JNT/armWrist_L_JNT/hand_L_JNT
+        weight: 1
+      - path: scytheZombie_RIG/spineRoot_JNT/spineLower_JNT/spineUpper/spineShoulder_JNT/armClavicle_R_JNT
+        weight: 1
+      - path: scytheZombie_RIG/spineRoot_JNT/spineLower_JNT/spineUpper/spineShoulder_JNT/armClavicle_R_JNT/armShoulder_R_JNT
+        weight: 1
+      - path: scytheZombie_RIG/spineRoot_JNT/spineLower_JNT/spineUpper/spineShoulder_JNT/armClavicle_R_JNT/armShoulder_R_JNT/armElbow_R_JNT
+        weight: 1
+      - path: scytheZombie_RIG/spineRoot_JNT/spineLower_JNT/spineUpper/spineShoulder_JNT/armClavicle_R_JNT/armShoulder_R_JNT/armElbow_R_JNT/armWrist_R_JNTT
+        weight: 1
+      - path: scytheZombie_RIG/spineRoot_JNT/spineLower_JNT/spineUpper/spineShoulder_JNT/armClavicle_R_JNT/armShoulder_R_JNT/armElbow_R_JNT/armWrist_R_JNTT/armBone_R_JNT
+        weight: 1
+      - path: scytheZombie_RIG/spineRoot_JNT/spineLower_JNT/spineUpper/spineShoulder_JNT/armClavicle_R_JNT/armShoulder_R_JNT/armElbow_R_JNT/armWrist_R_JNTT/armBone_R_JNT/armScythe_R_JNT
+        weight: 1
+      - path: scytheZombie_RIG/spineRoot_JNT/spineLower_JNT/spineUpper/spineShoulder_JNT/armClavicle_R_JNT/armShoulder_R_JNT/armElbow_R_JNT/armWrist_R_JNTT/armBone_R_JNT/armScythe_R_JNT/armBlade_R_JNT_END
+        weight: 1
+      - path: scytheZombie_RIG/spineRoot_JNT/spineLower_JNT/spineUpper/spineShoulder_JNT/armClavicle_R_JNT/armShoulder_R_JNT/armElbow_R_JNT/armWrist_R_JNTT/hand_R_JNT
+        weight: 1
+      - path: scytheZombie_RIG/spineRoot_JNT/spineLower_JNT/spineUpper/spineShoulder_JNT/spineNeck_JNT
+        weight: 1
+      - path: scytheZombie_RIG/spineRoot_JNT/spineLower_JNT/spineUpper/spineShoulder_JNT/spineNeck_JNT/head_JNT_END
+        weight: 1
+      - path: scytheZombie_RIG/spineRoot_JNT/spineLower_JNT/spineUpper/spineShoulder_JNT/spineNeck_JNT/jaw_JNT
+        weight: 1
+      - path: shoes
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 1
+    - serializedVersion: 16
+      name: Death
+      takeName: Take 001
+      firstFrame: 96
+      lastFrame: 194
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Clothess
+        weight: 1
+      - path: Clothess/pants_MDL
+        weight: 1
+      - path: scytheZombie_MDL
+        weight: 1
+      - path: scytheZombie_RIG
+        weight: 1
+      - path: scytheZombie_RIG/spineRoot_JNT
+        weight: 1
+      - path: scytheZombie_RIG/spineRoot_JNT/legHip_L_JNT
+        weight: 1
+      - path: scytheZombie_RIG/spineRoot_JNT/legHip_L_JNT/legKnee_L_JNT
+        weight: 1
+      - path: scytheZombie_RIG/spineRoot_JNT/legHip_L_JNT/legKnee_L_JNT/legAnkle_L_JNT
+        weight: 1
+      - path: scytheZombie_RIG/spineRoot_JNT/legHip_L_JNT/legKnee_L_JNT/legAnkle_L_JNT/footMid_L_JNT
+        weight: 1
+      - path: scytheZombie_RIG/spineRoot_JNT/legHip_L_JNT/legKnee_L_JNT/legAnkle_L_JNT/footMid_L_JNT/legToe_L_JNT_END
+        weight: 1
+      - path: scytheZombie_RIG/spineRoot_JNT/legHip_R_JNT
+        weight: 1
+      - path: scytheZombie_RIG/spineRoot_JNT/legHip_R_JNT/legKnee_R_JNT
+        weight: 1
+      - path: scytheZombie_RIG/spineRoot_JNT/legHip_R_JNT/legKnee_R_JNT/legAnkle_R_JNT
+        weight: 1
+      - path: scytheZombie_RIG/spineRoot_JNT/legHip_R_JNT/legKnee_R_JNT/legAnkle_R_JNT/footMid_R_JNT
+        weight: 1
+      - path: scytheZombie_RIG/spineRoot_JNT/legHip_R_JNT/legKnee_R_JNT/legAnkle_R_JNT/footMid_R_JNT/legToe_R_JNT_END
+        weight: 1
+      - path: scytheZombie_RIG/spineRoot_JNT/spineLower_JNT
+        weight: 1
+      - path: scytheZombie_RIG/spineRoot_JNT/spineLower_JNT/spineUpper
+        weight: 1
+      - path: scytheZombie_RIG/spineRoot_JNT/spineLower_JNT/spineUpper/spineShoulder_JNT
+        weight: 1
+      - path: scytheZombie_RIG/spineRoot_JNT/spineLower_JNT/spineUpper/spineShoulder_JNT/armClavicle_L_JNT1
+        weight: 1
+      - path: scytheZombie_RIG/spineRoot_JNT/spineLower_JNT/spineUpper/spineShoulder_JNT/armClavicle_L_JNT1/armShoulder_L_JNT
+        weight: 1
+      - path: scytheZombie_RIG/spineRoot_JNT/spineLower_JNT/spineUpper/spineShoulder_JNT/armClavicle_L_JNT1/armShoulder_L_JNT/armElbow_L_JNT
+        weight: 1
+      - path: scytheZombie_RIG/spineRoot_JNT/spineLower_JNT/spineUpper/spineShoulder_JNT/armClavicle_L_JNT1/armShoulder_L_JNT/armElbow_L_JNT/armWrist_L_JNT
+        weight: 1
+      - path: scytheZombie_RIG/spineRoot_JNT/spineLower_JNT/spineUpper/spineShoulder_JNT/armClavicle_L_JNT1/armShoulder_L_JNT/armElbow_L_JNT/armWrist_L_JNT/armBone_L_JNT
+        weight: 1
+      - path: scytheZombie_RIG/spineRoot_JNT/spineLower_JNT/spineUpper/spineShoulder_JNT/armClavicle_L_JNT1/armShoulder_L_JNT/armElbow_L_JNT/armWrist_L_JNT/armBone_L_JNT/armScythe_L_JNT
+        weight: 1
+      - path: scytheZombie_RIG/spineRoot_JNT/spineLower_JNT/spineUpper/spineShoulder_JNT/armClavicle_L_JNT1/armShoulder_L_JNT/armElbow_L_JNT/armWrist_L_JNT/armBone_L_JNT/armScythe_L_JNT/armBlade_L_JNT_END
+        weight: 1
+      - path: scytheZombie_RIG/spineRoot_JNT/spineLower_JNT/spineUpper/spineShoulder_JNT/armClavicle_L_JNT1/armShoulder_L_JNT/armElbow_L_JNT/armWrist_L_JNT/hand_L_JNT
+        weight: 1
+      - path: scytheZombie_RIG/spineRoot_JNT/spineLower_JNT/spineUpper/spineShoulder_JNT/armClavicle_R_JNT
+        weight: 1
+      - path: scytheZombie_RIG/spineRoot_JNT/spineLower_JNT/spineUpper/spineShoulder_JNT/armClavicle_R_JNT/armShoulder_R_JNT
+        weight: 1
+      - path: scytheZombie_RIG/spineRoot_JNT/spineLower_JNT/spineUpper/spineShoulder_JNT/armClavicle_R_JNT/armShoulder_R_JNT/armElbow_R_JNT
+        weight: 1
+      - path: scytheZombie_RIG/spineRoot_JNT/spineLower_JNT/spineUpper/spineShoulder_JNT/armClavicle_R_JNT/armShoulder_R_JNT/armElbow_R_JNT/armWrist_R_JNTT
+        weight: 1
+      - path: scytheZombie_RIG/spineRoot_JNT/spineLower_JNT/spineUpper/spineShoulder_JNT/armClavicle_R_JNT/armShoulder_R_JNT/armElbow_R_JNT/armWrist_R_JNTT/armBone_R_JNT
+        weight: 1
+      - path: scytheZombie_RIG/spineRoot_JNT/spineLower_JNT/spineUpper/spineShoulder_JNT/armClavicle_R_JNT/armShoulder_R_JNT/armElbow_R_JNT/armWrist_R_JNTT/armBone_R_JNT/armScythe_R_JNT
+        weight: 1
+      - path: scytheZombie_RIG/spineRoot_JNT/spineLower_JNT/spineUpper/spineShoulder_JNT/armClavicle_R_JNT/armShoulder_R_JNT/armElbow_R_JNT/armWrist_R_JNTT/armBone_R_JNT/armScythe_R_JNT/armBlade_R_JNT_END
+        weight: 1
+      - path: scytheZombie_RIG/spineRoot_JNT/spineLower_JNT/spineUpper/spineShoulder_JNT/armClavicle_R_JNT/armShoulder_R_JNT/armElbow_R_JNT/armWrist_R_JNTT/hand_R_JNT
+        weight: 1
+      - path: scytheZombie_RIG/spineRoot_JNT/spineLower_JNT/spineUpper/spineShoulder_JNT/spineNeck_JNT
+        weight: 1
+      - path: scytheZombie_RIG/spineRoot_JNT/spineLower_JNT/spineUpper/spineShoulder_JNT/spineNeck_JNT/head_JNT_END
+        weight: 1
+      - path: scytheZombie_RIG/spineRoot_JNT/spineLower_JNT/spineUpper/spineShoulder_JNT/spineNeck_JNT/jaw_JNT
+        weight: 1
+      - path: shoes
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 1
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
