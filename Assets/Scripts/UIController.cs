@@ -47,6 +47,10 @@ public class UIController : MonoBehaviour {
     public void QuitGame()
     {
         Application.Quit();
+#if UNITY_PS4
+        //Do Nothing
+#endif
+
     }
 
     public void LoadLevel()
