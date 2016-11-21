@@ -51,6 +51,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6bb64ca926069f4eb1f05cbc529f8de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Prefab: {fileID: 1000013640141726}
+  Prefab: {fileID: 1000013640141726, guid: a4ff8b4fb5aca544c9dad9f5adfe29d2, type: 2}
   respwanTimer: 30
   healthToGive: 30

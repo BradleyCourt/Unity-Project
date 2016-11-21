@@ -21,7 +21,7 @@ GameObject:
   - 4: {fileID: 4000013285617988}
   - 114: {fileID: 114000013154154210}
   m_Layer: 0
-  m_Name: AmmoBox
+  m_Name: AmmoBoxSpawner
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -51,6 +51,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc5299010e2cf664e9a12f823fe3f27a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Prefab: {fileID: 1000011225008712}
+  Prefab: {fileID: 1000011225008712, guid: 270178388e9232b469d97fd251a76192, type: 2}
   respwanTimer: 30
   ammoToGive: 30

@@ -25,7 +25,7 @@ GameObject:
   - 114: {fileID: 114000012652461684}
   - 114: {fileID: 114000010179073978}
   m_Layer: 0
-  m_Name: Ammo_box
+  m_Name: AmmoBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
