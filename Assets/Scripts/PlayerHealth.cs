@@ -16,7 +16,7 @@ public class PlayerHealth : Health
 	}
 
 	public override void Death()
-    {
+    {        
         combatController.enabled = false;
         topDownController.enabled = false;
         lookScript.enabled = false;

@@ -21,9 +21,9 @@ public class CombatController : MonoBehaviour
     bool isReloading = false;
     InputDevice device;
 
-	//Weapon Events. Not shown in inspector, used for animation system and UI
-	public delegate void WeaponEvent(int weaponID);
-	public event WeaponEvent OnWeaponSwitch;
+    //Weapon Events. Not shown in inspector, used for animation system and UI
+    public delegate void WeaponEvent(int weaponID);
+    public event WeaponEvent OnWeaponSwitch;
 
     // Use this for initialization
     void Start()
@@ -31,13 +31,18 @@ public class CombatController : MonoBehaviour
         Time.timeScale = 1;
     }
 
+    void OnDisable()
+    {
+        StopAllCoroutines();
+    }
+
     public void WeaponSwitch()
     {
-        
+
         // Keyboard Weapon Switching (Press 0-9)
         for (int i = 0; i < weapons.Count; i++)
         {
-            
+
             if (Input.GetKeyDown(KeyCode.Alpha1 + i))
             {
                 if (weaponID == i)
@@ -59,7 +64,7 @@ public class CombatController : MonoBehaviour
                     // turn off mesh add next mesh
                     break;
                 }
-             
+
             }
         }
         // Gamepad Weapon Switching
@@ -74,7 +79,7 @@ public class CombatController : MonoBehaviour
             //turn off mesh add new mesh
         }
 
-		if (OnWeaponSwitch != null) { OnWeaponSwitch(weaponID); } //Broadcast Event
+        if (OnWeaponSwitch != null) { OnWeaponSwitch(weaponID); } //Broadcast Event
     }
 
     // Update is called once per frame
@@ -94,9 +99,9 @@ public class CombatController : MonoBehaviour
                 {
                     if (selectedWeapon.currentAmmo <= 0)
                     {
-                        StartCoroutine(wepReload());
+                        StartCoroutine(WeaponReload());
                     }
-                    StartCoroutine(ShootWeapon());                    
+                    StartCoroutine(ShootWeapon());
                 }
             }
         }
@@ -104,13 +109,13 @@ public class CombatController : MonoBehaviour
         if (Input.GetMouseButtonUp(0) && isShooting == true)
         {
             Debug.Log("working");
-            StopCoroutine(ShootWeapon());
+            StopCoroutine("ShootWeapon");
             isShooting = false;
         }
         if (InputManager.ActiveDevice.GetControl(InputControlType.RightTrigger) && isShooting == true)
         {
             Debug.Log("working");
-            StopCoroutine(ShootWeapon());
+            StopCoroutine("ShootWeapon");
             isShooting = false;
         }
 
@@ -123,7 +128,7 @@ public class CombatController : MonoBehaviour
             }
             else if (isReloading == true && selectedWeapon.ammoCapacity != 0)
             {
-                t.text = selectedWeapon.name + " : " + selectedWeapon.currentAmmo.ToString() + "  /  " + selectedWeapon.ammoCapacity + "  Reloading...  ";           
+                t.text = selectedWeapon.name + " : " + selectedWeapon.currentAmmo.ToString() + "  /  " + selectedWeapon.ammoCapacity + "  Reloading...  ";
             }
             else if (isReloading == false)
             {
@@ -134,12 +139,11 @@ public class CombatController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R) || (InputManager.ActiveDevice.GetControl(InputControlType.Action3)))
         {
             Debug.Log("Reloading");
-
-            StartCoroutine(wepReload());
+            StartCoroutine(WeaponReload());
         }
 
     }
-        IEnumerator ShootWeapon()
+    IEnumerator ShootWeapon()
     {
         coroutinerun = true;
         while (isShooting && selectedWeapon.currentAmmo != 0)
@@ -190,7 +194,7 @@ public class CombatController : MonoBehaviour
         }
         coroutinerun = false;
     }
-    IEnumerator wepReload()
+    IEnumerator WeaponReload()
     {
         if (selectedWeapon.ammoCapacity > 600)
         {
@@ -200,7 +204,7 @@ public class CombatController : MonoBehaviour
         {
             // full on ammo, dont reload
         }
-      
+
         else
         {
             isReloading = true;
@@ -223,7 +227,7 @@ public class CombatController : MonoBehaviour
                 selectedWeapon.currentAmmo += selectedWeapon.ammoCapacity;
                 selectedWeapon.ammoCapacity = 0;
             }
-            
+
 
 
             isReloading = false;
