@@ -89,9 +89,7 @@ public class CombatController : MonoBehaviour
 
         WeaponSwitch();
         if ((Input.GetMouseButton(0)) || (InputManager.ActiveDevice.GetControl(InputControlType.RightTrigger)))
-        {
-
-            Debug.Log(isReloading);
+        { 
             if (isShooting == false && !isReloading)
             {
                 isShooting = true;
@@ -138,7 +136,6 @@ public class CombatController : MonoBehaviour
 
         if ((Input.GetKeyDown(KeyCode.R) || (InputManager.ActiveDevice.GetControl(InputControlType.Action3))) && !isReloading)
         {
-            Debug.Log("Reloading");
             StartCoroutine(WeaponReload());
         }
 

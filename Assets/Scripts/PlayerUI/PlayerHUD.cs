@@ -133,14 +133,12 @@ public class PlayerHUD : MonoBehaviour
 
 	public void ShowWaveDisplay()
 	{
-		print("terry");
 		StartCoroutine(TimedWaveAnnoucement());
 	}
 
 	public IEnumerator TimedWaveAnnoucement()
 	{
 		waveDisplay.SetActive(true);
-		print("bob");
 		yield return new WaitForSeconds(waveDisplayTime);
 		waveDisplay.SetActive(false);
 	}
