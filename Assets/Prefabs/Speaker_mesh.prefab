@@ -9,47 +9,47 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1000011415919202}
+  m_RootGameObject: {fileID: 1000012556908536}
   m_IsPrefabParent: 1
---- !u!1 &1000011415919202
+--- !u!1 &1000012556908536
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 4000012206217740}
-  - 33: {fileID: 33000011001245278}
-  - 23: {fileID: 23000012067120674}
-  - 95: {fileID: 95000011377545228}
-  - 208: {fileID: 208000013913345294}
-  - 65: {fileID: 65000010990598300}
+  - 4: {fileID: 4000010554353514}
+  - 33: {fileID: 33000010279666398}
+  - 23: {fileID: 23000013340898400}
+  - 95: {fileID: 95000010877592652}
+  - 65: {fileID: 65000011870931672}
+  - 208: {fileID: 208000013341763710}
   m_Layer: 0
-  m_Name: Chair_asset_Blue
+  m_Name: Speaker_mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
   m_IsActive: 1
---- !u!4 &4000012206217740
+--- !u!4 &4000010554353514
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000011415919202}
-  m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -13.57, y: 1.1036253, z: 30.083122}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+  m_GameObject: {fileID: 1000012556908536}
+  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalPosition: {x: -43.989994, y: 3.5699997, z: 7.3999987}
+  m_LocalScale: {x: 309.50775, y: 453.57272, z: 309.50778}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!23 &23000012067120674
+--- !u!23 &23000013340898400
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000011415919202}
+  m_GameObject: {fileID: 1000012556908536}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -57,7 +57,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: c44f19b48c918564d90918f51f2ca487, type: 2}
+  - {fileID: 2100000, guid: c5ccfbf7002d1f44fbeccb66d03d3467, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
@@ -73,34 +73,34 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
---- !u!33 &33000011001245278
+--- !u!33 &33000010279666398
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000011415919202}
-  m_Mesh: {fileID: 4300000, guid: d107ff8b8e6cae64799a59cec7fa7f13, type: 3}
---- !u!65 &65000010990598300
+  m_GameObject: {fileID: 1000012556908536}
+  m_Mesh: {fileID: 4300000, guid: 3151eb46ce840ba4fb30e312b509604e, type: 3}
+--- !u!65 &65000011870931672
 BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000011415919202}
+  m_GameObject: {fileID: 1000012556908536}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.4252849, y: 3.6206026, z: 2.2206583}
-  m_Center: {x: -0.057025015, y: 0.15998858, z: -0.000000059604645}
---- !u!95 &95000011377545228
+  m_Size: {x: 0.01, y: 0.01, z: 0.010000001}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!95 &95000010877592652
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000011415919202}
+  m_GameObject: {fileID: 1000012556908536}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: d107ff8b8e6cae64799a59cec7fa7f13, type: 3}
+  m_Avatar: {fileID: 9000000, guid: 3151eb46ce840ba4fb30e312b509604e, type: 3}
   m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
@@ -109,18 +109,18 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!208 &208000013913345294
+--- !u!208 &208000013341763710
 NavMeshObstacle:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000011415919202}
+  m_GameObject: {fileID: 1000012556908536}
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
-  m_Extents: {x: 1.213, y: 1.8100001, z: 1.11}
+  m_Extents: {x: 0.0050000004, y: 0.0050000004, z: 0.0050000004}
   m_MoveThreshold: 0.1
   m_Carve: 1
   m_CarveOnlyStationary: 1
-  m_Center: {x: -0.057000004, y: 0.16000001, z: 0}
+  m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
