@@ -136,7 +136,7 @@ public class CombatController : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.R) || (InputManager.ActiveDevice.GetControl(InputControlType.Action3)))
+        if ((Input.GetKeyDown(KeyCode.R) || (InputManager.ActiveDevice.GetControl(InputControlType.Action3))) && !isReloading)
         {
             Debug.Log("Reloading");
             StartCoroutine(WeaponReload());
