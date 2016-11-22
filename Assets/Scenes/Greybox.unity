@@ -5300,8 +5300,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06b7762feae120e4d972de088b5e1df4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseEnemiesPerWave: 20
-  enemyIncreasePerWave: 5
+  baseEnemiesPerWave: 40
+  enemyIncreasePerWave: 10
   wavePausePeriod: 5
   spawnPeriod: 10
   spawnPeriodIncreaseFrequency: 5

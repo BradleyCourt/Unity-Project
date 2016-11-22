@@ -2170,7 +2170,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreText: {fileID: 0}
   score: 0
-  speed: 20
+  speed: 15
   gravity: 20
   deadzone: 0.2
   moveDirection: {x: 0, y: 0, z: 0}

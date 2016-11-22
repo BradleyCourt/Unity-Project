@@ -8,7 +8,7 @@ public class FollowPlayer : MonoBehaviour
     public GameObject player;
     public float attackRange = 0f;
     float Distance;
-    public float Defaultspeed = 3.5f;
+    public float Defaultspeed = 10.0f;
 
     void Start()
     {
