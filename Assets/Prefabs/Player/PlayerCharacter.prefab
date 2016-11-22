@@ -1098,7 +1098,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012145586884}
   m_LocalRotation: {x: 0.60876137, y: 0, z: 0, w: 0.7933534}
-  m_LocalPosition: {x: 0, y: 30, z: -5}
+  m_LocalPosition: {x: 0, y: 22.16, z: -5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 75, y: 0, z: 0}
   m_Children: []
@@ -1952,7 +1952,7 @@ Rigidbody:
   m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!65 &65000010922555722
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -2136,7 +2136,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weapons:
   - {fileID: 114000011419939952}
-  - {fileID: 114000013763289370}
   - {fileID: 114000013763289370}
   Target: {fileID: 1000010326910766}
   deadZone: 0.1
