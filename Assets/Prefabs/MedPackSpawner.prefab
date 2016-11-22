@@ -33,8 +33,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013640141726}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11.4, y: 5.334, z: -2.02}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -56.94, y: 1.79, z: 1.66}
   m_LocalScale: {x: 2.2372162, y: 0.9331316, z: 2.2372162}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -53,4 +53,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Prefab: {fileID: 1000013640141726, guid: a4ff8b4fb5aca544c9dad9f5adfe29d2, type: 2}
   respwanTimer: 30
-  healthToGive: 30
+  healthToGive: 20
